@@ -1,5 +1,7 @@
 
 import './App.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
 import {BrowserRouter, Route , Routes} from 'react-router-dom'
 import Login from './Components/Login';
 import DefectDashboard from './Components/DefectDashboard';
