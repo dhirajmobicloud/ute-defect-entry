@@ -7,7 +7,7 @@ overflow: hidden;
 
 .defects-repaired{
   width: 30%;
-  /* height: 100vh; */
+  max-height: 100vh;
   border-right: solid black 1px;
   display: flex;
   flex-direction: column;
@@ -88,9 +88,10 @@ overflow: hidden;
     display: flex;
     flex-direction: column;
     width: 100vw;
+    max-height: 100vh;
 
     .vehicle-information{
-        height: 30%;
+        max-height: 30%;
         display: flex;
         
         .info{
@@ -104,7 +105,6 @@ overflow: hidden;
     /* Segments */
 
     .defect-segments{
-        height: 70%;
         margin-top: 50px;
         .add-defect-heading{
             height: 45px;
