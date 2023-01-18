@@ -4,6 +4,7 @@ export const DefectDashboardStyle = styled.div`
 background-color: #E8E8E8;
 display: flex;
 overflow: hidden;
+height: 100vh;
 
 .defects-repaired{
   width: 30%;
