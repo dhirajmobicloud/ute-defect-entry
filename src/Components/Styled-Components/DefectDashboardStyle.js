@@ -7,7 +7,7 @@ overflow: hidden;
 
 .defects-repaired{
   width: 30%;
-  height: 100vh;
+  /* height: 100vh; */
   border-right: solid black 1px;
   display: flex;
   flex-direction: column;
@@ -87,7 +87,7 @@ overflow: hidden;
 .add-defects{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    /* width: 100vw; */
 
     .vehicle-information{
         height: 30%;
@@ -116,21 +116,26 @@ overflow: hidden;
         }
 
         .segments{
-            padding: 20px;
+           margin: 20px;
+           
+           .inner-segment{
+                justify-content: center;
 
-            .a-segment{
-                display: flex;
-                width: 185px;
-                height: 60px;
-                margin: 20px ;
-                background-color: #58C8EB;
-                border-radius: 10px;
+                .a-segment{
+                    display: flex;
+                    width: 185px;
+                    height: 60px;
+                    margin: 20px ;
+                    background-color: #58C8EB;
+                    border-radius: 10px;
 
-                h5{
-                    margin: auto;
-                    text-align: center;
-                }
-            }
+                    h5{
+                        margin: auto;
+                        text-align: center;
+                    }
+                }  
+           }
+            
         }
 
     }

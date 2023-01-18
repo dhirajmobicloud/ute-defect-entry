@@ -87,50 +87,50 @@ const DefectDashboard = () => {
       {/* -------------------- Add Defect section -------------------- */}
       <div className="add-defects">
         <div className="vehicle-information">
-          <div className="info">
-            vehicle information
-          </div>
+          <div className="info">vehicle information</div>
         </div>
         {/* Segments */}
         <div className="defect-segments container-fuild">
-            <div className="add-defect-heading">
-                <h2>Add Defect</h2>
+          <div className="add-defect-heading">
+            <h2>Add Defect</h2>
+          </div>
+          <div className="segments  ">
+            <div className="inner-segment d-flex container row g-3">
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 1</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 2</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 3</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 4</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 5</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 6</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 7</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 8</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 9</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 10</h5>
+              </div>
+              <div className="a-segment col-md-3">
+                <h5>Surface RH 11</h5>
+              </div>
             </div>
-            <div className="segments container row g-3">
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 1</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 2</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 3</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 4</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 5</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 6</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 7</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 8</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 9</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 10</h5>
-                </div>
-                <div className="a-segment col-md-3">
-                    <h5>Surface RH 11</h5>
-                </div>
-            </div>
+          </div>
         </div>
       </div>
     </DefectDashboardStyle>
