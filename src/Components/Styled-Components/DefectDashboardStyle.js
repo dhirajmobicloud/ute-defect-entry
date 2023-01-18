@@ -122,7 +122,7 @@ overflow: hidden;
                 display: flex;
                 width: 185px;
                 height: 60px;
-                margin: 20px auto;
+                margin: 20px ;
                 background-color: #58C8EB;
                 border-radius: 10px;
 
