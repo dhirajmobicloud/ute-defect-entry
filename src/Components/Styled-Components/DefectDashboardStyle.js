@@ -129,6 +129,7 @@ height: 100vh;
                     margin: 20px ;
                     background-color: #58C8EB;
                     border-radius: 10px;
+                    cursor: pointer;
 
                     h5{
                         margin: auto;

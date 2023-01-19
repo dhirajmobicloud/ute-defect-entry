@@ -1,7 +1,10 @@
 import React from "react";
 import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
+import { useNavigate } from "react-router-dom";
 
 const DefectDashboard = () => {
+  const navigate = useNavigate();
+
   return (
     <DefectDashboardStyle className="container-fuild">
       <div className="defects-repaired">
@@ -96,37 +99,37 @@ const DefectDashboard = () => {
           </div>
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 1</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 2</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 3</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 4</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 5</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 6</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 7</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 8</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 9</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 10</h5>
               </div>
-              <div className="a-segment col-md-3">
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
                 <h5>Surface RH 11</h5>
               </div>
             </div>

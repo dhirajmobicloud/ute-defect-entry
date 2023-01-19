@@ -8,7 +8,7 @@ const Login = () => {
     <LoginStyled className="cantainer d-flex">
       <div className="LoginCart">
         <div className="Login-creaditnal">
-          <form>
+          <form onSubmit={()=> navigate('/defect-dashboard')}>
             <div className="mb-1">
               <label htmlFor="exampleInputEmail1" className="form-label">   
               </label>
