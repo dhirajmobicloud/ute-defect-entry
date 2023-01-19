@@ -81,7 +81,7 @@ display: flex   ;
         .container{
                 .a-defect{
                     display: flex;
-                    justify-content: space-between;
+                    /* justify-content: space-between; */
                     margin: 10px 10px 10px 0;
                     h6{
                         background-color: #FFC5C5;
@@ -92,6 +92,7 @@ display: flex   ;
                     }
                     span{
                         height: 29px;
+                        margin-left: 10px;
                         /* align-items: center; */
                     }
                 }
