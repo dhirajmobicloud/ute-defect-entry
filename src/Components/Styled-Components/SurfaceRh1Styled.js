@@ -38,8 +38,9 @@ display: flex   ;
             display: flex;
             flex-direction: column;
             margin: 20px; 
-            h5{
+            .heading{
                 margin: 10px;
+                text-transform: uppercase;
             }
             .defect-list{ 
                 display: flex;

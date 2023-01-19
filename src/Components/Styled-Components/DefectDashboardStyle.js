@@ -26,8 +26,9 @@ height: 100vh;
 
   .defects-heading{
     height: 45px;
-    h2{
+    h3{
     text-align: center;
+    text-transform: uppercase;
   }
   }
 
@@ -62,8 +63,9 @@ height: 100vh;
 
     .repaired-heading{
         height: 45px;
-        h2{
+        h3{
         text-align: center;
+        text-transform: uppercase;
         }
     }
 
@@ -109,9 +111,10 @@ height: 100vh;
         margin-top: 50px;
         .add-defect-heading{
             height: 45px;
-                h2{
+                h3{
                     text-align: center;
                     color: #008EAD;
+                    text-transform: uppercase;
                 }
             }
         }

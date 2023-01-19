@@ -1,13 +1,17 @@
 import React from "react";
 import { SurfaceRh1Styled } from "../Styled-Components/SurfaceRh1Styled";
+import { useNavigate } from "react-router-dom";
 
 const SurfaceRH1 = () => {
+
+    const navigate = useNavigate()
+
   return (
     <SurfaceRh1Styled>
       <div className="select-defect">
         <div className="section-one">
           <div className="back-button ">
-            <span className="btn btn-dark">Back</span>
+            <span className="btn btn-dark" onClick={()=> navigate('/defect-dashboard')}>Back</span>
           </div>
           <div className="Add-button">
             <span className="btn btn-success">Add new defect</span>
@@ -29,7 +33,7 @@ const SurfaceRH1 = () => {
           </div>
         </div>
         <div className="section-three">
-          <h5>defect list</h5>
+          <h5 className="heading">defect list</h5>
           <div className="defect-list container">
             <div className="container">
               <h5> defect xyzzzzzzzzz</h5>

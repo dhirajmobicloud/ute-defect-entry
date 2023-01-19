@@ -11,7 +11,7 @@ const DefectDashboard = () => {
         {/* -------------------- Defects List -------------------- */}
         <div className="defects-list">
           <div className="defects-heading">
-            <h2>Defects</h2>
+            <h3>Defects</h3>
           </div>
           <div className="defect">
             <div className="defect-name">
@@ -58,7 +58,7 @@ const DefectDashboard = () => {
         {/* -------------------- Repaired List -------------------- */}
         <div className="repaired-list">
           <div className="repaired-heading">
-            <h2>Repaired</h2>
+            <h3>Repaired</h3>
           </div>
           <div className="repaired">
             <div className="repaired-name">
@@ -95,7 +95,7 @@ const DefectDashboard = () => {
         {/* Segments */}
         <div className="defect-segments container-fuild">
           <div className="add-defect-heading">
-            <h2>Add Defect</h2>
+            <h3>Add Defect</h3>
           </div>
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
