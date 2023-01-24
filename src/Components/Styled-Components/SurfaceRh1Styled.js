@@ -46,16 +46,17 @@ display: flex   ;
                 display: flex;
                 flex-direction: column;
                 background-color: #fff;
-                /* height: 600px; */
+                overflow: scroll;
+                height: 600px;
                 div{
                     display: flex;
                     height: 30px;
                     margin: 10px 10px 10px 0;
                     align-items: center;
                     background-color: #E8E8E8;
-                    /* h5{
-                        color: #fff;
-                    } */
+                    h5{
+                       font-size: 12px;
+                    }
                 }  
             }
         }
