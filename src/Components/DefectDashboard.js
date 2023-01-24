@@ -100,37 +100,40 @@ const DefectDashboard = () => {
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 1</h5>
+                <h5>Surface RH 139</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 2</h5>
+                <h5>Surface FTR 139</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 3</h5>
+                <h5>Bluetooth 139</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 4</h5>
+                <h5>Electrical 1 140</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 5</h5>
+                <h5>Surface LH 140</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 6</h5>
+                <h5>Rear Int 140</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 7</h5>
+                <h5>Rear EXT 141</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 8</h5>
+                <h5>RH Exterior 141</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 9</h5>
+                <h5>LH Exterior 141</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 10</h5>
+                <h5>Electrical 2 142</h5>
               </div>
               <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
-                <h5>Surface RH 11</h5>
+                <h5>Front EXT 142</h5>
+              </div>
+              <div className="a-segment col-md-3" onClick={()=> navigate('/surface-rh-1')}>
+                <h5>Door Closing 142</h5>
               </div>
             </div>
           </div>

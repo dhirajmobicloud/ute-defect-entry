@@ -3,11 +3,19 @@ import { SurfaceRh1Styled } from "../Styled-Components/SurfaceRh1Styled";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Add_SurfaceRH1_defect } from "../../Redux/Reducers/SurfaceRH1_defects";
 
 const SurfaceRH1 = () => {
   const navigate = useNavigate();
-
+  const dispatch = useDispatch()
   const [defects, setDefects] = useState([]);
+
+  const surfaceRH1_defects = useSelector((state)=>state.surfaceRH1_defects) 
+console.log(surfaceRH1_defects)
+  const AddDefect =(defect)=>{
+    dispatch(Add_SurfaceRH1_defect(defect))
+  }
 
   const getData = () => {
     fetch("http://localhost:5000/", {
@@ -61,7 +69,7 @@ const SurfaceRH1 = () => {
           <div className="defect-list container">
             {
               defects.map((element)=>{
-                return <div className="container">
+                return <div className="container" onClick={()=>AddDefect(element)}>
                 <h5>{element.Descrizione}</h5>
               </div>
               })
@@ -75,22 +83,15 @@ const SurfaceRH1 = () => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          <div className="a-defect">
-            <h6>defect zyzzz</h6>
+         { surfaceRH1_defects.map((element)=>{
+
+            return <div className="a-defect">
+            <h6>{element.Descrizione}</h6>
             <span className="btn btn-sm btn-danger">Remove</span>
           </div>
-          <div className="a-defect">
-            <h6>defect zyzzz</h6>
-            <span className="btn btn-sm btn-danger">Remove</span>
-          </div>
-          <div className="a-defect">
-            <h6>defect zyzzz</h6>
-            <span className="btn btn-sm btn-danger">Remove</span>
-          </div>
-          <div className="a-defect">
-            <h6>defect zyzzz</h6>
-            <span className="btn btn-sm btn-danger">Remove</span>
-          </div>
+         })
+          
+          }
         </div>
       </div>
     </SurfaceRh1Styled>

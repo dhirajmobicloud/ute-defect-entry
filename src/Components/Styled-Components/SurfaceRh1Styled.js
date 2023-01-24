@@ -54,6 +54,7 @@ display: flex   ;
                     margin: 10px 10px 10px 0;
                     align-items: center;
                     background-color: #E8E8E8;
+                    cursor: pointer;
                     h5{
                        font-size: 12px;
                     }
@@ -90,6 +91,7 @@ display: flex   ;
                         border-radius: 5px;
                         padding: 5px 0 ;
                         text-align: center;
+                        font-size: 12px;
                     }
                     span{
                         height: 29px;
