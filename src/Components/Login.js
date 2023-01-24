@@ -33,6 +33,9 @@ const Login = () => {
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
+            <button type="submit" className="btn btn-danger">
+              ADD DEFECT
+            </button>
             </div>
           </form>
         </div>

@@ -26,6 +26,8 @@ export const DashboardStyled = styled.div`
     display: flex;
     justify-content: space-between;
     padding-right: 39vh;
+    text-transform: uppercase;
+    
   }
   .input-fil .period {
     margin-left: 10vh;
@@ -33,7 +35,7 @@ export const DashboardStyled = styled.div`
     background: #d9d9d9;
     font-weight: bold;
     text-align: center;
-    text-transform: uppercase;
+   
   }
   .input-fil .date {
     margin-left: 11vh;
