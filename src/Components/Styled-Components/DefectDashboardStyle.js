@@ -9,7 +9,7 @@ height: 100vh;
 .defects-repaired{
   width: 30%;
   max-height: 100vh;
-  border-right: solid black 1px;
+  border-right: solid lightgrey 1px;
   display: flex;
   flex-direction: column;
 
@@ -19,7 +19,7 @@ height: 100vh;
   padding: 10px;
   height: 50%;
   overflow: scroll;
-  border-bottom: solid black 1px ;
+  border-bottom: solid lightgrey 1px ;
   ::-webkit-scrollbar {
     display: none;
 }
@@ -42,6 +42,9 @@ height: 100vh;
       background-color: #FF9B9B;
       border-radius: 5px;
       padding-left: 10px;
+      h5{
+        font-size: 13px;
+      }
     }
 
     .done{
@@ -79,6 +82,9 @@ height: 100vh;
             background-color: #9CF27E;
             border-radius: 5px;
             padding-left: 10px;
+            h5{
+              font-size: 13px;
+            }
         }
     }
 }

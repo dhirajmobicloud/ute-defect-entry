@@ -38,6 +38,10 @@ display: flex   ;
             display: flex;
             flex-direction: column;
             margin: 20px; 
+            overflow: scroll;
+            ::-webkit-scrollbar{
+                display: none;
+            }
             .heading{
                 margin: 10px;
                 text-transform: uppercase;
@@ -46,8 +50,8 @@ display: flex   ;
                 display: flex;
                 flex-direction: column;
                 background-color: #fff;
-                overflow: scroll;
-                height: 600px;
+                /* overflow: scroll;
+                height: 600px; */
                 div{
                     display: flex;
                     height: 30px;

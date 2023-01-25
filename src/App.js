@@ -13,8 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/defect-dashboard" element={<DefectDashboard />} />
-        <Route exact path="/surface-rh-1" element={<SurfaceRH1 />} />
         <Route exact path="/Dashboard" element={<Dashboard/>} />
+        <Route exact path="/surface-RH-139-defects" element={<SurfaceRH1 segment="surface_RH_139_defects" />} />
+        <Route exact path="/surface-FTR-139-defects" element={<SurfaceRH1 segment="surface_FTR_139_defects" />} />
       </Routes>
     </BrowserRouter>
   );

@@ -33,7 +33,7 @@ const Login = () => {
             <button type="submit" className="btn btn-primary">
               Submit
             </button>
-            <button type="submit" className="btn btn-danger">
+            <button type="submit" className="btn btn-danger" onClick={()=> navigate('/Dashboard')}>
               ADD DEFECT
             </button>
             </div>
