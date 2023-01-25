@@ -8,8 +8,8 @@ const Dashboard = () => {
         <div className="input-fil">
           <div className="input-lable">
             <h5>Model</h5>
-            <h5>Model</h5>
-            <h5>Model</h5>
+            <h5>Period Time</h5>
+            <h5>Date</h5>
           </div>
           <input className="Model" type="text" />
           <input className="period" type="text" />
