@@ -4,26 +4,29 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Add_SurfaceRH1_defect, Remove_SurfaceRH1_defect } from "../../Redux/Reducers/SurfaceRH1_defects";
+import {
+  Add_SurfaceRH1_defect,
+  Remove_SurfaceRH1_defect,
+} from "../../Redux/Reducers/SurfaceRH1_defects";
 
 const SurfaceRH1 = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [defects, setDefects] = useState([]);
 
-  const surfaceRH1_defects = useSelector((state)=>state.surfaceRH1_defects) 
-console.log(surfaceRH1_defects)
-  
-  const AddDefect =(defect)=>{
-    dispatch(Add_SurfaceRH1_defect(defect))
-  }
+  const surfaceRH1_defects = useSelector((state) => state.surfaceRH1_defects);
+  console.log(surfaceRH1_defects);
 
-  const RemoveDefect =(id)=>{
-    dispatch(Remove_SurfaceRH1_defect(id))
-  }
+  const AddDefect = (defect) => {
+    dispatch(Add_SurfaceRH1_defect(defect));
+  };
+
+  const RemoveDefect = (id) => {
+    dispatch(Remove_SurfaceRH1_defect(id));
+  };
 
   const getData = () => {
-    fetch(`http://localhost:5000/${props.segment}`, {
+    fetch(`http://localhost:5000/${props.segement}`, {
       method: "GET",
     })
       .then((res) => {
@@ -74,14 +77,13 @@ console.log(surfaceRH1_defects)
         <div className="section-three">
           <h5 className="heading">defect list</h5>
           <div className="defect-list container">
-            {
-              defects.map((element)=>{
-                return <div className="container" onClick={()=>AddDefect(element)}>
-                <h5>{element.Descrizione}</h5>
-              </div>
-              })
-              
-            }
+            {defects.map((element) => {
+              return (
+                <div className="container" onClick={() => AddDefect(element)}>
+                  <h5>{element.Descrizione}</h5>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -90,15 +92,20 @@ console.log(surfaceRH1_defects)
           <h5>selected defects</h5>
         </div>
         <div className="container">
-         { surfaceRH1_defects.map((element)=>{
-
-            return <div className="a-defect">
-            <h6>{element.Descrizione}</h6>
-            <span className="btn btn-sm btn-danger" onClick={()=> RemoveDefect(element._id)}>Remove</span>
-          </div>
-         })
-          
-          }
+          {surfaceRH1_defects.filter((items) => items.Segement == props.station)
+            .map((element) => {
+              return (
+                <div className="a-defect" key={element}>
+                  <h6>{element.Descrizione}</h6>
+                  <span
+                    className="btn btn-sm btn-danger"
+                    onClick={() => RemoveDefect(element._id)}
+                  >
+                    Remove
+                  </span>
+                </div>
+              );
+            })}
         </div>
       </div>
     </SurfaceRh1Styled>
