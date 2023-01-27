@@ -1,0 +1,121 @@
+
+
+.mainpart{
+    height: 100vh;
+    width: 100%;
+    background-color: #d2d2d2;
+}
+.anotherpart{
+    display: relative;
+    margin-left: 15%;
+}
+.modeldescription{
+    margin-left: 59px;
+    margin-right: 117px;
+    margin-bottom: 28px;
+    display: flex;
+}
+
+.modelname{
+    position: relative;
+    width: 350px;
+    margin-right: 62px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+}
+
+.modelname h5{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.Model{
+    position: absolute;
+    height: 36px;
+    width: 100%;
+    background-color:#d9d9d9;
+    border-radius: 10px;
+    
+}
+.inputsearchperiod{
+    position: relative;
+    width: 350px;
+    margin-right: 62px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+}
+
+.inputsearchperiod h5{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.inputstartdate{
+    position: relative;
+    width: 169px;
+    margin-right: 28px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+}
+
+.inputstartdate h5{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.startdate{
+    position: absolute;
+    height: 36px;
+    width: 100%;
+    background-color:#d9d9d9;
+    border-radius: 10px;
+}
+.inputenddate{
+    position: relative;
+    width: 169px;
+    margin-top: 60px;
+    margin-bottom: 28px;
+
+}
+
+.inputenddate h5{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.enddate{
+    position: absolute;
+    height: 36px;
+    width: 100%;
+    background-color:#d9d9d9;
+    border-radius: 10px;
+}
+.defectlist{
+    margin-left: 59px;
+    position: relative;
+    margin-right: 55px;
+    width: 1252px;
+   background-color: #D9D9D9;
+   overflow-x:hidden;
+   overflow-y:auto;
+   height: 606px;
+
+ 
+}
+.mydata{
+    height: auto;
+    padding-top: 32px;
+    padding-bottom: 46px;
+    margin-left: 26px;
+    margin-right: 34px;
+    position:relative;
+}
+.listdata{
+    width: 100%;
+    background-color: white;
+    border-bottom: 22px;
+}
+
