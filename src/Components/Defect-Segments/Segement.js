@@ -1,5 +1,5 @@
 import React from "react";
-import { SurfaceRh1Styled } from "../Styled-Components/SurfaceRh1Styled";
+import { SurfaceRh1Styled } from "../Styled-Components/SegementStyled";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -9,7 +9,7 @@ import {
   Remove_SurfaceRH1_defect,
 } from "../../Redux/Reducers/SurfaceRH1_defects";
 
-const SurfaceRH1 = (props) => {
+const Segement = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [defects, setDefects] = useState([]);
@@ -54,6 +54,9 @@ const SurfaceRH1 = (props) => {
               Back
             </span>
           </div>
+          <div className="segement-name">
+            <h3>{props.station}</h3>
+          </div>
           <div className="Add-button">
             <span className="btn btn-success">Add new defect</span>
           </div>
@@ -77,9 +80,9 @@ const SurfaceRH1 = (props) => {
         <div className="section-three">
           <h5 className="heading">defect list</h5>
           <div className="defect-list container">
-            {defects.map((element) => {
+            {defects.map((element, index) => {
               return (
-                <div className="container" onClick={() => AddDefect(element)}>
+                <div key={index} className="container" onClick={() => AddDefect(element)}>
                   <h5>{element.Descrizione}</h5>
                 </div>
               );
@@ -92,10 +95,10 @@ const SurfaceRH1 = (props) => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          {surfaceRH1_defects.filter((items) => items.Segement == props.station)
-            .map((element) => {
+          {surfaceRH1_defects.filter((items) => items.Segement === props.station)
+            .map((element, index) => {
               return (
-                <div className="a-defect" key={element}>
+                <div className="a-defect" key={index}>
                   <h6>{element.Descrizione}</h6>
                   <span
                     className="btn btn-sm btn-danger"
@@ -112,4 +115,4 @@ const SurfaceRH1 = (props) => {
   );
 };
 
-export default SurfaceRH1;
+export default Segement;
