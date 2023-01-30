@@ -26,7 +26,7 @@ const Segement = (props) => {
   };
 
   const getData = () => {
-    fetch(`http://localhost:5000/${props.segement}`, {
+    fetch(`https://easy-gray-camel-sock.cyclic.app/${props.segement}`, {
       method: "GET",
     })
       .then((res) => {
