@@ -24,6 +24,14 @@ display: flex   ;
                     border-radius: 200px;
                 }
             }
+            .segement-name{
+                width: 300px;
+                margin-left: 50px;
+                display: flex;
+                h3{
+                    margin: auto;
+                }
+            }
 
         }
         .section-two{
