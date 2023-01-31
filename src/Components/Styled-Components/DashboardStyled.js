@@ -2,59 +2,85 @@ import styled from "styled-components";
 
 export const DashboardStyled = styled.div`
   height: 100vh;
+  /* width: 100vw; */
   display: flex;
-  background: #d9d9d9;
+  background: #f1f1f1;
+  flex-direction: column;
+  ::-webkit-scrollbar {
+          display: none;
+        }
 
-  .select-defect {
-    width: 1366px;
-    height: 768px;
-    margin: auto;
-  }
-  .input-fil {
-    margin: 2vh;
-  }
-  .input-fil .Model {
-    margin-left: 15vh;
-    border-radius: 9px;
-    background: #d9d9d9;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .input-lable {
-    padding-left: 25vh;
-    display: flex;
-    justify-content: space-between;
-    padding-right: 39vh;
-    text-transform: uppercase;
+  .modeldescription{
+    display:flex;
+    padding: 30px 30px 10px 30px;
     
   }
-  .input-fil .period {
-    margin-left: 10vh;
-    border-radius: 9px;
-    background: #d9d9d9;
-    font-weight: bold;
-    text-align: center;
-   
-  }
-  .input-fil .date {
-    margin-left: 11vh;
-    border-radius: 9px;
-    background: #d9d9d9;
-    font-weight: bold;
-  }
+  .inputElement{
+    margin: auto;
 
-  .defect-list {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff;
-
-    div {
-      display: flex;
-      height: 30px;
-      margin: 10px 10px 10px 0;
-      align-items: center;
-      background-color: #e8e8e8;
+    select, input{
+      background-color: #D9D9D9;
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      width: 200px;
     }
+    h5{
+      text-align: center;
+    }
+  }
+
+  .defect-list-container{
+    /* background-color: gray; */
+    height: 100vh;
+    /* overflow: hidden; */
+    
+    
+
+    .result-filter{
+      display: flex;
+      background-color: lightgrey;
+      margin: 20px 20px 0 20px;
+      border-radius: 10px 10px 0 0 ;
+
+      .form-check{
+        margin: 10px ;
+      }
+      
+    }
+    .defects{
+        margin: 5px 20px 20px 20px;
+        background-color: lightgrey;
+        border-radius: 0 0 10px 10px ;
+       
+        padding: 20px;
+       
+       
+
+        .defectlist{
+          height: 65vh;
+          overflow: scroll;
+          ::-webkit-scrollbar {
+          display: none;
+        }
+          .listdata{
+          background-color: #fff;
+          margin: 5px;
+          align-items: center;
+          
+          .vinNumber{
+              padding: 0 10px 0 0;
+              border-right: solid black 1px;
+          }
+          .model{
+              padding: 0 10px 0 0;
+              border-right: solid black 1px;
+          }
+         
+        }
+        }
+
+       
+      }
   }
 `;
