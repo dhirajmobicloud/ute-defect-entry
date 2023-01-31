@@ -13,6 +13,7 @@ export const DashboardStyled = styled.div`
   .modeldescription{
     display:flex;
     padding: 30px 30px 10px 30px;
+    flex-wrap: wrap;
     
   }
   .inputElement{
