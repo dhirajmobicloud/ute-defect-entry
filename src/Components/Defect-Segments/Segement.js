@@ -8,21 +8,22 @@ import {
   Add_SurfaceRH1_defect,
   Remove_SurfaceRH1_defect,
 } from "../../Redux/Reducers/SurfaceRH1_defects";
+import { add_vehicle_defect, remove_vehicle_defect } from "../../Redux/Reducers/vehicle";
 
 const Segement = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [defects, setDefects] = useState([]);
 
-  const surfaceRH1_defects = useSelector((state) => state.surfaceRH1_defects);
-  console.log(surfaceRH1_defects);
+  const segement_defects = useSelector((state) => state.vehicle);
+  console.log(segement_defects[0].defect);
 
   const AddDefect = (defect) => {
-    dispatch(Add_SurfaceRH1_defect(defect));
+    dispatch(add_vehicle_defect(defect));
   };
 
   const RemoveDefect = (id) => {
-    dispatch(Remove_SurfaceRH1_defect(id));
+    dispatch(remove_vehicle_defect(id));
   };
 
   const getData = () => {
@@ -95,7 +96,7 @@ const Segement = (props) => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          {surfaceRH1_defects.filter((items) => items.Segement === props.station)
+          {!segement_defects[0].defects.lenght < 0 ? segement_defects[0].defect.filter((items) => items.Segement === props.station)
             .map((element, index) => {
               return (
                 <div className="a-defect" key={index}>
@@ -108,7 +109,7 @@ const Segement = (props) => {
                   </span>
                 </div>
               );
-            })}
+            }): ""}
         </div>
       </div>
     </SurfaceRh1Styled>
