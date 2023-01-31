@@ -1084,7 +1084,48 @@
     }
     ]
     
+},
+{
+    "vin": "12370",
+    "model":"Nexon Electric",
+    "date":"27/01/2023",
+   
+   
+    "defect":[{
+        "description":"C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - GF - NOT FITTED - 000 - SINGLE "
+    },
+    {
+        "description":"D85YR110 - FRONT FENDER - 76 - ORANGE PEEL - 410 - LOWER/LEFT"
+    },
+    {
+        "description":"D71CE110 - REAR SIDE DOOR HINGES - K4 - LOOSE - 090 - RIGHT"
+    },
+    {
+        "description":"C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+    },
+    {
+        "description":"D85YT110 - SIDE DOORS - GH - MISALIGNED - 190 - FRONT/RIGHT "
+    }
+    ],
+    "repaired":[{
+        "description":"C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - 0X - WRONG PART - 000 - SINGLE"
+    },
+    {
+        "description":"D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+    },
+    {
+        "description":"D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
+    },
+    {
+        "description":"C65EK110 - OUTER TAIL-LIGHT - KB - DEFORMATION - 090 - RIGHT "
+    },
+    {
+        "description":"D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
+    }
+    ]
+    
 }
+
 
 
 
