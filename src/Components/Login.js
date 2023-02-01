@@ -20,7 +20,7 @@ const Login = () => {
 
   const onSubmitHandler =(e)=>{
       e.preventDefault();
-      dispatch(Add_vehicle(vehicle))
+      // dispatch(Add_vehicle(vehicle))
       navigate('/defect-dashboard')
   }
 
