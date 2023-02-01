@@ -11,7 +11,7 @@ const DefectDashboard = () => {
   const vehicle = useSelector((state) => state.vehicle);
   const vehicle_data = useSelector((state) => state.vehicle);
 
-  const [inputSegement, setInputSegement] = useState(false);
+  const [inputSegement, setInputSegement] = useState('all');
 
   const setSegement = (e) => {
     setInputSegement(e.target.value);
@@ -54,8 +54,9 @@ const DefectDashboard = () => {
             onChange={setSegement}
             className="form-select form-select-sm"
             aria-label=".form-select-sm example"
+            
           >
-            <option defaultValue={false}>Choose Segement</option>
+            {/* <option >Choose Segement</option> */}
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
             <option value="Surface-FTR-139">Surface FTR 139</option>
