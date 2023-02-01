@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login";
 import DefectDashboard from "./Components/DefectDashboard";
 import Segement from "./Components/Defect-Segments/Segement";
-import Dashboard from "./Components/Dashboard/Dashboard";
+// import Dashboard from "./Components/Dashboard/Dashboard";
+import DashboardDM from "./Components/Dashboard/DashboardDM";
 
 function App() {
   
@@ -14,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/defect-dashboard" element={<DefectDashboard />} />
-        <Route exact path="/Dashboard" element={<Dashboard/>} />
+        <Route exact path="/Dashboard" element={<DashboardDM/>} />
         <Route exact path="/surface-RH-139-defects" element={<Segement segement="surface_RH_139_defects" station='Surface-RH-139' />} />
         <Route exact path="/surface-FTR-139-defects" element={<Segement segement="surface_FTR_139_defects" station='Surface-FTR-139'/>} />
         <Route exact path="/electrical-1-140-defects" element={<Segement segement="electrical_1_140_defects" station='Electrical-1-140'/>} />

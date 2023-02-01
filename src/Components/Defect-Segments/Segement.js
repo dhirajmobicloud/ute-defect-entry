@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Add_SurfaceRH1_defect,
-  Remove_SurfaceRH1_defect,
-} from "../../Redux/Reducers/SurfaceRH1_defects";
 import { add_vehicle_defect, remove_vehicle_defect } from "../../Redux/Reducers/vehicle";
 
 const Segement = (props) => {
@@ -16,7 +12,7 @@ const Segement = (props) => {
   const [defects, setDefects] = useState([]);
 
   const segement_defects = useSelector((state) => state.vehicle);
-  console.log(segement_defects[0].defect);
+  console.log(segement_defects);
 
   const AddDefect = (defect) => {
     dispatch(add_vehicle_defect(defect));
@@ -27,7 +23,7 @@ const Segement = (props) => {
   };
 
   const getData = () => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/${props.segement}`, {
+    fetch(`http://localhost:5000/${props.segement}`, {
       method: "GET",
     })
       .then((res) => {
@@ -42,6 +38,13 @@ const Segement = (props) => {
     getData();
     // eslint-disable-next-line
   }, []);
+
+  // useEffect(()=>{
+  //   fetch('https://easy-gray-camel-sock.cyclic.app/add_vehicle', {method:"POST", body:segement_defects[0]})
+  //   .then((res)=>{
+  //     console.log(res)
+  //   })
+  //   },[AddDefect, RemoveDefect])
 
   return (
     <SurfaceRh1Styled>
@@ -96,7 +99,7 @@ const Segement = (props) => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          {!segement_defects[0].defects.lenght < 0 ? segement_defects[0].defect.filter((items) => items.Segement === props.station)
+          {segement_defects[0].defect.length > 0 ? segement_defects[0].defect.filter((items) => items.Segement === props.station)
             .map((element, index) => {
               return (
                 <div className="a-defect" key={index}>

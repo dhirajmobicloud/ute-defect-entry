@@ -5,11 +5,12 @@ import { useState } from "react";
 // import styles from "./dashboard.module.css";
 
 const Dashboard = () => {
-  const uniqueArr = [...new Set(data.map((value) => value.model))];
+  const uniqueArr = [...new Set(data.map((value) => value.Segement))];
   const [period, setPeriod] = useState();
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [flag, setFlag] = useState(0);
+  const [defectSegment, setDefectSegement] = useState("");
 
   function DateChecker(valueData) {
     let booleanData = false;
@@ -67,6 +68,24 @@ const Dashboard = () => {
     console.log("End", endDate);
   };
 
+  const segmentHandler = (e) => {
+    setFlag(3);
+    setDefectSegement(e.target.value);
+    console.log("segement", defectSegment);
+    // checkSegmentHandler()
+  };
+
+  // const checkSegmentHandler = () => {
+  //   let defects = data.filter((element)=>{ 
+  //     let result = element.repaired.filter((item)=> item.Segement === segment)
+  //     return result
+  //   })
+  //   console.log(defects)
+  // };
+
+
+
+
   function DateSpanChecker(valueData) {
     let booleanData = false;
     const [day, month, year] = valueData.split("/");
@@ -89,28 +108,21 @@ const Dashboard = () => {
   function ShowOnlyList() {
     return (
       <>
-        {data.filter((value) => value.model === inputData).length > 0 ? (
+        {data.filter((value) => value.Segement === inputData).length > 0 ? (
           <div className="defectlist">
-           
-              {data
-                .filter((value) => value.model === inputData)
-                .map((info) =>
-                  info.repaired.map((defectdata) => (
-                    <div className="listdata d-flex">
-                      <div className="vinNumber mx-2 my-2" >
-                        {info.vin} 
-                      </div>
-                      <div className="model mx-2 my-2">
-                         {info.model} 
-                      </div>
-                      <div className="description mx-2 my-2">
-                       {defectdata.description}
-                        
-                      </div>
+            {data
+              .filter((value) => value.Segement === inputData)
+              .map((info) =>
+                info.repaired.map((defectdata) => (
+                  <div className="listdata d-flex">
+                    <div className="vinNumber mx-2 my-2">{info.vin}</div>
+                    <div className="Segement mx-2 my-2">{info.Segement}</div>
+                    <div className="description mx-2 my-2">
+                      {defectdata.description}
                     </div>
-                  ))
-                )}
-           
+                  </div>
+                ))
+              )}
           </div>
         ) : (
           <h1>Not Found</h1>
@@ -124,34 +136,24 @@ const Dashboard = () => {
       <>
         {data.filter(
           (value) =>
-            value.model === inputData && DateChecker(value.date) === true
+            value.Segement === inputData && DateChecker(value.date) === true
         ).length > 0 ? (
           <div className={"defectlist"}>
-            
-              {data
-                .filter(
-                  (value) =>
-                    value.model === inputData &&
-                    DateChecker(value.date) === true
-                )
-                .map((info) =>
-                  info.repaired.map((defectdata) => (
-                    <div className="listdata d-flex">
-                    <div className="mx-2 my-2" >
-                      {info.vin} 
-                    </div>
-                    <div className="mx-2 my-2">
-                       {info.model} 
-                    </div>
-                    <div className="mx-2 my-2">
-                     {defectdata.description}
-                      
-                    </div>
+            {data
+              .filter(
+                (value) =>
+                  value.Segement === inputData && DateChecker(value.date) === true
+              )
+              .map((info) =>
+                info.repaired.map((defectdata) => (
+                  <div className="listdata d-flex">
+                    <div className="mx-2 my-2">{info.vin}</div>
+                    <div className="mx-2 my-2">{info.Segement}</div>
+                    <div className="mx-2 my-2">{defectdata.description}</div>
                   </div>
-                  ))
-                )}
-            </div>
-       
+                ))
+              )}
+          </div>
         ) : (
           <h1>Not Found</h1>
         )}
@@ -163,33 +165,63 @@ const Dashboard = () => {
       <>
         {data.filter(
           (value) =>
-            value.model === inputData && DateSpanChecker(value.date) === true
+            value.Segement === inputData && DateSpanChecker(value.date) === true
         ).length > 0 ? (
           <div className={"defectlist"}>
-            
-              {data
-                .filter(
-                  (value) =>
-                    value.model === inputData &&
-                    DateSpanChecker(value.date) === true
-                )
-                .map((info) =>
-                  info.repaired.map((defectdata) => (
-                    <div className="listdata d-flex">
-                    <div className="mx-2 my-2" >
-                      {info.vin} 
-                    </div>
-                    <div className="mx-2 my-2">
-                       {info.model} 
-                    </div>
-                    <div className="mx-2 my-2">
-                     {defectdata.description}
-                      
-                    </div>
+            {data
+              .filter(
+                (value) =>
+                  value.Segement === inputData &&
+                  DateSpanChecker(value.date) === true
+              )
+              .map((info) =>
+                info.repaired.map((defectdata) => (
+                  <div className="listdata d-flex">
+                    <div className="mx-2 my-2">{info.vin}</div>
+                    <div className="mx-2 my-2">{info.Segement}</div>
+                    <div className="mx-2 my-2">{defectdata.description}</div>
                   </div>
-                  ))
-                )}
-        
+                ))
+              )}
+          </div>
+        ) : (
+          <h1>Not Found</h1>
+        )}
+      </>
+    );
+  }
+
+  function segementWiseRendering() {
+    return (
+      <>
+        {data.filter((value) => value.Segement === inputData && DateSpanChecker(value.date) === true ).length > 0 ? (
+          <div className={"defectlist"}>
+            {data
+              .filter(
+                (value) =>
+                  value.Segement === inputData &&
+                  DateSpanChecker(value.date) === true
+              )
+              .map((info) =>
+              info.repaired.filter((item)=> item.Segement === defectSegment)
+              .map((defectdata) => {
+                   return <div className="listdata d-flex">
+                      <div className="mx-2 my-2">{info.vin}</div>
+                      <div className="mx-2 my-2">{info.Segement}</div>
+                      <div className="mx-2 my-2">{info.Segement}</div>
+                      <div className="mx-2 my-2">{defectdata.description}</div>
+                    </div>
+                 } 
+              //   info.repaired.map((defectdata) => {
+              //     <div className="listdata d-flex">
+              //       <div className="mx-2 my-2">{info.vin}</div>
+              //       <div className="mx-2 my-2">{info.Segement}</div>
+              //       <div className="mx-2 my-2">{info.Segement}</div>
+              //       <div className="mx-2 my-2">{defectdata.description}</div>
+              //     </div>
+              //  } 
+               )
+              )}
           </div>
         ) : (
           <h1>Not Found</h1>
@@ -200,10 +232,18 @@ const Dashboard = () => {
 
   function Combiner() {
     if (flag === 0) {
-      return <>{ShowOnlyList()}</>;
-    } else if (flag === 1) {
-      return <>{ShowOnlyListWithPeriod()}</>;
-    } else if (flag === 2) return <>{ShowOnlyListWithStartAndEndDate()}</>;
+      return <>{ShowOnlyList()}</>
+    } 
+    else if (flag === 1) {
+      return <>{ShowOnlyListWithPeriod()}</>
+    } 
+    else if (flag === 2){
+      return <>{ShowOnlyListWithStartAndEndDate()}</>
+    }
+    else if (flag === 3){
+      return <>{segementWiseRendering()}</>
+    }
+    
   }
 
   return (
@@ -243,8 +283,7 @@ const Dashboard = () => {
           <h5>Segement</h5>
           <select
             className={"Model"}
-            onChange={(e) => dataSetting(e)}
-            defaultValue={period}
+            onChange={(e) => segmentHandler(e)}
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -305,10 +344,7 @@ const Dashboard = () => {
             </label>
           </div>
         </div>
-        <div className="defects">
-        {Combiner()}
-        </div>
-        
+        <div className="defects">{Combiner()}</div>
       </div>
     </DashboardStyled>
   );

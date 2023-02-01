@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { Add_SurfaceRH1_repaired } from "../Redux/Reducers/SurfaceRH1_repaired";
-import { Remove_SurfaceRH1_defect } from "../Redux/Reducers/SurfaceRH1_defects";
+import { remove_vehicle_defect, add_repaired_defect } from "../Redux/Reducers/vehicle";
+
 
 const DefectDashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const defects = useSelector((state) => state.surfaceRH1_defects);
-  const repaired = useSelector((state) => state.surfaceRH1_repaired);
+  const vehicle = useSelector((state) => state.vehicle);
+  const vehicle_data = useSelector((state) => state.vehicle);
 
   const [inputSegement, setInputSegement] = useState(false);
 
@@ -17,24 +17,29 @@ const DefectDashboard = () => {
     setInputSegement(e.target.value);
   };
 
-  // useEffect(()=>{
-  
-  //   // let data = await fetch('http://localhost:5000/add_vehicle', {method:"GET"})
-  //   // let result = await data.json()
-  //   // console.log(result)
-  //   fetch('http://localhost:5000/add_vehicle', {method:"GET"})
-  //   .then((res)=>{
-  //     return res.json()
-  //   }).then((res1)=>{
-  //       console.log(JSON.stringify(res1))
-  //   })
-
-  // },[])
 
   const Add_repaired = (defect) => {
-    dispatch(Add_SurfaceRH1_repaired(defect));
-    dispatch(Remove_SurfaceRH1_defect(defect._id));
+    dispatch(add_repaired_defect(defect));
+    dispatch(remove_vehicle_defect(defect._id));
+    save();
   };
+
+  const save =()=>{
+    // let formData = new FormData();
+    // for (let key of Object.keys(vehicle_data)) {
+    //     formData.append(key, vehicle_data[key]);
+    // }
+    fetch('http://localhost:5000/add_vehicle', {method:"POST", body:vehicle_data})
+    .then((res)=>{
+      console.log(res)
+    })
+  }
+
+  // useEffect(()=>{
+
+  //   save()
+    
+  //   },[Add_repaired,])
 
   return (
     <DefectDashboardStyle className="container-fuild">
@@ -67,7 +72,7 @@ const DefectDashboard = () => {
           </select>
           <div className="defect-outer">
             {inputSegement === "all"
-              ? defects.map((element, index) => {
+              ? vehicle[0].defect.map((element, index) => {
                   console.log(inputSegement);
                   return (
                     <div className="defect" key={index}>
@@ -87,7 +92,7 @@ const DefectDashboard = () => {
                     </div>
                   );
                 })
-              : defects
+              : vehicle[0].defect
                   .filter((element) => {
                     return element.Segement === inputSegement;
                   })
@@ -120,7 +125,8 @@ const DefectDashboard = () => {
             <h3>Repaired</h3>
           </div>
           {inputSegement === "all"
-            ? repaired.map((element) => {
+            ? vehicle[0].repaired
+            .map((element) => {
                 return (
                   <div className="repaired">
                     <div className="repaired-name">
@@ -131,7 +137,7 @@ const DefectDashboard = () => {
                   </div>
                 );
               })
-            : repaired
+            : vehicle[0].repaired
                 .filter((items) => items.Segement === inputSegement)
                 .map((element) => {
                   return (
