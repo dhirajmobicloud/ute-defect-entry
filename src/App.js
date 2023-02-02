@@ -6,16 +6,26 @@ import Login from "./Components/Login";
 import DefectDashboard from "./Components/DefectDashboard";
 import Segement from "./Components/Defect-Segments/Segement";
 // import Dashboard from "./Components/Dashboard/Dashboard";
-import DashboardDM from "./Components/Dashboard/DashboardDM";
+import VehicleHistory from "./Components/Admin-pannel/VehicleHistory";
+import AdminLogin from "./Components/Admin-pannel/AdminLogin";
+import AdminDashboard from "./Components/Admin-pannel/AdminDashboard";
+import NewDefects from "./Components/Admin-pannel/NewDefects";
+import SegementManagement from "./Components/Admin-pannel/SegementManagement";
 
 function App() {
   
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />}/>
+        <Route path="/admin-login" element={<AdminLogin/>}/>
+        <Route exact path="/admin-pannel" element={<AdminDashboard/>}>
+          <Route path="admin-dashboard" element={<VehicleHistory/>}/>
+          <Route path="new-defects" element={<NewDefects/>}/>
+          <Route path="segement-managenent" element={<SegementManagement/>}/>
+
+        </Route>
         <Route path="/defect-dashboard" element={<DefectDashboard />} />
-        <Route exact path="/Dashboard" element={<DashboardDM/>} />
         <Route exact path="/surface-RH-139-defects" element={<Segement segement="surface_RH_139_defects" station='Surface-RH-139' />} />
         <Route exact path="/surface-FTR-139-defects" element={<Segement segement="surface_FTR_139_defects" station='Surface-FTR-139'/>} />
         <Route exact path="/electrical-1-140-defects" element={<Segement segement="electrical_1_140_defects" station='Electrical-1-140'/>} />

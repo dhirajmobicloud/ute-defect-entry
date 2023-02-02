@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DashboardStyled = styled.div`
+export const VehicleHistoryStyled = styled.div`
   height: 100vh;
   /* width: 100vw; */
   display: flex;

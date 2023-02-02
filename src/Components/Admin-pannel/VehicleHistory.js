@@ -1,11 +1,11 @@
 import React from "react";
-import { DashboardStyled } from "../Styled-Components/DashboardStyled";
+import { VehicleHistoryStyled } from "../Styled-Components/VehicleHistoryStyled";
 import data from "./vehicleinfo.json";
 import { useState } from "react";
 import moment from "moment/moment";
 // import styles from "./dashboard.module.css";
 
-const DashboardDM = () => {
+const VehicleHistory = () => {
   const [model, setModel] = useState('all');
   const [period, setPeriod] = useState("");
   const [startdate, setStartDate] = useState();
@@ -315,7 +315,7 @@ const DashboardDM = () => {
 
 
   return (
-    <DashboardStyled className={"mainpart"}>
+    <VehicleHistoryStyled className={"mainpart"}>
       <div className={"modeldescription"}>
         <div className="inputElement">
           <h5>MODEL</h5>
@@ -436,8 +436,8 @@ const DashboardDM = () => {
           </div>
         </div>
       </div>
-    </DashboardStyled>
+    </VehicleHistoryStyled>
   );
 };
 
-export default DashboardDM;
+export default VehicleHistory;

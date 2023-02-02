@@ -12,14 +12,23 @@ export const LoginStyled = styled.div`
     margin: auto;
   }
  form{
-  padding-left: 5vh;
-  padding-right: 5vh;
-  padding: 9vh;
+  padding: 20px;
   align-items: center;
-  button{
-   margin: auto;
-   margin: 10px;
-   
+
+  .buttons{
+    flex-direction: column;
+    padding: 10px;
+    button{
+      margin: auto;   
+    }
+    span{
+      margin: auto;
+      padding: 10px;
+      cursor: pointer;
+
+    }
   }
+
+ 
  }
 `;

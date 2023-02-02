@@ -154,7 +154,7 @@ const DefectDashboard = () => {
         <div className="vehicle-information">
           <div className="info \ ">
             <h4>MODEL : {vehicle_data[0].model}</h4>
-            <h4> ID : {vehicle_data[0].win_number}</h4>
+            <h4> Vin Number : {vehicle_data[0].win_number}</h4>
           </div>
         </div>
         {/* Segments */}

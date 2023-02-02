@@ -1,5 +1,5 @@
 import React from "react";
-import { DashboardStyled } from "../Styled-Components/DashboardStyled";
+import { DashboardStyled } from "../Styled-Components/VehicleHistoryStyled";
 import data from "./vehicleinfo.json";
 import { useState } from "react";
 // import styles from "./dashboard.module.css";

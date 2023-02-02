@@ -29,7 +29,7 @@ const Login = () => {
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>
-            {/* <div className="mb-1">
+            <div className="mb-1">
               <label
                 htmlFor="exampleInputEmail1"
                 className="form-label"
@@ -37,38 +37,33 @@ const Login = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Vehicle Name"
-                onChange={onChangeHandler}
-                name="model"
-                value={vehicle.model}
+                placeholder="Username"
+                
+                
               />
-            </div> */}
-            {/* <div className="mb-1">
+            </div>
+            <div className="mb-1">
               <label
                 htmlFor="exampleInputPassword1"
                 className="form-label"
               ></label>
               <input
-                type="text"
-                placeholder="Vehicle Id"
+                type="password"
+                placeholder="password"
                 className="form-control"
-                onChange={onChangeHandler}
-                name="win_number"
-                value={vehicle.win_number}
+              
               />
-            </div> */}
+            </div>
             
-            <div className="d-flex ">
-              <button type="submit" className="btn btn-primary">
-                Go to defect entry
+            <div className="buttons d-flex ">
+              <button type="button" className="btn btn-primary"  onClick={() => navigate("/defect-dashboard")}>
+                login
               </button>
-              <button
-                type="submit"
-                className="btn btn-danger"
-                onClick={() => navigate("/Dashboard")}
+              <span
+                onClick={() => navigate("/admin-login")}
               >
-                Go to defects history
-              </button>
+                Admin login
+              </span>
             </div>
           </form>
         </div>
