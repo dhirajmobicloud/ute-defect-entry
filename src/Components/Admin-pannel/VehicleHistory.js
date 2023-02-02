@@ -2,7 +2,7 @@ import React from "react";
 import { VehicleHistoryStyled } from "../Styled-Components/VehicleHistoryStyled";
 import data from "./vehicleinfo.json";
 import { useState } from "react";
-import moment from "moment/moment";
+// import moment from "moment/moment";
 // import styles from "./dashboard.module.css";
 
 const VehicleHistory = () => {
@@ -262,19 +262,19 @@ const VehicleHistory = () => {
 
   const checkPeriod = (TimePeriod)=>{
     if(TimePeriod === "Today"){
-      let date =  moment().format("L")
-      setWeekDate(date)
-      console.log(date)
+      // let date =  moment().format("L")
+      // setWeekDate(date)
+      // console.log(date)
     }
     else if(TimePeriod === "Weekly"){
-      let date =  moment().subtract(7, 'days').calendar()
-      setWeekDate(date)
-      console.log(date)
+      // let date =  moment().subtract(7, 'days').calendar()
+      // setWeekDate(date)
+      // console.log(date)
     }
     else if(TimePeriod === "Monthly"){
-      let date =  moment().subtract(30, 'days').calendar()
-      setWeekDate(date)
-      console.log(date)
+      // let date =  moment().subtract(30, 'days').calendar()
+      // setWeekDate(date)
+      // console.log(date)
     }
     
   }

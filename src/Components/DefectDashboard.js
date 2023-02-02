@@ -25,7 +25,7 @@ const DefectDashboard = () => {
   };
 
   // const save =()=>{
-  //   fetch('http://localhost:5000/add_vehicle', {method:"POST", body:JSON.stringify(vehicle_data[0]), headers: { "Content-Type": "application/json" } })
+  //   fetch('https://easy-gray-camel-sock.cyclic.app/add_vehicle', {method:"POST", body:JSON.stringify(vehicle_data[0]), headers: { "Content-Type": "application/json" } })
   //   .then((res)=>{
   //     console.log(res)
   //   })
