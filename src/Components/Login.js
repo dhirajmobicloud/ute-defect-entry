@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
-import { useDispatch, useSelector } from "react-redux";
-import { Add_vehicle } from "../Redux/Reducers/vehicle";
+// import { useDispatch, useSelector } from "react-redux";
+// import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
-  const [vehicle , setVehicle] =useState({
-    model:"", win_number :"",defect:[] , repaired:[]
-  })
+  // const [vehicle , setVehicle] =useState({
+  //   model:"", win_number :"",defect:[] , repaired:[]
+  // })
 
-  const onChangeHandler =(e)=>{
-        let name = e.target.name;
-        let value = e.target.value
-       setVehicle({ ...vehicle, [name]: value })
-  }
+  // const onChangeHandler =(e)=>{
+  //       let name = e.target.name;
+  //       let value = e.target.value
+  //      setVehicle({ ...vehicle, [name]: value })
+  // }
 
   const onSubmitHandler =(e)=>{
       e.preventDefault();
@@ -29,7 +29,7 @@ const Login = () => {
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>
-            <div className="mb-1">
+            {/* <div className="mb-1">
               <label
                 htmlFor="exampleInputEmail1"
                 className="form-label"
@@ -42,8 +42,8 @@ const Login = () => {
                 name="model"
                 value={vehicle.model}
               />
-            </div>
-            <div className="mb-1">
+            </div> */}
+            {/* <div className="mb-1">
               <label
                 htmlFor="exampleInputPassword1"
                 className="form-label"
@@ -56,18 +56,18 @@ const Login = () => {
                 name="win_number"
                 value={vehicle.win_number}
               />
-            </div>
+            </div> */}
             
             <div className="d-flex ">
               <button type="submit" className="btn btn-primary">
-                Submit
+                Go to defect entry
               </button>
               <button
                 type="submit"
                 className="btn btn-danger"
                 onClick={() => navigate("/Dashboard")}
               >
-                ADD DEFECT
+                Go to defects history
               </button>
             </div>
           </form>

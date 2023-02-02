@@ -76,15 +76,12 @@ const Dashboard = () => {
   };
 
   // const checkSegmentHandler = () => {
-  //   let defects = data.filter((element)=>{ 
+  //   let defects = data.filter((element)=>{
   //     let result = element.repaired.filter((item)=> item.Segement === segment)
   //     return result
   //   })
   //   console.log(defects)
   // };
-
-
-
 
   function DateSpanChecker(valueData) {
     let booleanData = false;
@@ -142,7 +139,8 @@ const Dashboard = () => {
             {data
               .filter(
                 (value) =>
-                  value.Segement === inputData && DateChecker(value.date) === true
+                  value.Segement === inputData &&
+                  DateChecker(value.date) === true
               )
               .map((info) =>
                 info.repaired.map((defectdata) => (
@@ -194,7 +192,10 @@ const Dashboard = () => {
   function segementWiseRendering() {
     return (
       <>
-        {data.filter((value) => value.Segement === inputData && DateSpanChecker(value.date) === true ).length > 0 ? (
+        {data.filter(
+          (value) =>
+            value.Segement === inputData && DateSpanChecker(value.date) === true
+        ).length > 0 ? (
           <div className={"defectlist"}>
             {data
               .filter(
@@ -203,24 +204,30 @@ const Dashboard = () => {
                   DateSpanChecker(value.date) === true
               )
               .map((info) =>
-              info.repaired.filter((item)=> item.Segement === defectSegment)
-              .map((defectdata) => {
-                   return <div className="listdata d-flex">
-                      <div className="mx-2 my-2">{info.vin}</div>
-                      <div className="mx-2 my-2">{info.Segement}</div>
-                      <div className="mx-2 my-2">{info.Segement}</div>
-                      <div className="mx-2 my-2">{defectdata.description}</div>
-                    </div>
-                 } 
-              //   info.repaired.map((defectdata) => {
-              //     <div className="listdata d-flex">
-              //       <div className="mx-2 my-2">{info.vin}</div>
-              //       <div className="mx-2 my-2">{info.Segement}</div>
-              //       <div className="mx-2 my-2">{info.Segement}</div>
-              //       <div className="mx-2 my-2">{defectdata.description}</div>
-              //     </div>
-              //  } 
-               )
+                info.repaired
+                  .filter((item) => item.Segement === defectSegment)
+                  .map(
+                    (defectdata) => {
+                      return (
+                        <div className="listdata d-flex">
+                          <div className="mx-2 my-2">{info.vin}</div>
+                          <div className="mx-2 my-2">{info.Segement}</div>
+                          <div className="mx-2 my-2">{info.Segement}</div>
+                          <div className="mx-2 my-2">
+                            {defectdata.description}
+                          </div>
+                        </div>
+                      );
+                    }
+                    //   info.repaired.map((defectdata) => {
+                    //     <div className="listdata d-flex">
+                    //       <div className="mx-2 my-2">{info.vin}</div>
+                    //       <div className="mx-2 my-2">{info.Segement}</div>
+                    //       <div className="mx-2 my-2">{info.Segement}</div>
+                    //       <div className="mx-2 my-2">{defectdata.description}</div>
+                    //     </div>
+                    //  }
+                  )
               )}
           </div>
         ) : (
@@ -232,18 +239,14 @@ const Dashboard = () => {
 
   function Combiner() {
     if (flag === 0) {
-      return <>{ShowOnlyList()}</>
-    } 
-    else if (flag === 1) {
-      return <>{ShowOnlyListWithPeriod()}</>
-    } 
-    else if (flag === 2){
-      return <>{ShowOnlyListWithStartAndEndDate()}</>
+      return <>{ShowOnlyList()}</>;
+    } else if (flag === 1) {
+      return <>{ShowOnlyListWithPeriod()}</>;
+    } else if (flag === 2) {
+      return <>{ShowOnlyListWithStartAndEndDate()}</>;
+    } else if (flag === 3) {
+      return <>{segementWiseRendering()}</>;
     }
-    else if (flag === 3){
-      return <>{segementWiseRendering()}</>
-    }
-    
   }
 
   return (
@@ -281,10 +284,7 @@ const Dashboard = () => {
         </div>
         <div className="inputElement">
           <h5>Segement</h5>
-          <select
-            className={"Model"}
-            onChange={(e) => segmentHandler(e)}
-          >
+          <select className={"Model"} onChange={(e) => segmentHandler(e)}>
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
             <option value="Surface-FTR-139">Surface FTR 139</option>

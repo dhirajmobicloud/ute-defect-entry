@@ -5,7 +5,7 @@ export const LoginStyled = styled.div`
   display: flex;
 
   .LoginCart {
-    height: 390px;
+    /* height: 390px; */
     width: 430px;
     border-radius: 15px;
     background-color: #d9d9d9;
@@ -14,11 +14,11 @@ export const LoginStyled = styled.div`
  form{
   padding-left: 5vh;
   padding-right: 5vh;
-  padding-top: 9vh;
+  padding: 9vh;
   align-items: center;
   button{
    margin: auto;
-   margin-top: 3vh;
+   margin: 10px;
    
   }
  }

@@ -2,7 +2,7 @@
   {
     "vin": "12344",
     "model": "Nexon Petrol",
-    "date": "01/01/2023",
+    "date": "02/01/2023",
     "defect": [
       {
         "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
@@ -54,7 +54,7 @@
   {
     "vin": "12345",
     "model": "Nexon Electric",
-    "date": "02/01/2023",
+    "date": "01/02/2023",
 
     "defect": [
       {
@@ -114,7 +114,7 @@
   {
     "vin": "12346",
     "model": "Nexon Vxi",
-    "date": "03/01/2023",
+    "date": "01/03/2023",
 
     "defect": [
       {
@@ -174,7 +174,7 @@
   {
     "vin": "12347",
     "model": "Compass Vxi",
-    "date": "03/01/2023",
+    "date": "01/03/2023",
 
     "defect": [
       {
@@ -234,7 +234,7 @@
   {
     "vin": "12348",
     "model": "Meridien Petrol",
-    "date": "03/01/2023",
+    "date": "01/03/2023",
 
     "defect": [
       {
@@ -295,7 +295,7 @@
   {
     "vin": "12349",
     "model": "Meridien Diesel",
-    "date": "04/01/2023",
+    "date": "01/04/2023",
     "defect": [
       {
         "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE "
@@ -355,7 +355,7 @@
   {
     "vin": "12350",
     "model": "Nexon Petrol",
-    "date": "05/01/2023",
+    "date": "01/05/2023",
     "defect": [
       {
         "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE"
@@ -414,7 +414,7 @@
   {
     "vin": "12351",
     "model": "Nexon Electric",
-    "date": "02/01/2023",
+    "date": "01/02/2023",
 
     "defect": [
       {
@@ -474,7 +474,7 @@
   {
     "vin": "12352",
     "model": "Nexon Vxi",
-    "date": "07/01/2023",
+    "date": "01/07/2023",
 
     "defect": [
       {
@@ -525,7 +525,7 @@
   {
     "vin": "12353",
     "model": "Compass Electric",
-    "date": "08/01/2023",
+    "date": "01/08/2023",
 
     "defect": [
       {
@@ -575,7 +575,7 @@
   {
     "vin": "12354",
     "model": "Compass Diesel",
-    "date": "08/01/2023",
+    "date": "01/08/2023",
 
     "defect": [
       {
@@ -674,7 +674,7 @@
   {
     "vin": "12356",
     "model": "Nexon Vxi",
-    "date": "09/01/2023",
+    "date": "01/09/2023",
     "defect": [
       {
         "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
@@ -723,7 +723,7 @@
   {
     "vin": "12357",
     "model": "Compass Petrol",
-    "date": "12/01/2023",
+    "date": "01/12/2023",
 
     "repaired": [
       {
@@ -773,7 +773,7 @@
   {
     "vin": "12358",
     "model": "Meridien Vxi",
-    "date": "14/01/2023",
+    "date": "01/14/2023",
 
     "repaired": [
       {
@@ -823,7 +823,7 @@
   {
     "vin": "12359",
     "model": "Nexon Vxi",
-    "date": "15/01/2023",
+    "date": "01/15/2023",
     "defect": [
       {
         "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - BA - BREAKAGE/DAMAGE - 000 - SINGLE ",
@@ -873,7 +873,7 @@
   {
     "vin": "12360",
     "model": "Nexon Petrol",
-    "date": "16/01/2023",
+    "date": "01/16/2023",
     "defect": [
       {
         "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
@@ -924,7 +924,7 @@
   {
     "vin": "12361",
     "model": "Meridien Vxi",
-    "date": "17/01/2023",
+    "date": "01/17/2023",
     "defect": [
       {
         "description": "C60CJ330 - EXCESS COOLANT TEMPT.WARNING LIGHT BULB - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE ",
@@ -969,7 +969,7 @@
   {
     "vin": "12361",
     "model": "Meridien Vxi",
-    "date": "17/01/2023",
+    "date": "01/17/2023",
     "defect": [
       {
         "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT"
@@ -1008,7 +1008,7 @@
   {
     "vin": "12362",
     "model": "Nexon Vxi",
-    "date": "20/01/2023",
+    "date": "01/20/2023",
     "defect": [
       {
         "description": "C60JL410 - ENGINE OIL LEVEL & TEMPERATURE SENSOR - RD - NOT WORKING - 000 - SINGLE "
@@ -1047,7 +1047,7 @@
   {
     "vin": "12362",
     "model": "Nexon Petrol",
-    "date": "21/01/2023",
+    "date": "01/21/2023",
 
     "defect": [
       {
@@ -1087,7 +1087,7 @@
   {
     "vin": "12363",
     "model": "Compass Vxi",
-    "date": "22/01/2023",
+    "date": "01/22/2023",
 
     "defect": [
       {
@@ -1127,7 +1127,7 @@
   {
     "vin": "12364",
     "model": "Compass Diesel",
-    "date": "22/01/2023",
+    "date": "01/22/2023",
 
     "defect": [
       {
@@ -1167,7 +1167,7 @@
   {
     "vin": "12365",
     "model": "Compass Diesel",
-    "date": "23/01/2023",
+    "date": "01/23/2023",
 
     "defect": [
       {
@@ -1207,7 +1207,7 @@
   {
     "vin": "12366",
     "model": "Meridien Vxi",
-    "date": "23/01/2023",
+    "date": "01/23/2023",
 
     "repaired": [
       {
@@ -1247,7 +1247,7 @@
   {
     "vin": "12367",
     "model": "Nexon Petrol",
-    "date": "24/01/2023",
+    "date": "01/24/2023",
 
     "defect": [
       {
@@ -1287,7 +1287,7 @@
   {
     "vin": "12368",
     "model": "Meridien Electric",
-    "date": "24/01/2023",
+    "date": "01/24/2023",
 
     "defect": [
       {
@@ -1328,7 +1328,7 @@
   {
     "vin": "12369",
     "model": "Meridien Petrol",
-    "date": "27/01/2023",
+    "date": "01/27/2023",
 
     "defect": [
       {
@@ -1368,7 +1368,7 @@
   {
     "vin": "12370",
     "model": "Nexon Electric",
-    "date": "27/01/2023",
+    "date": "01/27/2023",
 
     "defect": [
       {

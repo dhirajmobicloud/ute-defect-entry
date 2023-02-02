@@ -2,16 +2,18 @@ import React from "react";
 import { DashboardStyled } from "../Styled-Components/DashboardStyled";
 import data from "./vehicleinfo.json";
 import { useState } from "react";
+import moment from "moment/moment";
 // import styles from "./dashboard.module.css";
 
 const DashboardDM = () => {
-  const [model , setModel] = useState('')
+  const [model, setModel] = useState('all');
   const [period, setPeriod] = useState("");
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
-  const [difectList, setDefectList] = useState();
+  const [difectList, setDefectList] = useState(data);
   const [defectSegment, setDefectSegement] = useState("");
-  const [conditin, setCondition] = useState()
+  const [weekDate, setWeekDate] = useState("");
+  const [conditin, setCondition] = useState();
 
   // function DateChecker(valueData) {
   //   let booleanData = false;
@@ -243,24 +245,83 @@ const DashboardDM = () => {
   //   }
 
   // }
+  const modelHandler = (e) => {
+    setModel(e.target.value);
+    if(e.target.value === "all"){
+      
+      setDefectList(data);
+    }
+    else{
+      let list = data.filter((element) => element.model === e.target.value);
+      setDefectList(list);
+      setCondition(1)
+      checkPeriod();
+    }
+    
+  };
 
-  const modelwise  = ()=>{
-      let list = data.filter((element)=> element.model === model )
-      setDefectList(list)
+  const checkPeriod = (TimePeriod)=>{
+    if(TimePeriod === "Today"){
+      let date =  moment().format("L")
+      setWeekDate(date)
+      console.log(date)
+    }
+    else if(TimePeriod === "Weekly"){
+      let date =  moment().subtract(7, 'days').calendar()
+      setWeekDate(date)
+      console.log(date)
+    }
+    else if(TimePeriod === "Monthly"){
+      let date =  moment().subtract(30, 'days').calendar()
+      setWeekDate(date)
+      console.log(date)
+    }
+    
   }
+
+  const periodlHandler = (e) => {
+    let date = new Date()
+    checkPeriod(date)
+    setPeriod(e.target.value);
+    if(date === 'Today'){
+      let list = data.filter((element) =>{ 
+        return element.model === model && element.date === weekDate  
+      });
+      console.log(list)
+      setDefectList(list);
+      setCondition(1)
+    }
+    else if(date === 'Weekly'){
+      let list = data.filter((element) =>{ 
+        return element.model === model && element.date >= weekDate  
+      });
+      console.log(list)
+      setDefectList(list);
+      setCondition(1)
+    }
+    else if(date === 'Monthly'){
+      let list = data.filter((element) =>{ 
+        return element.model === model && element.date >= weekDate  
+      });
+      console.log(list)
+      setDefectList(list);
+      setCondition(1)
+    }
+    else{
+      console.log('something went wrong')
+    }
+   
+  };
+
 
   return (
     <DashboardStyled className={"mainpart"}>
       <div className={"modeldescription"}>
         <div className="inputElement">
           <h5>MODEL</h5>
-          <select
-            className={"Model"}
-            onChange={(e) => setModel(e.target.value)}
-            value={model}
-          >
-            <option value="Choose" selected>
-              Choose
+          <select className={"Model"} onChange={modelHandler} value={model}>
+            <option value="all" >
+              All models
             </option>
             {data.map((vehicle, index) => (
               <option key={index} value={vehicle.model}>
@@ -271,7 +332,11 @@ const DashboardDM = () => {
         </div>
         <div className="inputElement">
           <h5>Period</h5>
-          <select className="Model" value={period} onChange={(e)=>setPeriod(e.target.value)} >
+          <select
+            className="Model"
+            value={period}
+            onChange={periodlHandler}
+          >
             <option value="all" selected>
               all
             </option>
@@ -282,7 +347,11 @@ const DashboardDM = () => {
         </div>
         <div className="inputElement">
           <h5>Segement</h5>
-          <select className="Model" value={defectSegment} onChange={(e)=>setDefectSegement(e.target.value)}>
+          <select
+            className="Model"
+            value={defectSegment}
+            onChange={(e) => setDefectSegement(e.target.value)}
+          >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
             <option value="Surface-FTR-139">Surface FTR 139</option>
@@ -300,11 +369,21 @@ const DashboardDM = () => {
         </div>
         <div className="inputElement">
           <h5>Start Date</h5>
-          <input type="date" className="startdate" value={startdate} onChange={(e)=>setStartDate(e.target.value)}></input>
+          <input
+            type="date"
+            className="startdate"
+            value={startdate}
+            onChange={(e) => setStartDate(e.target.value)}
+          ></input>
         </div>
         <div className="inputElement">
           <h5>End Date</h5>
-          <input type="date" className="enddate" value={endDate} onChange={(e)=>setEndDate(e.target.value)}></input>
+          <input
+            type="date"
+            className="enddate"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          ></input>
         </div>
       </div>
       <div className="defect-list-container container-fluid">
@@ -336,13 +415,24 @@ const DashboardDM = () => {
         </div>
         <div className="defects">
           <div className="defectlist">
-            <div className="listdata d-flex">
-              <div className="vinNumber mx-2 my-2">""</div>
-              <div className="Segement mx-2 my-2">"""</div>
-              <div className="description mx-2 my-2">
-             ""
-              </div>
-            </div>  
+            {difectList
+              ? difectList.map((element) => {
+                  return element.repaired.map((item) => {
+                    return (
+                      <div className="listdata d-flex">
+                        <div className="vinNumber mx-2 my-2">{element.vin}</div>
+                        <div className="Segement mx-2 my-2">
+                          {element.model}
+                        </div>
+                        <div className="Segement mx-2 my-2">{item.Segement}</div>
+                        <div className="description mx-2 my-2">
+                          {item.description}
+                        </div>
+                      </div>
+                    );
+                  });
+                })
+              : ""}
           </div>
         </div>
       </div>

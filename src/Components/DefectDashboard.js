@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
