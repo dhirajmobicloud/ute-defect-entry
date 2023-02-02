@@ -128,6 +128,9 @@ export const DefectDashboardStyle = styled.div`
         width: 700px;
         margin: 20px auto;
         background-color: #c6c0c0;
+        h4{
+          margin: 20px;
+        }
       }
     }
 

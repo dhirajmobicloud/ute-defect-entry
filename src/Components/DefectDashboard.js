@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
@@ -8,38 +8,34 @@ import { remove_vehicle_defect, add_repaired_defect } from "../Redux/Reducers/ve
 const DefectDashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const vehicle = useSelector((state) => state.vehicle);
+  // const vehicle = useSelector((state) => state.vehicle);
   const vehicle_data = useSelector((state) => state.vehicle);
 
   const [inputSegement, setInputSegement] = useState('all');
-
+ 
   const setSegement = (e) => {
     setInputSegement(e.target.value);
   };
 
 
-  const Add_repaired = (defect) => {
+  const Add_repaired =  (defect) => {
     dispatch(add_repaired_defect(defect));
     dispatch(remove_vehicle_defect(defect._id));
-    save();
+    // save();
   };
 
-  const save =()=>{
-    // let formData = new FormData();
-    // for (let key of Object.keys(vehicle_data)) {
-    //     formData.append(key, vehicle_data[key]);
-    // }
-    fetch('http://localhost:5000/add_vehicle', {method:"POST", body:vehicle_data})
-    .then((res)=>{
-      console.log(res)
-    })
-  }
+  // const save =()=>{
+  //   fetch('http://localhost:5000/add_vehicle', {method:"POST", body:JSON.stringify(vehicle_data[0]), headers: { "Content-Type": "application/json" } })
+  //   .then((res)=>{
+  //     console.log(res)
+  //   })
+  // }
 
   // useEffect(()=>{
 
   //   save()
-    
-  //   },[Add_repaired,])
+  //    // eslint-disable-next-line
+  //   },[Add_repaired])
 
   return (
     <DefectDashboardStyle className="container-fuild">
@@ -73,7 +69,7 @@ const DefectDashboard = () => {
           </select>
           <div className="defect-outer">
             {inputSegement === "all"
-              ? vehicle[0].defect.map((element, index) => {
+              ? vehicle_data[0].defect.map((element, index) => {
                   console.log(inputSegement);
                   return (
                     <div className="defect" key={index}>
@@ -93,7 +89,7 @@ const DefectDashboard = () => {
                     </div>
                   );
                 })
-              : vehicle[0].defect
+              : vehicle_data[0].defect
                   .filter((element) => {
                     return element.Segement === inputSegement;
                   })
@@ -126,7 +122,7 @@ const DefectDashboard = () => {
             <h3>Repaired</h3>
           </div>
           {inputSegement === "all"
-            ? vehicle[0].repaired
+            ? vehicle_data[0].repaired
             .map((element) => {
                 return (
                   <div className="repaired">
@@ -138,7 +134,7 @@ const DefectDashboard = () => {
                   </div>
                 );
               })
-            : vehicle[0].repaired
+            : vehicle_data[0].repaired
                 .filter((items) => items.Segement === inputSegement)
                 .map((element) => {
                   return (
@@ -156,12 +152,16 @@ const DefectDashboard = () => {
       {/* -------------------- Add Defect section -------------------- */}
       <div className="add-defects">
         <div className="vehicle-information">
-          <div className="info">vehicle information</div>
+          <div className="info \ ">
+            <h4>MODEL : {vehicle_data[0].model}</h4>
+            <h4> ID : {vehicle_data[0].win_number}</h4>
+          </div>
         </div>
         {/* Segments */}
         <div className="defect-segments container-fuild">
           <div className="add-defect-heading">
             <h3>Add Defect</h3>
+
           </div>
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
@@ -169,7 +169,7 @@ const DefectDashboard = () => {
                 className="a-segment col-md-3"
                 onClick={() => navigate("/surface-RH-139-defects")}
               >
-                <h5>Surface RH 139</h5>
+                <h5 >Surface RH 139</h5>
               </div>
               <div
                 className="a-segment col-md-3"

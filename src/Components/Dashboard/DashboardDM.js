@@ -280,7 +280,7 @@ const DashboardDM = () => {
   }
 
   const periodlHandler = (e) => {
-    let date = new Date()
+    let date = e.target.value
     checkPeriod(date)
     setPeriod(e.target.value);
     if(date === 'Today'){
