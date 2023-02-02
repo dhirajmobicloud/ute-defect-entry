@@ -36,8 +36,8 @@ const Login = () => {
               ></label>
               <input
                 type="text"
-                className="form-control"
-                placeholder="Username"
+                className="form-control text-center"
+                placeholder="USERNAME"
                 
                 
               />
@@ -49,25 +49,25 @@ const Login = () => {
               ></label>
               <input
                 type="password"
-                placeholder="password"
-                className="form-control"
+                placeholder="PASSWORD"
+                className="form-control text-center"
               
               />
             </div>
             
             <div className="buttons d-flex ">
-              <button type="button" className="btn btn-primary"  onClick={() => navigate("/defect-dashboard")}>
-                login
-              </button>
+              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >
-                Admin login
+                ADMIN LOGIN
               </span>
             </div>
           </form>
         </div>
       </div>
+
+    
     </LoginStyled>
   );
 };
