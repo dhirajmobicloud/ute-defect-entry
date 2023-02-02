@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
+import { DefectDashboardStyle } from "../Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { remove_vehicle_defect, add_repaired_defect } from "../Redux/Reducers/vehicle";
+import { remove_vehicle_defect, add_repaired_defect } from "../../Redux/Reducers/vehicle";
 
 
 const DefectDashboard = () => {

@@ -315,8 +315,8 @@ const VehicleHistory = () => {
 
 
   return (
-    <VehicleHistoryStyled className={"mainpart"}>
-      <div className={"modeldescription"}>
+    <VehicleHistoryStyled className="mainpart">
+      <div className="modeldescription">
         <div className="inputElement">
           <h5>MODEL</h5>
           <select className={"Model"} onChange={modelHandler} value={model}>
