@@ -3,7 +3,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./Components/Login";
-import DefectDashboard from "./Components/DefectDashboard";
+import DefectDashboard from "./Components/Defect-Segments/DefectDashboard";
 import Segement from "./Components/Defect-Segments/Segement";
 // import Dashboard from "./Components/Dashboard/Dashboard";
 import VehicleHistory from "./Components/Admin-pannel/VehicleHistory";

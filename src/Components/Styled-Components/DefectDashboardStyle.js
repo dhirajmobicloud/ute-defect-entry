@@ -122,6 +122,13 @@ export const DefectDashboardStyle = styled.div`
     .vehicle-information {
       max-height: 30%;
       display: flex;
+      flex-direction: column;
+
+      .logo img{
+        width: 150px;
+        height: 50px;
+        margin: 10px;
+      }
 
       .info {
         height: 200px;

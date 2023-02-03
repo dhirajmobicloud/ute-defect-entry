@@ -7,13 +7,13 @@ import { useState } from "react";
 
 const VehicleHistory = () => {
   const [model, setModel] = useState('all');
-  const [period, setPeriod] = useState("");
+  const [period, setPeriod] = useState("all");
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [difectList, setDefectList] = useState(data);
   const [defectSegment, setDefectSegement] = useState("");
   const [weekDate, setWeekDate] = useState("");
-  const [conditin, setCondition] = useState();
+  const [flag, setflag] = useState(0);
 
   // function DateChecker(valueData) {
   //   let booleanData = false;
@@ -254,69 +254,123 @@ const VehicleHistory = () => {
     else{
       let list = data.filter((element) => element.model === e.target.value);
       setDefectList(list);
-      setCondition(1)
-      checkPeriod();
     }
-    
+    console.log("Hello",difectList);
   };
 
-  const checkPeriod = (TimePeriod)=>{
-    if(TimePeriod === "Today"){
-      // let date =  moment().format("L")
-      // setWeekDate(date)
-      // console.log(date)
+  function MyDateCheckerToday(mydate)
+ {
+  let booleanData=false;
+  const [day,month,year]=mydate.split('/')
+  let myValue=new Date(+year,month-1,+day);
+  return myValue;
+ 
+ }
+
+
+
+  const periodHandler=(e)=>{
+    setPeriod(e.target.value);
+    if(e.target.value==="all")
+    {
+      setDefectList(difectList);
     }
-    else if(TimePeriod === "Weekly"){
-      // let date =  moment().subtract(7, 'days').calendar()
-      // setWeekDate(date)
-      // console.log(date)
+    if(e.target.value==="Today")
+    {
+      let mydate=new Date();
+      let listData= difectList.filter((values)=>(MyDateCheckerToday(values.date)===mydate));
+      setDefectList(listData);
     }
-    else if(TimePeriod === "Monthly"){
-      // let date =  moment().subtract(30, 'days').calendar()
-      // setWeekDate(date)
-      // console.log(date)
+    else if(e.target.value==="Weekly")
+    {
+      let mydate=new Date();
+      let datelast=new Date(Date.now()-7*24*60*60*1000);
+      let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)<=mydate&&MyDateCheckerToday(values.date)>=datelast));
+      setDefectList(listData);
+    }
+    else if(e.target.value==="Monthly")
+    {
+      let mydate=new Date();
+      let datelast=new Date(Date.now()-30*24*60*60*1000);
+      let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)<=mydate&&MyDateCheckerToday(values.date)>=datelast));
+      setDefectList(listData);
     }
     
+    console.log("Date",difectList);
   }
 
-  const periodlHandler = (e) => {
-    let date = e.target.value
-    checkPeriod(date)
-    setPeriod(e.target.value);
-    if(date === 'Today'){
-      let list = data.filter((element) =>{ 
-        return element.model === model && element.date === weekDate  
-      });
-      console.log(list)
-      setDefectList(list);
-      setCondition(1)
-    }
-    else if(date === 'Weekly'){
-      let list = data.filter((element) =>{ 
-        return element.model === model && element.date >= weekDate  
-      });
-      console.log(list)
-      setDefectList(list);
-      setCondition(1)
-    }
-    else if(date === 'Monthly'){
-      let list = data.filter((element) =>{ 
-        return element.model === model && element.date >= weekDate  
-      });
-      console.log(list)
-      setDefectList(list);
-      setCondition(1)
+  /*
+  function DateSpanChecker(values)
+  {
+    const [day,month,year]=values.split('/');
+    const date=new Date(+year,month-1,+day);
+    console.log(date);
+    return date;
+  }
+
+  const DefectSegmentDecider=(e)=>{
+    setflag(2);
+    setDefectSegement(e.target.value);
+
+  }
+
+  const DateCheckerSpanFunction=(e)=>{
+    setEndDate(e.target.value);
+    let endDater=new Date(endDate);
+    let startdater=new Date(startdate);
+    if(startdater>endDater)
+    {
+      alert("Start Date entered wrong");
     }
     else{
-      console.log('something went wrong')
+      let listdata=difectList.filter((value)=>(DateSpanChecker(value.date)>=startdater)&&(DateSpanChecker(value.date)<=endDater));
+      setDefectList(listdata);
     }
-   
-  };
+  }
+
+  
+ 
+*/
+
+
+function ShowDataCondition()
+{
+  return(
+    <div className="defects">
+    <div className="defectlist">
+      {difectList.length>0
+        ? difectList.map((element) => {
+            return element.repaired.map((item) => {
+              return (
+                <div className="listdata d-flex">
+                  <div className="vinNumber mx-2 my-2">{element.vin}</div>
+                  <div className="Segement mx-2 my-2">
+                    {element.model}
+                  </div>
+                  <div className="Segement mx-2 my-2">{item.Segement}</div>
+                  <div className="description mx-2 my-2">
+                    {item.description}
+                  </div>
+                </div>
+              );
+            });
+          })
+        : ""}
+    </div>
+  </div>
+  )
+        }
+       
+
+  
+
+  
+    
 
 
   return (
-    <VehicleHistoryStyled className={"mainpart"}>
-      <div className={"modeldescription"}>
+    <VehicleHistoryStyled className="mainpart">
+      <div className="modeldescription">
         <div className="inputElement">
           <h5>MODEL</h5>
           <select className={"Model"} onChange={modelHandler} value={model}>
@@ -335,7 +389,7 @@ const VehicleHistory = () => {
           <select
             className="Model"
             value={period}
-            onChange={periodlHandler}
+            onChange={(e)=>periodHandler(e)}
           >
             <option value="all" selected>
               all
@@ -350,7 +404,7 @@ const VehicleHistory = () => {
           <select
             className="Model"
             value={defectSegment}
-            onChange={(e) => setDefectSegement(e.target.value)}
+            onChange={(e) => setDefectSegement(e)}
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -413,28 +467,7 @@ const VehicleHistory = () => {
             </label>
           </div>
         </div>
-        <div className="defects">
-          <div className="defectlist">
-            {difectList
-              ? difectList.map((element) => {
-                  return element.repaired.map((item) => {
-                    return (
-                      <div className="listdata d-flex">
-                        <div className="vinNumber mx-2 my-2">{element.vin}</div>
-                        <div className="Segement mx-2 my-2">
-                          {element.model}
-                        </div>
-                        <div className="Segement mx-2 my-2">{item.Segement}</div>
-                        <div className="description mx-2 my-2">
-                          {item.description}
-                        </div>
-                      </div>
-                    );
-                  });
-                })
-              : ""}
-          </div>
-        </div>
+      {ShowDataCondition()}
       </div>
     </VehicleHistoryStyled>
   );

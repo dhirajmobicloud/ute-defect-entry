@@ -1,6 +1,7 @@
 // import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
+import logo from '../Images/FCA_logo-removebg-preview.png'
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
@@ -26,6 +27,9 @@ const Login = () => {
 
   return (
     <LoginStyled className="cantainer d-flex">
+      <div className="logo">
+          <img src={logo} alt="logo" />
+      </div>
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>

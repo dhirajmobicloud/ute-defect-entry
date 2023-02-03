@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { DefectDashboardStyle } from "./Styled-Components/DefectDashboardStyle";
+import { DefectDashboardStyle } from "../Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { remove_vehicle_defect, add_repaired_defect } from "../Redux/Reducers/vehicle";
+import { remove_vehicle_defect, add_repaired_defect } from "../../Redux/Reducers/vehicle";
+import logo from '../../Images/FCA_logo-removebg-preview.png'
 
 
 const DefectDashboard = () => {
@@ -149,10 +150,14 @@ const DefectDashboard = () => {
                 })}
         </div>
       </div>
+
       {/* -------------------- Add Defect section -------------------- */}
       <div className="add-defects">
         <div className="vehicle-information">
-          <div className="info \ ">
+          <div className="logo">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="info  ">
             <h4>MODEL : {vehicle_data[0].model}</h4>
             <h4> Vin Number : {vehicle_data[0].win_number}</h4>
           </div>
