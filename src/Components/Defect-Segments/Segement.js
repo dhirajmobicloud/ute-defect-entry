@@ -52,7 +52,7 @@ const Segement = (props) => {
         <div className="section-one">
           <div className="back-button ">
             <span
-              className="btn btn-dark"
+              className="btn"
               onClick={() => navigate("/defect-dashboard")}
             >
               Back
@@ -73,16 +73,16 @@ const Segement = (props) => {
               </label> */}
               <input
                 type="text"
-                className="form-control"
+                className="form-control text-center"
                 id="exampleInputEmail1"
-                placeholder="Search"
+                placeholder="SEARCH"
               />
             </form>
           </div>
         </div>
         {/* <h5 className="heading">defect list</h5> */}
         <div className="section-three">
-          <h5 className="heading">defect list</h5>
+         <span  className="heading"><h5>defect list</h5></span>
           <div className="defect-list container">
             {defects.map((element, index) => {
               return (

@@ -5,8 +5,18 @@ export const LoginStyled = styled.div`
   height: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   position: absolute;
-  background: linear-gradient(to bottom, #6e529d 0%, #d97b93 100%);
+  background: #0f0c29;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  .logo img{
+        width: 150px;
+        height: 50px;
+        margin: 10px;
+      }
 
   .LoginCart {
     /* height: 390px; */
@@ -20,6 +30,10 @@ export const LoginStyled = styled.div`
     padding: 40px;
     align-items: center;
 
+    .span-heding:hover{
+     color: white;
+     transition: 1s;
+    }
     .buttons {
       .btnStyle {
         color: #fff;
