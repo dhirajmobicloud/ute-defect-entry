@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const NewDefectsStyled = styled.div`
 
-height: 100vh;
+/* height: 100vh; */
   /* width: 100vw; */
   display: flex;
   background: #f1f1f1;
@@ -34,7 +34,7 @@ height: 100vh;
 
   .defect-list-container{
     /* background-color: gray; */
-    height: 100vh;
+    /* height: 100vh; */
     /* overflow: hidden; */
     
     .defects{
@@ -44,7 +44,7 @@ height: 100vh;
         padding: 20px;
 
         .defectlist{
-          height: 65vh;
+          /* height: 65vh; */
           overflow: scroll;
           ::-webkit-scrollbar {
           display: none;
@@ -68,5 +68,19 @@ height: 100vh;
 
        
       }
+  }
+
+  .section-2{
+   
+    display: flex;
+    flex-direction: column;
+    /* background-color: black; */
+    .management-section{
+      display: flex;
+      background-color: grey;
+      margin: 30px;
+      height: 400px;
+      border-radius: 10px;
+    }
   }
 `;

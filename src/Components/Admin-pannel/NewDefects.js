@@ -217,7 +217,7 @@ const NewDefects = () => {
                           {element.model}
                         </div>
                         <div className="Segement mx-2 my-2">
-                          {item.Segement}
+                          {item.segement}
                         </div>
                         <div className="description mx-2 my-2">
                           {item.description}
@@ -231,8 +231,10 @@ const NewDefects = () => {
         </div>
       </div>
 
-      <div className=" container">
+      <div className="section-2">
+              <div className="management-section">
 
+              </div>
       </div>
 
     </NewDefectsStyled>
