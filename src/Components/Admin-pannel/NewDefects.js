@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import moment from "moment/moment";
+import React, { useEffect, useState } from "react";
 import { NewDefectsStyled } from "../Styled-Components/NewDefectsStyled";
 import data from "./vehicleinfo.json";
 
@@ -7,9 +8,18 @@ const NewDefects = () => {
   const [period, setPeriod] = useState("");
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
-  const [difectList, setDefectList] = useState(data);
+  const [newDefectList, setNewDefectList] = useState();
   const [defectSegment, setDefectSegement] = useState("");
-  const [weekDate, setWeekDate] = useState("");
+  const [timePeriod, settimePeriod] = useState("");
+
+
+  useEffect(()=>{
+    let list =  data.map((element) => {
+      return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
+    })
+    setNewDefectList(list)
+  },[])
+ 
 
   const modelHandler = (e) => {
     setModel(e.target.value);
@@ -20,13 +30,13 @@ const NewDefects = () => {
       })
 
       console.log(list)
-      setDefectList(list);
+      setNewDefectList(list);
     } else {
       let list = data.filter((element) => element.model === e.target.value);
       let list1 =  list.map((element) => {
         return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
       })
-      setDefectList(list1);
+      setNewDefectList(list1);
 
       checkPeriod();
     }
@@ -34,17 +44,20 @@ const NewDefects = () => {
 
   const checkPeriod = (TimePeriod) => {
     if (TimePeriod === "Today") {
-      // let date =  moment().format("L")
-      // setWeekDate(date)
-      // console.log(date)
+      let date =  moment().format("L")
+      let today = new Date(date)
+      settimePeriod(today)
+      console.log(today)
     } else if (TimePeriod === "Weekly") {
-      // let date =  moment().subtract(7, 'days').calendar()
-      // setWeekDate(date)
-      // console.log(date)
+      let date =  moment().subtract(7, 'days').calendar()
+      let week = new Date(date)
+      settimePeriod(week)
+      console.log(week)
     } else if (TimePeriod === "Monthly") {
-      // let date =  moment().subtract(30, 'days').calendar()
-      // setWeekDate(date)
-      // console.log(date)
+      let date =  moment().subtract(30, 'days').calendar()
+      let month = new Date(date)
+      settimePeriod(month)
+      console.log(month)
     }
   };
 
@@ -54,22 +67,22 @@ const NewDefects = () => {
     setPeriod(e.target.value);
     if (date === "Today") {
       let list = data.filter((element) => {
-        return element.model === model && element.date === weekDate;
+        return element.model === model && element.date === timePeriod;
       });
       console.log(list);
-      setDefectList(list);
+      setNewDefectList(list);
     } else if (date === "Weekly") {
       let list = data.filter((element) => {
-        return element.model === model && element.date >= weekDate;
+        return element.model === model && element.date >= timePeriod;
       });
       console.log(list);
-      setDefectList(list);
+      setNewDefectList(list);
     } else if (date === "Monthly") {
       let list = data.filter((element) => {
-        return element.model === model && element.date >= weekDate;
+        return element.model === model && element.date >= timePeriod;
       });
       console.log(list);
-      setDefectList(list);
+      setNewDefectList(list);
     } else {
       console.log("something went wrong");
     }
@@ -144,8 +157,8 @@ const NewDefects = () => {
       <div className="defect-list-container container-fluid">
         <div className="defects">
           <div className="defectlist">
-            {difectList
-              ? difectList.map((element) => {
+            {newDefectList
+              ? newDefectList.map((element) => {
                   return element.repaired.map((item) => {
                     return (
                       <div className="listdata d-flex">

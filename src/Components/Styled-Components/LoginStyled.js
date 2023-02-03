@@ -5,8 +5,15 @@ export const LoginStyled = styled.div`
   height: 100%;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   position: absolute;
   background: linear-gradient(to bottom, #6e529d 0%, #d97b93 100%);
+
+  .logo img{
+        width: 150px;
+        height: 50px;
+        margin: 10px;
+      }
 
   .LoginCart {
     /* height: 390px; */
