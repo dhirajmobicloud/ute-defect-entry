@@ -8,34 +8,51 @@ const NewDefects = () => {
   const [period, setPeriod] = useState("");
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
-  const [newDefectList, setNewDefectList] = useState();
   const [defectSegment, setDefectSegement] = useState("");
-  const [timePeriod, settimePeriod] = useState("");
+  const [timePeriod, setTimePeriod] = useState("");
 
+  let list = data.map((element) => {
+    return {
+      ...element,
+      repaired: element.repaired.filter(
+        (subElement) => subElement.new === "true"
+      ),
+    };
+  });
+  console.log(list.filter((element) => element.repaired.length > 0));
 
-  useEffect(()=>{
-    let list =  data.map((element) => {
-      return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
-    })
-    setNewDefectList(list)
-  },[])
- 
+  const [newDefectList, setNewDefectList] = useState(
+    list.filter((element) => element.repaired.length > 0)
+  );
+
+  useEffect(() => {
+    console.log(newDefectList);
+  }, []);
 
   const modelHandler = (e) => {
     setModel(e.target.value);
     if (e.target.value === "all") {
+      let list = data.map((element) => {
+        return {
+          ...element,
+          repaired: element.repaired.filter(
+            (subElement) => subElement.new === "true"
+          ),
+        };
+      });
 
-     let list =  data.map((element) => {
-        return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
-      })
-
-      console.log(list)
-      setNewDefectList(list);
+      console.log(list.filter((element) => element.repaired.length > 0));
+      setNewDefectList(list.filter((element) => element.repaired.length > 0));
     } else {
       let list = data.filter((element) => element.model === e.target.value);
-      let list1 =  list.map((element) => {
-        return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
-      })
+      let list1 = list.map((element) => {
+        return {
+          ...element,
+          repaired: element.repaired.filter(
+            (subElement) => subElement.new === "true"
+          ),
+        };
+      });
       setNewDefectList(list1);
 
       checkPeriod();
@@ -44,48 +61,76 @@ const NewDefects = () => {
 
   const checkPeriod = (TimePeriod) => {
     if (TimePeriod === "Today") {
-      let date =  moment().format("L")
-      let today = new Date(date)
-      settimePeriod(today)
-      console.log(today)
+      let date = moment().format("L");
+      let today = new Date(date);
+      setTimePeriod(today);
+      console.log(today);
     } else if (TimePeriod === "Weekly") {
-      let date =  moment().subtract(7, 'days').calendar()
-      let week = new Date(date)
-      settimePeriod(week)
-      console.log(week)
+      let date = moment().subtract(7, "days").calendar();
+      let week = new Date(date);
+      setTimePeriod(week);
+      console.log(week);
     } else if (TimePeriod === "Monthly") {
-      let date =  moment().subtract(30, 'days').calendar()
-      let month = new Date(date)
-      settimePeriod(month)
-      console.log(month)
+      let date = moment().subtract(30, "days").calendar();
+      let month = new Date(date);
+      setTimePeriod(month);
+      console.log(month);
     }
   };
 
   const periodlHandler = (e) => {
     let date = e.target.value;
-    checkPeriod(date);
+    // checkPeriod(date);
     setPeriod(e.target.value);
+    console.log(timePeriod);
     if (date === "Today") {
-      let list = data.filter((element) => {
-        return element.model === model && element.date === timePeriod;
-      });
+      let date = moment().format("L");
+      let today = new Date(date);
+      setTimePeriod(today);
+      console.log(today);
+      let list = newDefectList.filter(
+        (element) => new Date(element.date) === today
+      );
+      // let a = new Date(element.date)
+      // console.log(new Date(element.date))
+      // return  a === today;
       console.log(list);
       setNewDefectList(list);
     } else if (date === "Weekly") {
       let list = data.filter((element) => {
-        return element.model === model && element.date >= timePeriod;
+        let a = element.date;
+        console.log(a);
+        return element.model === model && a >= timePeriod;
       });
       console.log(list);
       setNewDefectList(list);
     } else if (date === "Monthly") {
       let list = data.filter((element) => {
-        return element.model === model && element.date >= timePeriod;
+        let a = new Date(element.date);
+        return element.model === model && a >= timePeriod;
       });
       console.log(list);
       setNewDefectList(list);
     } else {
       console.log("something went wrong");
     }
+  };
+
+  const segementHandler = (e) => {
+    console.log(e.target.value);
+    setDefectSegement(e.target.value);
+    let list = newDefectList.filter((element) => element.model === model);
+    let list1 = list.map((element) => {
+      return {
+        ...element,
+        repaired: element.repaired.filter(
+          (subElement) => subElement.segement === e.target.value
+        ),
+      };
+      // return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
+    });
+    setNewDefectList(list1);
+    console.log(list1);
   };
 
   return (
@@ -118,7 +163,7 @@ const NewDefects = () => {
           <select
             className="Model"
             value={defectSegment}
-            onChange={(e) => setDefectSegement(e.target.value)}
+            onChange={segementHandler}
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -185,6 +230,11 @@ const NewDefects = () => {
           </div>
         </div>
       </div>
+
+      <div className=" container">
+
+      </div>
+
     </NewDefectsStyled>
   );
 };
