@@ -1,11 +1,16 @@
 // import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
+import data from './UserData.json';
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [username,setUsername]=useState('');
+  const [userpassword,setUserpassword]=useState('');
+  console.log(data);
   // const dispatch = useDispatch()
 
   // const [vehicle , setVehicle] =useState({
@@ -20,8 +25,14 @@ const Login = () => {
 
   const onSubmitHandler =(e)=>{
       e.preventDefault();
-      // dispatch(Add_vehicle(vehicle))
-      navigate('/defect-dashboard')
+    let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
+    if(mydata.length>0)
+      {
+    
+    alert("Hello");
+    navigate('/defect-dashboard');
+      }
+      
   }
 
   return (
@@ -38,6 +49,7 @@ const Login = () => {
                 type="text"
                 className="form-control text-center"
                 placeholder="USERNAME"
+                onChange={(e)=>setUsername(e.target.value)}
                 
                 
               />
@@ -51,12 +63,13 @@ const Login = () => {
                 type="password"
                 placeholder="PASSWORD"
                 className="form-control text-center"
+                onChange={(e)=>setUserpassword(e.target.value)}
               
               />
             </div>
             
             <div className="buttons d-flex ">
-              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+              <button type="submit" className="btnStyle" role="button">LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >

@@ -11,9 +11,12 @@ const VehicleHistory = () => {
   const [startdate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const [difectList, setDefectList] = useState(data);
-  const [defectSegment, setDefectSegement] = useState("");
+  const [defectSegment, setDefectSegement] = useState("all");
   const [weekDate, setWeekDate] = useState("");
   const [flag, setflag] = useState(0);
+
+  console.log("difectlist",difectList);
+  console.log("Flag is",flag);
 
   // function DateChecker(valueData) {
   //   let booleanData = false;
@@ -248,10 +251,12 @@ const VehicleHistory = () => {
   const modelHandler = (e) => {
     setModel(e.target.value);
     if(e.target.value === "all"){
-      
+      setflag(1);
       setDefectList(data);
+    
     }
     else{
+      setflag(1);
       let list = data.filter((element) => element.model === e.target.value);
       setDefectList(list);
     }
@@ -271,33 +276,304 @@ const VehicleHistory = () => {
 
   const periodHandler=(e)=>{
     setPeriod(e.target.value);
-    if(e.target.value==="all")
+    alert(e.target.value+"Model:"+model+"Flag:"+flag);
+    if(flag===0)
     {
-      setDefectList(difectList);
+      if(model==="all")
+      {
+           if(e.target.value==="Today"&&difectList.length>0)
+           {
+            let mydate=new Date();
+            console.log(mydate);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate())&&
+        (MyDateCheckerToday(values.date).getMonth()===mydate.getMonth())&&(MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear()));
+        setDefectList(listData);
+        setflag(2)
+           }
+            if(e.target.value==="Weekly"&&difectList.length>0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-7*24*60*60*1000);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+            if(e.target.value==="Monthly"&&difectList.length>0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-30*24*60*60*1000);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+           }
+      }
+      if(flag===2)
+      {
+        if(model==="all")
+      {
+           if(e.target.value==="Today"&&difectList.length>0)
+           {
+            alert("Hello 2")
+            let mydate=new Date();
+            let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate())&&
+            (MyDateCheckerToday(values.date).getMonth()===mydate.getMonth())&&(MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear()));
+            setDefectList(listData);
+        setflag(2)
+           }
+           if(e.target.value==="Weekly"&&difectList.length===0)
+           {
+            alert("Hello 3");
+            let mydate=new Date();
+        let datelast=new Date(Date.now()-7*24*60*60*1000);
+        let listData=data.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate()&&MyDateCheckerToday(values.date).getMonth===mydate.month&&MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear));
+        setDefectList(listData);
+        setflag(2)
+           }
+           if(e.target.value==="Weekly"&&difectList.length>0)
+           {
+            alert("Hello 4");
+            let mydate=new Date();
+            let datelast=new Date(Date.now()-7*24*60*60*1000);
+            let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+        setflag(2)
+           }
+         
+            if(e.target.value==="Monthly"&&difectList.length>0)
+            {
+              alert("Hello4");
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-30*24*60*60*1000);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+            if(e.target.value==="Weekly"&&difectList.length===0)
+            {
+             let mydate=new Date();
+             let datelast=new Date(Date.now()-7*24*60*60*1000);
+             let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+             setDefectList(listData);
+            
+      
+         setDefectList(listData);
+         setflag(2)
+            }
+            if(e.target.value==="Monthly"&&difectList.length>0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-30*24*60*60*1000);
+        let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+            if(e.target.value==="Monthly"&&difectList.length===0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-30*24*60*60*1000);
+        let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+           }
+      }
+      if(flag===1)
+    {
+      if(model==="all")
+      {
+           if(e.target.value==="Today"&&difectList.length>0)
+           {
+            let mydate=new Date();
+            let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate())&&
+            (MyDateCheckerToday(values.date).getMonth()===mydate.getMonth())&&(MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear()));
+            setDefectList(listData);
+        setflag(2)
+           }
+            if(e.target.value==="Weekly"&&difectList.length>0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-7*24*60*60*1000);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)>=datelast));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+            if(e.target.value==="Monthly"&&difectList.length>0)
+            {
+              let mydate=new Date();
+        let datelast=new Date(Date.now()-30*24*60*60*1000);
+        let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)>=datelast));
+        setDefectList(listData);
+       
+        setflag(2)
+            }
+           }
+      }
+      if(flag===1)
+      {
+        if(model!=="all")
+        {
+             if(e.target.value==="Today"&&difectList.length>0)
+             {
+              alert("Part 1");
+              let mydate=new Date();
+              let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate())&&
+              (MyDateCheckerToday(values.date).getMonth()===mydate.getMonth())&&(MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear())&&(values.model===model));
+              setDefectList(listData);
+          setflag(2)
+             }
+              if(e.target.value==="Weekly"&&difectList.length>0)
+              {
+                alert("Part2");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-7*24*60*60*1000);
+          let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&values.model===model));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Weekly"&&difectList.length===0)
+              {
+                alert("Part8");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-7*24*60*60*1000);
+          let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&values.model===model));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Monthly"&&difectList.length>0)
+              {
+                alert("Part 3");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-30*24*60*60*1000);
+          let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&values.model===model));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Monthly"&&difectList.length===0)
+              {
+                alert("Part 3");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-30*24*60*60*1000);
+          let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=datelast&&values.model===model));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+             }
+             }
+
+        if(flag===2)
+        {
+          if(model!=="all")
+        {
+             if(e.target.value==="Today"&&difectList.length>0)
+             {
+              alert("Part4");
+              let mydate=new Date();
+              let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date).getDate()===mydate.getDate())&&
+              (MyDateCheckerToday(values.date).getMonth()===mydate.getMonth())&&(MyDateCheckerToday(values.date).getFullYear()===mydate.getFullYear())&&(values.model===model));
+              setDefectList(listData);
+          setflag(2);
+             }
+          
+            if(e.target.value==="Weekly"&&difectList.length>0)
+              {
+                alert("part6");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-7*24*60*60*1000);
+          let listData=data.filter((values)=>(values.model===model&&MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+          setDefectList(listData);
+          console.log(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Weekly"&&difectList.length===0)
+              {
+                alert("part6");
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-7*24*60*60*1000);
+          let listData=data.filter((values)=>(values.model===model&&MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Monthly"&&difectList.length>0)
+              {
+                alert("Part8")
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-30*24*60*60*1000);
+          let listData=data.filter((values)=>(values.model===model&&MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+              if(e.target.value==="Monthly"&&difectList.length===0)
+              {
+                alert("Part8")
+                let mydate=new Date();
+          let datelast=new Date(Date.now()-30*24*60*60*1000);
+          let listData=data.filter((values)=>(values.model===model&&MyDateCheckerToday(values.date)>=datelast&&MyDateCheckerToday(values.date)<=mydate));
+          setDefectList(listData);
+         
+          setflag(2)
+              }
+             
+             
+             }
+        }
     }
-    if(e.target.value==="Today")
+
+    const EndDateFunction=(e)=>{
+     setEndDate(e.target.value);
+     let start=new Date(startdate);
+     let end=new Date(e.target.value);
+     console.log(start);
+
+     console.log(end);
+
+     if(start>end)
+     {
+      alert("Invalid Date");
+     }
+
+    if(model==="all")
     {
-      let mydate=new Date();
-      let listData= difectList.filter((values)=>(MyDateCheckerToday(values.date)===mydate));
+      alert("Hello Part End");
+      let listData=data.filter((values)=>(MyDateCheckerToday(values.date)>=start)&&(MyDateCheckerToday(values.date)<=end));
       setDefectList(listData);
     }
-    else if(e.target.value==="Weekly")
-    {
-      let mydate=new Date();
-      let datelast=new Date(Date.now()-7*24*60*60*1000);
-      let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)<=mydate&&MyDateCheckerToday(values.date)>=datelast));
-      setDefectList(listData);
-    }
-    else if(e.target.value==="Monthly")
-    {
-      let mydate=new Date();
-      let datelast=new Date(Date.now()-30*24*60*60*1000);
-      let listData=difectList.filter((values)=>(MyDateCheckerToday(values.date)<=mydate&&MyDateCheckerToday(values.date)>=datelast));
-      setDefectList(listData);
-    }
+     }
+
+
+    const MySegmentFunction=(e)=>{
+      let val=e.target.value
+      setDefectSegement(e.target.value);
+      setflag(4);
+      if(model==="all"&&val!="all"&&difectList.length>0)
+      {
+        alert("Hello 123");
+        let valueData=difectList.filter(item =>
+          item.repaired.filter(c => c.Segement == val).length > 0);
+          console.log("Value is",valueData);
+      }
     
-    console.log("Date",difectList);
-  }
+     }
+  
+    
+        
+  
+   
+   
+    
 
   /*
   function DateSpanChecker(values)
@@ -404,7 +680,7 @@ function ShowDataCondition()
           <select
             className="Model"
             value={defectSegment}
-            onChange={(e) => setDefectSegement(e)}
+            onChange={(e) => MySegmentFunction(e)}
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -436,7 +712,7 @@ function ShowDataCondition()
             type="date"
             className="enddate"
             value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
+            onChange={(e) => EndDateFunction(e)}
           ></input>
         </div>
       </div>

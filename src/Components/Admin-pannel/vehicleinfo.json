@@ -1404,5 +1404,56 @@
         "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
       }
     ]
+  },
+  {
+    "vin": "12372",
+    "model": "Nexon Vxi",
+    "date": "03/02/2023",
+
+    "defect": [
+      {
+        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
+        "Segement" : "Surface-RH-139"
+      }
+    ],
+
+    "repaired": [
+      {
+        "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
+        "Segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Segement" : "Surface-RH-139"
+      }
+    ]
   }
 ]
