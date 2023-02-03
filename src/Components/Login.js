@@ -57,7 +57,7 @@ const Login = () => {
             
             <div className="buttons d-flex ">
               <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
-              <span
+              <span className="span-heding"
                 onClick={() => navigate("/admin-login")}
               >
                 ADMIN LOGIN
@@ -66,8 +66,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-
-    
     </LoginStyled>
   );
 };
