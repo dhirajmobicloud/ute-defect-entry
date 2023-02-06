@@ -13,11 +13,7 @@ background: linear-gradient(to right, #4286f4, #373B44);
         flex-direction: column;
         /* background: #373B44;   */
         /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #4286f4, #373B44);  
-background: linear-gradient(to right, #4286f4, #373B44); 
-
-
-        background-color: #E8E8E8;
+        background-color: #141e30;
         width: 70vw;
         /* height: 100vh; */
         border-right: solid black 1px;
