@@ -2,8 +2,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
+<<<<<<< HEAD
 import data from'./UserData.json';
 import logo from '../Images/FCA_logo-removebg-preview.png'
+=======
+import data from './UserData.json'
+>>>>>>> da771ba78c20d7217865c0b6ca58e84dfa9d3ed3
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
@@ -12,6 +16,7 @@ const Login = () => {
   const [username,setUsername]=useState('');
   const [userpassword,setUserpassword]=useState('');
   console.log(data);
+
   // const dispatch = useDispatch()
 
   // const [vehicle , setVehicle] =useState({
@@ -38,9 +43,9 @@ const Login = () => {
 
   return (
     <LoginStyled className="cantainer d-flex">
-      <div className="logo">
+      {/* <div className="logo">
           <img src={logo} alt="logo" />
-      </div>
+      </div> */}
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>
@@ -74,7 +79,7 @@ const Login = () => {
             
             <div className="buttons d-flex ">
               <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
-              <span
+              <span className="span_admin"
                 onClick={() => navigate("/admin-login")}
               >
                 ADMIN LOGIN

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DefectDashboardStyle = styled.div`
-  background-color: #e8e8e8;
+  background-color: #141e30;
   display: flex;
   overflow: hidden;
   height: 100vh;
@@ -37,6 +37,7 @@ export const DefectDashboardStyle = styled.div`
       }
 
       .defects-heading {
+        color: bisque;
         height: 45px;
         h3 {
           text-align: center;
@@ -81,6 +82,7 @@ export const DefectDashboardStyle = styled.div`
       }
 
       .repaired-heading {
+        color: bisque;
         height: 45px;
         h3 {
           text-align: center;
@@ -149,7 +151,7 @@ export const DefectDashboardStyle = styled.div`
         height: 45px;
         h3 {
           text-align: center;
-          color: #008ead;
+          color: bisque;
           text-transform: uppercase;
         }
       }
