@@ -16,7 +16,7 @@ background: linear-gradient(to right, #4286f4, #373B44);
         background-color: #141e30;
         width: 70vw;
         /* height: 100vh; */
-        border-right: solid black 1px;
+        border-right: solid gold 1px;
 
         .section-one{
             display: flex;
@@ -41,14 +41,13 @@ background: linear-gradient(to right, #4286f4, #373B44);
                 width: 300px;
                 margin-left: 50px;
                 display: flex;
+                
                 h3{
                     margin: auto;
                     padding:10px 20px;
                     border-radius:40px;
-                    text-transform:uppercase;
                     background: linear-gradient(to right, #74ebd5, #acb6e5);
-                    
-                    
+
                 }
             }
 
@@ -111,7 +110,7 @@ background: linear-gradient(to right, #4286f4, #373B44);
         .heading{
             display: flex;
             height: 50px;
-            border-bottom: solid black 1px;
+            border-bottom: solid gold 1px;
             color: bisque;
             h5{
                 margin: auto;

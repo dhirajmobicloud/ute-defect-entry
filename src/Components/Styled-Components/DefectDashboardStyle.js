@@ -9,7 +9,7 @@ export const DefectDashboardStyle = styled.div`
   .defects-repaired {
     width: 30%;
     max-height: 100vh;
-    border-right: solid lightgrey 1px;
+    border-right: solid gold 1px;
     display: flex;
     flex-direction: column;
 
@@ -19,7 +19,7 @@ export const DefectDashboardStyle = styled.div`
       padding: 10px;
       height: 50%;
       /* overflow: scroll; */
-        border-bottom: solid lightgrey 1px;
+        border-bottom: solid gold 1px;
         ::-webkit-scrollbar {
           display: none;
         }
@@ -136,7 +136,8 @@ export const DefectDashboardStyle = styled.div`
         height: 200px;
         width: 700px;
         margin: 20px auto;
-        background-color: #c6c0c0;
+        border-radius: 10px;
+        background: linear-gradient(to right, #e0eafc, #cfdef3);
         h4{
           margin: 20px;
         }
@@ -168,7 +169,9 @@ export const DefectDashboardStyle = styled.div`
           width: 185px;
           height: 60px;
           margin: 20px;
-          background-color: #58c8eb;
+          color: white;
+          text-transform: uppercase;
+          /* background-color: #58c8eb; */
           border-radius: 10px;
           cursor: pointer;
 
@@ -177,6 +180,11 @@ export const DefectDashboardStyle = styled.div`
             text-align: center;
           }
         }
+        .a-segment:hover{
+          transition: 0.7s;
+            color: black;
+            background-color: #58c8eb;
+          }
       }
     }
   }

@@ -17,9 +17,11 @@ export const VehicleHistoryStyled = styled.div`
   }
   .inputElement {
     margin: auto;
+    text-transform: uppercase;
 
     select,
     input {
+      text-transform: uppercase;
       text-align: center;
       background: linear-gradient(to right, #e96443, #904e95);
       padding: 5px;
@@ -71,7 +73,7 @@ export const VehicleHistoryStyled = styled.div`
 
           .vinNumber {
             padding: 0 10px 0 0;
-            border-right: solid black 1px;
+            border-right: solid white 1px;
           }
           .model {
             padding: 0 10px 0 0;

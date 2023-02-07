@@ -27,6 +27,7 @@ export const NewDefectsStyled = styled.div`
       border-radius: 10px;
       border: none;
       width: 200px;
+      text-transform: uppercase;
     }
     h5 {
       text-align: center;
@@ -46,6 +47,7 @@ export const NewDefectsStyled = styled.div`
       padding: 20px;
 
       .defectlist {
+        background-color: #373b44;
         height: 65vh;
         overflow: scroll;
         ::-webkit-scrollbar {
@@ -59,7 +61,7 @@ export const NewDefectsStyled = styled.div`
 
           .vinNumber {
             padding: 0 10px 0 0;
-            border-right: solid black 1px;
+            border-right: solid white 1px;
           }
           .model {
             padding: 0 10px 0 0;

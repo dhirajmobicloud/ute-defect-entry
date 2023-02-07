@@ -62,7 +62,7 @@ const Segement = (props) => {
             <h3>{props.station}</h3>
           </div>
           <div className="Add-button">
-            <span className="btn btn-success">Add new defect</span>
+            <span className="btn btn-outline-info text-white">Add new defect</span>
           </div>
         </div>
         <div className="section-two">

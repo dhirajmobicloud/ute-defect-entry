@@ -139,7 +139,7 @@ const NewDefects = () => {
         <div className="inputElement">
           <h5>MODEL</h5>
           <select className={"Model"} onChange={modelHandler} value={model}>
-            <option value="all">All models</option>
+            <option value="all">ALL MODELS</option>
             {data.map((vehicle, index) => (
               <option key={index} value={vehicle.model}>
                 {vehicle.model}
@@ -148,10 +148,10 @@ const NewDefects = () => {
           </select>
         </div>
         <div className="inputElement">
-          <h5>Period</h5>
+          <h5>PERIOD</h5>
           <select className="Model" value={period} onChange={periodlHandler}>
             <option value="all" selected>
-              all
+              ALL
             </option>
             <option value="Today">Today</option>
             <option value="Weekly">Weekly</option>
@@ -159,7 +159,7 @@ const NewDefects = () => {
           </select>
         </div>
         <div className="inputElement">
-          <h5>Segement</h5>
+          <h5>SEGEMENT</h5>
           <select
             className="Model"
             value={defectSegment}
