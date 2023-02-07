@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
 import data from'./UserData.json';
 import logo from '../Images/FCA_logo-removebg-preview.png'
-import data from './UserData.json'
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
