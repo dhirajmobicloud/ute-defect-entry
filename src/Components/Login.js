@@ -7,7 +7,6 @@ import data from'./UserData.json';
 import logo from '../Images/FCA_logo-removebg-preview.png'
 =======
 import data from './UserData.json'
->>>>>>> da771ba78c20d7217865c0b6ca58e84dfa9d3ed3
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
