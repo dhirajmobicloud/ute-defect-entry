@@ -1,0 +1,26 @@
+[
+    {
+        "username":"OmkarBhosale",
+        "defect_check_permission":["Surface RH 139","Surface FTR 139"]
+    },
+    {
+        "username":"DhirajMahadik",
+        "defect_check_permission":["Bluetooth 139","Electrical 1 140"]
+    },
+    {
+        "username":"ViratKohli",
+        "defect_check_permission":["Bluetooth 139","Surface LH 140"]
+    },
+    {
+        "username":"AtulShinde",
+        "defect_check_permission":["Rear Int 140","Rear EXT 140"]
+    },
+    {
+        "username":"ShubhamZende",
+        "defect_check_permission":["Rear Exterior 140","Rear Exterior 140"]
+    },
+    {
+        "username":"LionelMessi",
+        "defect_check_permission":["Electrical 2 142","Front EXT 142"]
+    }
+]
