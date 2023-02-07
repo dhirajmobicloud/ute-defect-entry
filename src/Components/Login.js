@@ -32,9 +32,11 @@ const Login = () => {
       {
     
     alert("Hello");
-    navigate('/defect-dashboard');
+    navigate('/defect-dashboard',{state:{username:username}});
       }
-      
+      else{
+        navigate('/defect-dashboard')
+      }
   }
 
   return (
@@ -74,7 +76,7 @@ const Login = () => {
             </div>
             
             <div className="buttons d-flex ">
-              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+              <button type="submit" className="btnStyle" role="button">LOGIN</button>
               <span className="span_admin"
                 onClick={() => navigate("/admin-login")}
               >
