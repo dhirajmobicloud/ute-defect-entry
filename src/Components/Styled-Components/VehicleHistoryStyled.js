@@ -4,84 +4,83 @@ export const VehicleHistoryStyled = styled.div`
   height: 100vh;
   /* width: 100vw; */
   display: flex;
-  background: #f1f1f1;
+  background-color: #141e30;
   flex-direction: column;
   ::-webkit-scrollbar {
-          display: none;
-        }
+    display: none;
+  }
 
-  .modeldescription{
-    display:flex;
+  .modeldescription {
+    display: flex;
     padding: 30px 30px 10px 30px;
     flex-wrap: wrap;
-    
   }
-  .inputElement{
+  .inputElement {
     margin: auto;
+    text-transform: uppercase;
 
-    select, input{
-      background-color: #D9D9D9;
+    select,
+    input {
+      text-transform: uppercase;
+      text-align: center;
+      background: linear-gradient(to right, #e96443, #904e95);
       padding: 5px;
       border-radius: 10px;
       border: none;
       width: 200px;
     }
-    h5{
+    h5 {
       text-align: center;
+      color: bisque;
     }
   }
 
-  .defect-list-container{
-    /* background-color: gray; */
+  .defect-list-container {
     height: 100vh;
-    /* overflow: hidden; */
-    
-    
 
-    .result-filter{
+    .result-filter {
       display: flex;
-      background-color: lightgrey;
+      background-color: #83a4d4;
+      /* background-color: lightgrey; */
       margin: 20px 20px 0 20px;
-      border-radius: 10px 10px 0 0 ;
+      border-radius: 10px 10px 0 0;
 
-      .form-check{
-        margin: 10px ;
+      .form-check {
+        margin: 10px;
+        color: black;
       }
-      
     }
-    .defects{
-        margin: 5px 20px 20px 20px;
-        background-color: lightgrey;
-        border-radius: 0 0 10px 10px ;
-       
-        padding: 20px;
-       
-       
+    .defects {
+      background-color: #83a4d4;
+      margin: 5px 20px 20px 20px;
+      /* background-color: lightgrey; */
+      border-radius: 0 0 10px 10px;
 
-        .defectlist{
-          height: 65vh;
-          overflow: scroll;
-          ::-webkit-scrollbar {
+      padding: 20px;
+
+      .defectlist {
+        background-color: #373b44;
+        height: 65vh;
+        overflow: scroll;
+        ::-webkit-scrollbar {
           display: none;
         }
-          .listdata{
-          background-color: #fff;
+        .listdata {
+          color: white;
+          background: linear-gradient(to right, #360033, #0b8793);
           margin: 5px;
           align-items: center;
-          
-          .vinNumber{
-              padding: 0 10px 0 0;
-              border-right: solid black 1px;
-          }
-          .model{
-              padding: 0 10px 0 0;
-              border-right: solid black 1px;
-          }
-         
-        }
-        }
 
-       
+          .vinNumber {
+            padding: 0 10px 0 0;
+            border-right: solid white 1px;
+          }
+          .model {
+            padding: 0 10px 0 0;
+            border-right: solid black 1px;
+          }
+        }
       }
+    }
   }
 `;

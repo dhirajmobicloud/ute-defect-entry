@@ -1,12 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,} from "react";
 import { DefectDashboardStyle } from "../Styled-Components/DefectDashboardStyle";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { remove_vehicle_defect, add_repaired_defect } from "../../Redux/Reducers/vehicle";
-import logo from '../../Images/FCA_logo-removebg-preview.png'
+import logo from '../../Images/FCA_logo-removebg-preview.png';
+import data from '../DefectInformation.json'
 
 
 const DefectDashboard = () => {
+  const location=useLocation();
+  const arraydata=["Surface RH 139","Surface FTR 139","Bluetooth 139","Electrical 1 140","Surface LH 140","Rear Int 140","Rear EXT 141","RH Exterior 141","LH Exterior 141","Electrical 2 142","Front EXT 142","Door Closing 142"];
+  let userdata=location.state.username;
+  console.log("UserData is",userdata);
+  function Myfunction1(userdata)
+  {
+    let myvalues;
+    for(let i=0;i<data.length;i++)
+    {
+      if(data[i].username===userdata)
+      {
+        myvalues=data[i].defect_check_permission;
+      }
+    }
+    return myvalues;
+  }
+   let UserSegments=Myfunction1(userdata);
+   console.log(UserSegments);
+
+  function MyvaluesCheck(values)
+  {
+   let value= UserSegments.includes(values)
+   return value;
+  }
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // const vehicle = useSelector((state) => state.vehicle);
@@ -170,78 +195,32 @@ const DefectDashboard = () => {
           </div>
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/surface-RH-139-defects")}
-              >
-                <h5 >Surface RH 139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/surface-FTR-139-defects")}
-              >
-                <h5>Surface FTR 139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/bluetooth-139-defect")}
-              >
-                <h5>Bluetooth 139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/electrical-1-140-defects")}
-              >
-                <h5>Electrical 1 140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/surface-LH-140-defect")}
-              >
-                <h5>Surface LH 140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/rear-INT-140-defects")}
-              >
-                <h5>Rear Int 140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/rear-EXT-141-defects")}
-              >
-                <h5>Rear EXT 141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/rh-exterior-141-defects")}
-              >
-                <h5>RH Exterior 141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/lh-exterior-141-defects")}
-              >
-                <h5>LH Exterior 141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/electrical-2-142-defects")}
-              >
-                <h5>Electrical 2 142</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/front-EXT-142-defects")}
-              >
-                <h5>Front EXT 142</h5>
-              </div>
-              <div
-                className="a-segment col-md-3"
-                onClick={() => navigate("/door-closing-142-defects")}
-              >
-                <h5>Door Closing 142</h5>
-              </div>
+            {arraydata.map((values)=>{
+              if(MyvaluesCheck(values)===true)
+              {
+                return(
+                  <button
+                  className="a-segment col-md-3 border border-info"
+                  onClick={() => navigate("/surface-RH-139-defects")}
+                >
+                
+                <h5 >{values}</h5>
+              </button>
+                )
+              }
+              else if(MyvaluesCheck(values)===false)
+              {
+                return(
+                  <button
+                  className="a-segment col-md-3 border border-info"
+                  disabled
+                >
+                  <h5 >{values}</h5>
+                </button>
+
+                )
+              }
+            })}
             </div>
           </div>
         </div>

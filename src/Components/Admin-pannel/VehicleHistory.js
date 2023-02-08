@@ -727,7 +727,7 @@ function ShowDataCondition()
               value="option1"
             />
             <label className="form-check-label" htmlFor="inlineRadio1">
-              default
+              DEFAULT
             </label>
           </div>
           <div className="form-check form-check-inline">
@@ -739,7 +739,7 @@ function ShowDataCondition()
               value="option2"
             />
             <label className="form-check-label" htmlFor="inlineRadio2">
-              New
+              NEW
             </label>
           </div>
         </div>
