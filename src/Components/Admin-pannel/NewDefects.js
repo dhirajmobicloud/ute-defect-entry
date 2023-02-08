@@ -233,12 +233,13 @@ const NewDefects = () => {
 
       <div className="section-2">
               <div className="management-section">
-
+                
               </div>
       </div>
 
     </NewDefectsStyled>
   );
 };
+
 
 export default NewDefects;

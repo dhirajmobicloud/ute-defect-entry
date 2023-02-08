@@ -74,9 +74,10 @@ export const LoginStyled = styled.div`
         cursor: pointer;
       }
       .span_admin:hover{
-        color:bisque;
+        color:white;
         transition: 1s;
       }
     }
   }
+  
 `;
