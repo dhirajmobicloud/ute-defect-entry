@@ -3,8 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
 import data from'./UserData.json';
-import logo from '../Images/FCA_logo-removebg-preview.png'
-// import { useDispatch, useSelector } from "react-redux";
+// import logo from '../Images/FCA_logo-removebg-preview.png'
+import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 import logo from '../Images/FCA_logo-removebg-preview.png'
 
@@ -13,21 +13,21 @@ const Login = () => {
   const [username,setUsername]=useState('');
   const [userpassword,setUserpassword]=useState('');
   console.log(data);
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  // const [vehicle , setVehicle] =useState({
-  //   model:"", win_number :"",defect:[] , repaired:[]
-  // })
+  const [vehicle , setVehicle] =useState({
+    model:"", win_number :"",defect:[] , repaired:[]
+  })
 
-  // const onChangeHandler =(e)=>{
-  //       let name = e.target.name;
-  //       let value = e.target.value
-  //      setVehicle({ ...vehicle, [name]: value })
-  // }
+  const onChangeHandler =(e)=>{
+        let name = e.target.name;
+        let value = e.target.value
+       setVehicle({ ...vehicle, [name]: value })
+  }
 
   const onSubmitHandler =(e)=>{
-    //   e.preventDefault();
-    // let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
+      e.preventDefault();
+    let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
     if(mydata.length>0)
       {
     
@@ -39,9 +39,9 @@ const Login = () => {
 
   return (
     <LoginStyled className="cantainer d-flex">
-      {/* <div className="logo">
+      <div className="logo">
           <img src={logo} alt="logo" />
-      </div> */}
+      </div>
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>
