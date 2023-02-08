@@ -20,7 +20,7 @@ background: linear-gradient(to right, #4286f4, #373B44);
         background-color: #E8E8E8;
         width: 70vw;
         /* height: 100vh; */
-        border-right: solid black 1px;
+        border-right: solid gold 1px;
 
         .section-one{
             display: flex;
@@ -115,7 +115,7 @@ background: linear-gradient(to right, #4286f4, #373B44);
         .heading{
             display: flex;
             height: 50px;
-            border-bottom: solid black 1px;
+            border-bottom: solid gold 1px;
             color: bisque;
             h5{
                 margin: auto;

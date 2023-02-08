@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
 // import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
+import logo from '../Images/FCA_logo-removebg-preview.png'
 
 const Login = () => {
   const navigate = useNavigate();
   const [username,setUsername]=useState('');
   const [userpassword,setUserpassword]=useState('');
-  console.log(data);
+  // console.log(data);
   // const dispatch = useDispatch()
 
   // const [vehicle , setVehicle] =useState({
@@ -23,14 +24,14 @@ const Login = () => {
   // }
 
   const onSubmitHandler =(e)=>{
-      e.preventDefault();
-    let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
-    if(mydata.length>0)
-      {
+    //   e.preventDefault();
+    // let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
+    // if(mydata.length>0)
+    //   {
     
-    alert("Hello");
-    navigate('/defect-dashboard');
-      }
+    // alert("Hello");
+    // navigate('/defect-dashboard');
+    //   }
       
   }
 
@@ -72,9 +73,9 @@ const Login = () => {
             
             <div className="buttons d-flex ">
               <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
-              <span
+              <span className="span_admin"
                 onClick={() => navigate("/admin-login")}
-              >
+              >     
                 ADMIN LOGIN
               </span>
             </div>
