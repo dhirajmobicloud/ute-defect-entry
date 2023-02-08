@@ -21,7 +21,7 @@ export const NewDefectsStyled = styled.div`
 
     select,
     input {
-      background: linear-gradient(to right, #348f50, #56b4d3);
+      background-color: #83a4d4;
       color: black;
       padding: 5px;
       text-align: center;

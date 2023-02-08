@@ -32,6 +32,7 @@ export const LoginStyled = styled.div`
      transition: 1s;
     }
     .buttons {
+
       .btnStyle {
         color: #fff;
         padding: 7px 30px;
@@ -65,18 +66,22 @@ export const LoginStyled = styled.div`
 
       flex-direction: column;
       padding: 10px;
+      
       button {
         margin: auto;
+        
       }
       span {
         margin: auto;
         padding: 10px;
         cursor: pointer;
-      }
-      .span_admin:hover{
+        :hover{
         color:white;
         transition: 1s;
+       
+      } 
       }
+     
     }
   }
   
