@@ -169,9 +169,9 @@ export const DefectDashboardStyle = styled.div`
           width: 185px;
           height: 60px;
           margin: 20px;
-          color: white;
+          color: black;
           text-transform: uppercase;
-          /* background-color: #58c8eb; */
+          background-color: #58c8eb;
           border-radius: 10px;
           cursor: pointer;
 
@@ -197,6 +197,7 @@ export const DefectDashboardStyle = styled.div`
           }
 
          
+        
       }
     }
   }

@@ -19,7 +19,7 @@ export const LoginStyled = styled.div`
     /* height: 390px; */
     width: 430px;
     border-radius: 15px;
-    background-color: hsla(120, 60%, 70%, 0.3);
+    background-color: #2C5364;
     /* background-color: #d9d9d9; */
     margin: auto;
   }
@@ -32,10 +32,11 @@ export const LoginStyled = styled.div`
      transition: 1s;
     }
     .buttons {
+
       .btnStyle {
         color: #fff;
         padding: 7px 30px;
-        background-color: #2596be;
+        background-color: #55c2da;
         background-image: radial-gradient(
             93% 87% at 87% 89%,
             rgba(0, 0, 0, 0.23) 0%,
@@ -65,18 +66,23 @@ export const LoginStyled = styled.div`
 
       flex-direction: column;
       padding: 10px;
+      
       button {
         margin: auto;
+        
       }
       span {
         margin: auto;
         padding: 10px;
         cursor: pointer;
-      }
-      .span_admin:hover{
+        :hover{
         color:white;
         transition: 1s;
+       
+      } 
       }
+     
     }
   }
+  
 `;

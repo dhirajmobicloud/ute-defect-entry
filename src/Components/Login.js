@@ -5,7 +5,10 @@ import { LoginStyled } from "./Styled-Components/LoginStyled";
 import axios from "axios";
 import logo from '../Images/FCA_logo-removebg-preview.png'
 // import { useDispatch, useSelector } from "react-redux";
+// import logo from '../Images/FCA_logo-removebg-preview.png'
+import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
+
 
 const Login = () => {
 
@@ -38,27 +41,26 @@ const onSubmitHandler=(e)=>{
  
 
 }
+  const dispatch = useDispatch()
 
-  // const dispatch = useDispatch()
+  const [vehicle , setVehicle] =useState({
+    model:"", win_number :"",defect:[] , repaired:[]
+  })
 
-  // const [vehicle , setVehicle] =useState({
-  //   model:"", win_number :"",defect:[] , repaired:[]
-  // })
-
-  // const onChangeHandler =(e)=>{
-  //       let name = e.target.name;
-  //       let value = e.target.value
-  //      setVehicle({ ...vehicle, [name]: value })
-  // }
+  const onChangeHandler =(e)=>{
+        let name = e.target.name;
+        let value = e.target.value
+       setVehicle({ ...vehicle, [name]: value })
+  }
 
   
   
 
   return (
     <LoginStyled className="cantainer d-flex">
-      {/* <div className="logo">
+      <div className="logo">
           <img src={logo} alt="logo" />
-      </div> */}
+      </div>
       <div className="LoginCart">
         <div className="Login-creaditnal">
           <form onSubmit={onSubmitHandler}>
@@ -91,10 +93,10 @@ const onSubmitHandler=(e)=>{
             </div>
             
             <div className="buttons d-flex ">
-              <button type="submit" className="btnStyle" role="button">LOGIN</button>
-              <span className="span_admin"
+              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+              <span
                 onClick={() => navigate("/admin-login")}
-              >
+              >     
                 ADMIN LOGIN
               </span>
             </div>

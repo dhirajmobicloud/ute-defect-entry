@@ -21,7 +21,8 @@ export const NewDefectsStyled = styled.div`
 
     select,
     input {
-      background: linear-gradient(to right, #e96443, #904e95);
+      background-color: #83a4d4;
+      color: black;
       padding: 5px;
       text-align: center;
       border-radius: 10px;
@@ -55,7 +56,7 @@ export const NewDefectsStyled = styled.div`
         }
         .listdata {
           color: white;
-          background: linear-gradient(to right, #360033, #0b8793);
+          background-color:  #4286f4;
           margin: 5px;
           align-items: center;
 
