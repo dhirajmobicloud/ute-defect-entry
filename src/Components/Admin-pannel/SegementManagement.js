@@ -7,6 +7,8 @@ const SegementManagement = () => {
   const SegmentData=["Surface RH 139","Surface FTR 139","Bluetooth 139","Electrical 1 140","Surface LH 140","Rear Int 140","Rear EXT 141","RH Exterior 141","LH Exterior 141","Electrical 2 142","Front EXT 142","Door Closing 142"];
   const [userdata,setUserdata]=useState([]);
   const [flag,setflag]=useState(false);
+  const [segementCollection,setSegementCollection]=useState([])
+
 
   useEffect(()=>{
 axios.get('https://easy-gray-camel-sock.cyclic.app/users').then((values)=>{
@@ -14,9 +16,45 @@ axios.get('https://easy-gray-camel-sock.cyclic.app/users').then((values)=>{
 }).catch((err)=>{
   console.log(err)
 })
+axios.get('https://easy-gray-camel-sock.cyclic.app/assigned-segement-data').then((response)=>{
+  setSegementCollection(response.data);
+}).catch((err)=>{
+  console.log(err);
+})
   },[])
 
   console.log(userdata);
+
+  function Mydata(values)
+  {
+    let valuedata=values;
+    console.log("SEGMENT_ASSIGNED IS",valuedata);
+
+    return(
+      <div className='showdata'>
+      {
+        valuedata.map((values,index)=>{
+          if(index<valuedata.length-1)
+          {
+          return(
+            <h5 className='description h5 form-label'>
+              {values},
+            </h5>
+          )
+          }
+          else{
+            return(
+              <h5 className='description h5 form-label'>
+                {values}
+              </h5>
+            )
+          }
+        })
+      }
+      
+      </div>
+    )
+  }
 
   const workType=['Repair Defect','Add Defect'];
   const [selectedSegment,setSelectedSegment]=useState([]);
@@ -66,6 +104,7 @@ axios.get('https://easy-gray-camel-sock.cyclic.app/users').then((values)=>{
   }
 
   const AddSegment=(e)=>{
+    console.log("SELECTED IS",selectedSegment);
 if(e.target.checked===true)
 {
   setSelectedSegment([...selectedSegment,e.target.value]);
@@ -88,11 +127,21 @@ else if(e.target.checked===false)
 }
 
 const Mysubmit=(e)=>{
-  console.log(selectedSegment);
+  
   e.preventDefault();
-  let mydata={username:username,segment_assigned:selectedSegment,work:defectWork};
-  console.log(mydata);
-  alert(JSON.stringify(mydata));
+ let jsondata={username:username,segement_assigned:selectedSegment,work:defectWork};
+ console.log(selectedSegment);
+  console.log(JSON.stringify(jsondata));
+  axios.post('https://easy-gray-camel-sock.cyclic.app/assigned-segement',jsondata).then((response)=>{
+    console.log(response);
+    if(response)
+    {
+      alert("Data Inserted Successfully");
+    }
+  }).catch((err)=>{
+    console.log(err);
+    
+  })
   
 }
 console.log("Userdata is",userdata);
@@ -151,9 +200,34 @@ console.log( userdata.filter((values)=>values.username.includes(username)));
 <button type='submit' className=' Mybutton btn btn-success'>Submit</button>
 </div>
 </form>
+<table className='tabledata table'>
+<thead className='myhead'>
+      <tr>
+        <th scope='col'><h5 className='description h5 form-label'>USERNAME</h5></th>
+        <th scope='col'><h5 className='description h5 form-label'>SEGEMENT_ASSIGNED</h5></th>
+        <th scope='col'><h5 className='description h5 form-label'>WORK</h5></th>
+      </tr>
+    </thead>
+  <tbody>
+{
+  segementCollection.map((values)=>{
+    return(
+      <tr scope='row'>
+<td><h5 className='description h5 form-label'>{values.username}</h5></td>
+<td>{Mydata(values.segement_assigned)}</td>
+<td>{Mydata(values.work)}</td>
+      </tr>
+
+    )
+  })
+}
+
+  </tbody>
+</table>
    
     </SegmentManagementStyle>
   )
 }
 
-export default SegementManagement
+
+export default SegementManagement;

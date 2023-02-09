@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SegmentManagementStyle=styled.div`
 background-color: #141e30;
-height: 170vh;
+height: 169vh;
 
 .title{
     margin-bottom: 3rem;
@@ -89,7 +89,19 @@ height: 170vh;
     }
 }
 
-
+.tabledata{
+margin-top: 2rem;
+background-color: #1269BB;
+color:white;
+    .myhead{
+        background-color:#0e5495;
+    }
+    .showdata{
+        display: flex;
+    }
+    
+    
+}
 
 
 
