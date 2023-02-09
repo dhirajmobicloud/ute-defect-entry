@@ -196,6 +196,23 @@ export const DefectDashboardStyle = styled.div`
             background-color: darkgray;
           }
 
+          .a-segment-disabled {
+          display: flex;
+          width: 185px;
+          height: 60px;
+          margin: 20px;
+          color: black;
+          text-transform: uppercase;
+          background-color:#bce9f7;
+          border-radius: 10px;
+          cursor: pointer;
+
+          h5 {
+            margin: auto;
+            text-align: center;
+          }
+        }
+
          
         
       }
