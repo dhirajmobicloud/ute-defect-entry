@@ -15,7 +15,8 @@
      
       {
         "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
-        "segement": "Bluetooth-139"
+        "segement": "Bluetooth-139",
+        "new": "true"
       },
       {
         "description": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
@@ -62,7 +63,8 @@
     "defect": [
       {
         "description": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "segement": "Surface-RH-139",
+        "new": "true"
       },
       {
         "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
@@ -126,7 +128,8 @@
       },
       {
         "description": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "segement": "Surface-RH-139",
+        "new": "true"
       },
       {
         "description": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
