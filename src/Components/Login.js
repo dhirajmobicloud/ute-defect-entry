@@ -2,40 +2,49 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginStyled } from "./Styled-Components/LoginStyled";
-import data from'./UserData.json';
+import axios from "axios";
+import logo from '../Images/FCA_logo-removebg-preview.png'
+// import { useDispatch, useSelector } from "react-redux";
 // import logo from '../Images/FCA_logo-removebg-preview.png'
 import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
-import logo from '../Images/FCA_logo-removebg-preview.png'
+
 
 const Login = () => {
+
   const navigate = useNavigate();
   const [username,setUsername]=useState('');
   const [userpassword,setUserpassword]=useState('');
-  console.log(data);
-  const dispatch = useDispatch()
+  const [error,setError]=useState('');
+  
 
-  const [vehicle , setVehicle] =useState({
-    model:"", win_number :"",defect:[] , repaired:[]
-  })
+ 
 
-  const onChangeHandler =(e)=>{
-        let name = e.target.name;
-        let value = e.target.value
-       setVehicle({ ...vehicle, [name]: value })
-  }
-
-  const onSubmitHandler =(e)=>{
-      e.preventDefault();
-    let mydata=data.filter((value)=>(value.username===username)&&(value.password===userpassword));
-    if(mydata.length>0)
-      {
-    
-    alert("Hello");
+  
+const onSubmitHandler=(e)=>{
+  e.preventDefault();
+ let mydata={username:username,password:userpassword};
+ axios.post(' https://easy-gray-camel-sock.cyclic.app/login',mydata).then((response)=>{
+  if(response)
+  {
+    localStorage.setItem('username',response.data.username);
+    alert("Successfully logged in");
     navigate('/defect-dashboard');
-      }
-      
   }
+ }).catch((err)=>{
+  console.log(err);
+  let response=err.response.data;
+  alert(response);
+ });
+ 
+ 
+ 
+
+}
+  
+
+  
+  
 
   return (
     <LoginStyled className="cantainer d-flex">
@@ -74,7 +83,7 @@ const Login = () => {
             </div>
             
             <div className="buttons d-flex ">
-              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+              <button type="button" className="btnStyle" role="button">LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >     

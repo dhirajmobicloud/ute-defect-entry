@@ -180,6 +180,23 @@ export const DefectDashboardStyle = styled.div`
             text-align: center;
           }
         }
+        .a-segment:hover{
+          transition: 0.7s;
+            color: black;
+            background-color: #58c8eb;
+          }
+          .a-segment:not(:disabled)
+          {
+            background-color:aquamarine;
+            color: black;
+          }
+
+          .a-segment:disabled{
+            color: darkgray;
+            background-color: darkgray;
+          }
+
+         
         
       }
     }

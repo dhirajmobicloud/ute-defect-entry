@@ -1,0 +1,85 @@
+import styled from "styled-components";
+
+export const SegmentManagementStyle=styled.div`
+background-color: #141e30;
+height: 160vh;
+
+.title{
+    margin-bottom: 3rem;
+    .titledata{
+        color: white;
+        text-shadow: 0.7rem 0.7rem 0.7rem black;
+        padding-top: 0.8rem;
+        font-size: 210%;
+    }
+}
+
+.formdata{
+    margin-left: 1rem;
+    margin-top: 1.2rem;
+    .inputText{
+        margin-top: 1.2rem;
+        margin-bottom: 2.4rem;
+
+        .description{
+            padding-bottom: 1rem;
+            color: bisque;
+            text-align: justify;
+            font-size: 160%;
+        }
+        .inputWrite{
+            width: 60%;
+            border-radius: 2.5rem;
+            height: 2.5rem;
+          
+
+        }
+    }
+    .checkboxData{
+        margin-bottom: 3rem;
+        .description{
+            padding-bottom: 1rem;
+            color: bisque;
+            text-align: justify;
+            font-size: 160%;
+        }
+        .mycheckboxvalues{
+            width: 100%;
+            margin-top:0.7rem;
+
+            .checkboxDiv{
+                margin-bottom:0.3rem;
+                color: bisque;
+              
+                .mycheckbox{
+                    height: 1.4rem;
+                    width: 1.4rem;
+                }
+                .mycheckboxvalues{
+                    padding-left: 1rem;
+                }
+            }
+
+        }
+
+    }
+    .Mybutton{
+        margin-left:1rem;
+        height:3rem;
+        width: 10rem;
+        border-radius: 2.5rem;
+        font-size: 150%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+`
