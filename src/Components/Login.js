@@ -41,17 +41,7 @@ const onSubmitHandler=(e)=>{
  
 
 }
-  const dispatch = useDispatch()
-
-  const [vehicle , setVehicle] =useState({
-    model:"", win_number :"",defect:[] , repaired:[]
-  })
-
-  const onChangeHandler =(e)=>{
-        let name = e.target.name;
-        let value = e.target.value
-       setVehicle({ ...vehicle, [name]: value })
-  }
+  
 
   
   
