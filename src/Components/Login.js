@@ -28,7 +28,6 @@ const onSubmitHandler=(e)=>{
   if(response)
   {
     localStorage.setItem('username',response.data.username);
-    alert("Successfully logged in");
     navigate('/defect-dashboard');
   }
  }).catch((err)=>{
