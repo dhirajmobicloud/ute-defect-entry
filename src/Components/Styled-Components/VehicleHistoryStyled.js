@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const VehicleHistoryStyled = styled.div`
   height: 100vh;
-  /* width: 100vw; */
+  width: -webkit-fill-available;
   display: flex;
+  padding-left: 20px;
   background-color: #141e30;
   flex-direction: column;
   ::-webkit-scrollbar {

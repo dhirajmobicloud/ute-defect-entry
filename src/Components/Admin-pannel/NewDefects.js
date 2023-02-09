@@ -14,15 +14,14 @@ const NewDefects = () => {
   const [pending, setPending] = useState("Repaired");
 
   let list = data.map((element) => {
-    if(pending === "Repaired"){
+    if (pending === "Repaired") {
       return {
         ...element,
         repaired: element.repaired.filter(
           (subElement) => subElement.new === "true"
         ),
       };
-    }
-    else if(pending === "Pending"){
+    } else if (pending === "Pending") {
       return {
         ...element,
         repaired: element.defect.filter(
@@ -30,36 +29,33 @@ const NewDefects = () => {
         ),
       };
     }
-    
   });
   // console.log(list.filter((element) => element.repaired.length > 0));
 
-  const [newDefectList, setNewDefectList] = useState([]
+  const [newDefectList, setNewDefectList] = useState(
+    []
     // list.filter((element) => element.repaired.length > 0)
   );
 
   useEffect(() => {
-  
-    if(pending === "Repaired"){
-     setNewDefectList(list.filter((element) => element.repaired.length > 0))
+    if (pending === "Repaired") {
+      setNewDefectList(list.filter((element) => element.repaired.length > 0));
+    } else if (pending === "Pending") {
+      setNewDefectList(list.filter((element) => element.defect.length > 0));
     }
-    else if(pending === "Pending"){
-      setNewDefectList(list.filter((element) => element.defect.length > 0))
-    }
-    modelHandler(model)
+    modelHandler(model);
     console.log(newDefectList);
     // eslint-disable-next-line
-  }, []);
+  }, [pending]);
 
   // Model handler //////////////////////////////////////////
 
-  const modalStateHandler =(e)=>{
+  const modalStateHandler = (e) => {
     setModel(e.target.value);
-    modelHandler(e.target.value)
-  }
+    modelHandler(e.target.value);
+  };
 
   const modelHandler = (MODEL) => {
-    
     if (MODEL === "all") {
       let list = data.map((element) => {
         if (pending === "Pending") {
@@ -81,7 +77,7 @@ const NewDefects = () => {
 
       if (pending === "Pending") {
         console.log(list.filter((element) => element.defect.length >= 1));
-        setNewDefectList(list.filter((element) => element.defect.length >= 1  ));
+        setNewDefectList(list.filter((element) => element.defect.length >= 1));
       } else if (pending === "Repaired") {
         console.log(list.filter((element) => element.repaired.length > 0));
         setNewDefectList(list.filter((element) => element.repaired.length > 0));
@@ -201,11 +197,10 @@ const NewDefects = () => {
   };
 
   // Pending or repaired handler //////////////////////////////////////////
-  
+
   const pendingORrepairedHandler = (e) => {
     console.log(e.target.value);
     setPending(e.target.value);
-      modelHandler(model)
   };
 
   return (
@@ -213,7 +208,11 @@ const NewDefects = () => {
       <div className="modeldescription">
         <div className="inputElement">
           <h5>MODEL</h5>
-          <select className={"Model"} onChange={modalStateHandler} value={model}>
+          <select
+            className={"Model"}
+            onChange={modalStateHandler}
+            value={model}
+          >
             <option value="all">ALL MODELS</option>
             {data.map((vehicle, index) => (
               <option key={index} value={vehicle.model}>
@@ -343,10 +342,19 @@ const NewDefects = () => {
                 SEGEMENT
               </label>
               <select class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>Choose...</option>
+                <option value="Surface-RH-139">Surface RH 139</option>
+                <option value="Surface-FTR-139">Surface FTR 139</option>
+                <option value="Bluetooth-139">Bluetooth 139</option>
+                <option value="Electrical-1-140">Electrical 1 140</option>
+                <option value="Surface-LH-140">Surface LH 140</option>
+                <option value="Rear-Int-140">Rear Int 140</option>
+                <option value="Rear-EXT-141">Rear EXT 141</option>
+                <option value="RH-Exterior-141">RH Exterior 141</option>
+                <option value="LH-Exterior-141">LH Exterior 141</option>
+                <option value="Electrical-2-142">Electrical 2 142</option>
+                <option value="Front EXT-142">Front EXT 142</option>
+                <option value="Door-Closing-142">Door Closing 142</option>
               </select>
             </div>
             <div class="col-md-4">
@@ -357,62 +365,44 @@ const NewDefects = () => {
             </div>
             <div class="col-md-4">
               <label for="inputAddress" class="form-label">
-                Address
+                Part name
               </label>
               <input
                 type="text"
                 class="form-control"
                 id="inputAddress"
-                placeholder="1234 Main St"
+                placeholder=" "
               />
             </div>
-            <div class="col-12">
+            <div class="col-md-4">
               <label for="inputAddress2" class="form-label">
-                Address 2
+                Component 
               </label>
               <input
                 type="text"
                 class="form-control"
                 id="inputAddress2"
-                placeholder="Apartment, studio, or floor"
+                placeholder=""
               />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
               <label for="inputCity" class="form-label">
-                City
+                EOL station
               </label>
               <input type="text" class="form-control" id="inputCity" />
             </div>
             <div class="col-md-4">
               <label for="inputState" class="form-label">
-                State
+                Check Point
               </label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <label for="inputZip" class="form-label">
-                Zip
-              </label>
-              <input type="text" class="form-control" id="inputZip" />
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
+              <input type="text" class="form-control" id="inputState" />
             </div>
             <div class="col-12">
               <button type="submit" class="btn btn-primary">
-                Sign in
+                Submit
+              </button>
+              <button type="submit" class="btn btn-primary disabled mx-2">
+                Submit
               </button>
             </div>
           </form>
