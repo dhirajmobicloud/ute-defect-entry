@@ -72,7 +72,7 @@ const onSubmitHandler=(e)=>{
               <label
                 htmlFor="exampleInputPassword1"
                 className="form-label"
-              ></label>
+                ></label>
               <input
                 type="password"
                 placeholder="PASSWORD"
@@ -83,7 +83,7 @@ const onSubmitHandler=(e)=>{
             </div>
             
             <div className="buttons d-flex ">
-              <button type="button" className="btnStyle" role="button">LOGIN</button>
+              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >     
