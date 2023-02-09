@@ -43,7 +43,7 @@ const NewDefects = () => {
 
       console.log(list.filter((element) => element.repaired.length > 0));
       setNewDefectList(list.filter((element) => element.repaired.length > 0));
-      console.log(list1)
+      console.log(list.filter((element) => element.repaired.length > 0))
     } else {
       let list = data.filter((element) => element.model === e.target.value);
       let list1 = list.map((element) => {
