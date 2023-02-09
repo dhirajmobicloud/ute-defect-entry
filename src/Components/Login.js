@@ -63,7 +63,7 @@ const Login = () => {
               <label
                 htmlFor="exampleInputPassword1"
                 className="form-label"
-              ></label>
+                ></label>
               <input
                 type="password"
                 placeholder="PASSWORD"
@@ -73,8 +73,8 @@ const Login = () => {
               />
             </div>
             
-            <div className="buttons d-flex ">
-              <button type="button" className="btnStyle" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+            <div className="buttons d-flex py-4">
+              <button type="button" className="btn btn-primary m-auto" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >     

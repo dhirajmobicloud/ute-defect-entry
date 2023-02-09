@@ -2,15 +2,27 @@ import styled from "styled-components";
 
 export const AdminPannelStyled = styled.div`
 
-background-color: #141e30;
-height: 100vh;
+width: 100%;
+  height: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #141e30;
 
-h1{
-    color: gold;
-    padding-top:400px ;
-
+.LoginCart{
+    width: 430px;
+    border-radius: 15px;
+    margin: auto;
+    background-color: #2C5364;
+    
 }
-h1:hover{
- transition: 1s;
+form {
+    padding: 40px;
+    align-items: center;
+    text-align:center;
+
+
+
 }
 `
