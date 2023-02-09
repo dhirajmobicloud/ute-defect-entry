@@ -83,7 +83,7 @@ const onSubmitHandler=(e)=>{
             </div>
             
             <div className="buttons d-flex py-4 ">
-              <button type="submit" className="btn btn-primary m-auto" role="button" onClick={() => navigate("/defect-dashboard")}>LOGIN</button>
+              <button type="submit" className="btn btn-primary m-auto" role="button" >LOGIN</button>
               <span
                 onClick={() => navigate("/admin-login")}
               >     
