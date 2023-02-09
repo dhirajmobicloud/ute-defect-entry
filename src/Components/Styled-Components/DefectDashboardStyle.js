@@ -185,6 +185,18 @@ export const DefectDashboardStyle = styled.div`
             color: black;
             background-color: #58c8eb;
           }
+          .a-segment:not(:disabled)
+          {
+            background-color:aquamarine;
+            color: black;
+          }
+
+          .a-segment:disabled{
+            color: darkgray;
+            background-color: darkgray;
+          }
+
+         
       }
     }
   }
