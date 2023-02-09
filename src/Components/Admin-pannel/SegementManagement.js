@@ -18,7 +18,7 @@ axios.get('https://easy-gray-camel-sock.cyclic.app/users').then((values)=>{
 
   console.log(userdata);
 
-  const workType=['Report Defect','Add Defect'];
+  const workType=['Repair Defect','Add Defect'];
   const [selectedSegment,setSelectedSegment]=useState([]);
   const [username,setUsername]=useState('');
   const [defectWork,setDefectWork]=useState([]);
