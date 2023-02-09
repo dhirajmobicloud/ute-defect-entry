@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SegmentManagementStyle=styled.div`
 background-color: #141e30;
-height: 160vh;
+height: 170vh;
 
 .title{
     margin-bottom: 3rem;
@@ -33,6 +33,23 @@ height: 160vh;
             height: 2.5rem;
           
 
+        }
+        .autocomplete{
+            width:60%;
+            background-color:white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            border-radius: 1.5rem;
+            border: 2px solid black;
+
+            .mainvalues{
+              padding: 0.5rem 0.5rem;
+
+            }
+            .mainvalues:hover{
+                background-color: #1269BB;
+                color:white;
+            }
         }
     }
     .checkboxData{
