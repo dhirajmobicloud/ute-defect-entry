@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewDefectsStyled = styled.div`
-  height: 100vh;
+  /* height: 100vh; */
   /* width: 100vw; */
   display: flex;
   /* background: #f1f1f1; */
@@ -38,7 +38,7 @@ export const NewDefectsStyled = styled.div`
 
   .defect-list-container {
     /* background-color: gray; */
-    height: 100vh;
+    /* height: 100vh; */
     /* overflow: hidden; */
 
     .defects {
@@ -49,14 +49,14 @@ export const NewDefectsStyled = styled.div`
 
       .defectlist {
         background-color: #373b44;
-        height: 65vh;
+        /* height: 65vh; */
         overflow: scroll;
         ::-webkit-scrollbar {
           display: none;
         }
         .listdata {
           color: white;
-          background-color:  #4286f4;
+          background-color: #4286f4;
           margin: 5px;
           align-items: center;
 
@@ -70,6 +70,19 @@ export const NewDefectsStyled = styled.div`
           }
         }
       }
+    }
+  }
+
+  .section-2 {
+    display: flex;
+    padding: 40px;
+
+    .management-section {
+      margin: auto;
+      background-color: #83a4d4;
+      width: 80vw;
+      padding: 20px;
+      border-radius: 10px;
     }
   }
 `;

@@ -12,11 +12,7 @@
         "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
         "segement": "Surface-FTR-139"
       },
-      {
-        "description": "LSD not fitted properly ",
-        "segement": "Surface-FTR-139",
-        "new": "true"
-      },
+     
       {
         "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
         "segement": "Bluetooth-139"
@@ -97,8 +93,8 @@
       },
       {
         "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
-        "segement": "Bluetooth-139",
-        "new": "true"
+        "segement": "Bluetooth-139"
+      
       },
       {
         "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
