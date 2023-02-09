@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const NewDefectsStyled = styled.div`
   /* height: 100vh; */
-  /* width: 100vw; */
+  width: -webkit-fill-available;
+ padding-left: 20px;
   display: flex;
   /* background: #f1f1f1; */
   background-color: #141e30;
@@ -75,7 +76,7 @@ export const NewDefectsStyled = styled.div`
 
   .section-2 {
     display: flex;
-    padding: 40px;
+    margin: 110px auto;
 
     .management-section {
       margin: auto;
