@@ -19,10 +19,10 @@ const NewDefects = () => {
       ),
     };
   });
-  console.log(list.filter((element) => element.repaired.length > 0));
+  // console.log(list.filter((element) => element.repaired.length > 0));
 
-  const [newDefectList, setNewDefectList] = useState(
-    list.filter((element) => element.repaired.length > 0)
+  const [newDefectList, setNewDefectList] = useState([]
+    // list.filter((element) => element.repaired.length > 0)
   );
 
   useEffect(() => {
@@ -43,6 +43,7 @@ const NewDefects = () => {
 
       console.log(list.filter((element) => element.repaired.length > 0));
       setNewDefectList(list.filter((element) => element.repaired.length > 0));
+      console.log(list1)
     } else {
       let list = data.filter((element) => element.model === e.target.value);
       let list1 = list.map((element) => {
@@ -50,10 +51,12 @@ const NewDefects = () => {
           ...element,
           repaired: element.repaired.filter(
             (subElement) => subElement.new === "true"
+
           ),
         };
       });
       setNewDefectList(list1);
+      console.log(list1)
 
       checkPeriod();
     }
@@ -202,7 +205,7 @@ const NewDefects = () => {
       <div className="defect-list-container container-fluid">
         <div className="defects">
           <div className="defectlist">
-            {newDefectList
+            {newDefectList.length > 0
               ? newDefectList.map((element) => {
                   return element.repaired.map((item) => {
                     return (
@@ -226,20 +229,98 @@ const NewDefects = () => {
                     );
                   });
                 })
-              : ""}
+              : <div className="d-flex">
+                <h5 style={{margin:"auto", color:"#fff", padding:"20px"}}>NOT FOUND ANY NEW DEFECTS</h5>
+                </div>}
           </div>
         </div>
       </div>
 
       <div className="section-2">
-              <div className="management-section">
-                
+        <div className="management-section">
+          <form class="row g-3">
+            <div class="col-md-4">
+              <label for="inputEmail4" class="form-label">
+                SEGEMENT
+              </label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword4" class="form-label">
+                Descrizione
+              </label>
+              <input type="password" class="form-control" id="inputPassword4" />
+            </div>
+            <div class="col-md-4">
+              <label for="inputAddress" class="form-label">
+                Address
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress"
+                placeholder="1234 Main St"
+              />
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">
+                Address 2
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="inputAddress2"
+                placeholder="Apartment, studio, or floor"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">
+                City
+              </label>
+              <input type="text" class="form-control" id="inputCity" />
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">
+                State
+              </label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">
+                Zip
+              </label>
+              <input type="text" class="form-control" id="inputZip" />
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  id="gridCheck"
+                />
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
               </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">
+                Sign in
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-
     </NewDefectsStyled>
   );
 };
-
 
 export default NewDefects;
