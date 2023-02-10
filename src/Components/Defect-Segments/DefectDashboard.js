@@ -7,17 +7,34 @@ import {
   add_repaired_defect,
 } from "../../Redux/Reducers/vehicle";
 import logo from "../../Images/FCA_logo-removebg-preview.png";
-import data from "../DefectInformation.json";
+
 
 const DefectDashboard = () => {
   const location = useLocation();
+
+  const [inputSegement, setInputSegement] = useState("all");
+  const [loginedUser, setLoginedUser] = useState();
+  // Disable segement state
+  const [surface_RH, setSurface_RH] = useState(true);
+  const [surface_FTR, setSurface_FTR] = useState(false);
+  const [Electrical_1, setElectrical_1] = useState(false);
+  const [Bluetooth_139, setBluetooth_139] = useState(false);
+  const [Surface_LH, setSurface_LH] = useState(true);
+  const [Rear_Int, setRear_Int] = useState(false);
+  const [Rear_EXT, setRear_EXT] = useState(false);
+  const [RH_Exterior, setRH_Exterior] = useState(false);
+  const [LH_Exterior, setLH_Exterior] = useState(false);
+  const [Electrical_2, setElectrical_2] = useState(false);
+  const [Front_EXT, setFront_EXT] = useState(true);
+  const [Door_Closing, setDoor_Closing] = useState(false);
+
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // const vehicle = useSelector((state) => state.vehicle);
   const vehicle_data = useSelector((state) => state.vehicle);
 
-  const [inputSegement, setInputSegement] = useState("all");
+  
 
   const setSegement = (e) => {
     setInputSegement(e.target.value);
@@ -28,6 +45,24 @@ const DefectDashboard = () => {
     dispatch(remove_vehicle_defect(defect._id));
     // save();
   };
+
+  const segementAssigned = (LoginedUser)=>{
+    fetch(`https://easy-gray-camel-sock.cyclic.app/get-assigned-segement-data/${LoginedUser}`,{method:"GET"})
+    .then((res)=>{
+      return res.json();  
+    })
+    .then((user)=>{
+      if(user.username !== LoginedUser){
+        console.log("hello ji")
+      }
+    })
+  }
+
+  useEffect(()=>{
+    setLoginedUser(localStorage.getItem("username"))
+    segementAssigned(localStorage.getItem("username"))
+
+  },[])
 
   // const save =()=>{
   //   fetch('https://easy-gray-camel-sock.cyclic.app/add_vehicle', {method:"POST", body:JSON.stringify(vehicle_data[0]), headers: { "Content-Type": "application/json" } })
@@ -172,78 +207,78 @@ const DefectDashboard = () => {
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
 
-              <div
-                className="a-segment col-md-3 border border-info"
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${surface_RH ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/surface-RH-139-defects")}
               >
                 <h5>Surface RH 139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${surface_FTR ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/surface-FTR-139-defects")}
               >
                 <h5>Surface-FTR-139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Electrical_1 ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/electrical-1-140-defects")}
               >
                 <h5>Electrical-1-140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Bluetooth_139 ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/bluetooth-139-defect")}
               >
                 <h5>Bluetooth-139</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Surface_LH ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/surface-LH-140-defect")}
               >
                 <h5>Surface-LH-140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Rear_Int ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/rear-INT-140-defects")}
               >
                 <h5>Rear-Int-140</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Rear_EXT ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/rear-EXT-141-defects")}
               >
                 <h5>Rear-EXT-141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${RH_Exterior ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/rh-exterior-141-defects")}
               >
                 <h5>RH-Exterior-141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+               className={`a-segment col-md-3 btn btn-primary ${LH_Exterior ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/lh-exterior-141-defects")}
               >
                 <h5>LH-Exterior-141</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
-                onClick={() => navigate("/electrical-2-142-defects")}
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Electrical_2 ? "text-light" : "disabled"}`}
+                onClick={() => navigate("/electrical-2-142-defects ")}
               >
                 <h5>Electrical-2-142</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Front_EXT ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/front-EXT-142-defects")}
               >
                 <h5>Front EXT-142</h5>
-              </div>
-              <div
-                className="a-segment col-md-3 border border-info"
+              </button>
+              <button
+                className={`a-segment col-md-3 btn btn-primary ${Door_Closing ? "text-light" : "disabled"}`}
                 onClick={() => navigate("/door-closing-142-defects")}
               >
                 <h5>Door-Closing-142</h5>
-              </div>
+              </button>
 
             </div>
           </div>

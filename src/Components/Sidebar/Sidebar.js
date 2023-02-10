@@ -90,7 +90,7 @@ export default Sidebar;
 
 const SIDEBAR = styled.section`
   /* width: 220px;   */
-  background-color: #1a1a27;
+  background-color: rgb(26 26 39/60%);
   height: 100vh;
   display: flex;
   flex-direction: column;
