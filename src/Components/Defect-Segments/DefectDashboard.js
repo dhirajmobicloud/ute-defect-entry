@@ -1,50 +1,29 @@
-import React, { useState, useEffect ,} from "react";
+import React, { useState, useEffect } from "react";
 import { DefectDashboardStyle } from "../Styled-Components/DefectDashboardStyle";
-import { useNavigate,useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { remove_vehicle_defect, add_repaired_defect } from "../../Redux/Reducers/vehicle";
-import logo from '../../Images/FCA_logo-removebg-preview.png';
-import data from '../DefectInformation.json'
-
+import {
+  remove_vehicle_defect,
+  add_repaired_defect,
+} from "../../Redux/Reducers/vehicle";
+import logo from "../../Images/FCA_logo-removebg-preview.png";
+import data from "../DefectInformation.json";
 
 const DefectDashboard = () => {
-  const location=useLocation();
-  const arraydata=["Surface RH 139","Surface FTR 139","Bluetooth 139","Electrical 1 140","Surface LH 140","Rear Int 140","Rear EXT 141","RH Exterior 141","LH Exterior 141","Electrical 2 142","Front EXT 142","Door Closing 142"];
-  let userdata=localStorage.getItem('username');
-  console.log("UserData is",userdata);
-  function Myfunction1(userdata)
-  {
-    let myvalues;
-    for(let i=0;i<data.length;i++)
-    {
-      if(data[i].username===userdata)
-      {
-        myvalues=data[i].defect_check_permission;
-      }
-    }
-    return myvalues;
-  }
-   let UserSegments=Myfunction1(userdata);
-   console.log(UserSegments);
+  const location = useLocation();
 
-  function MyvaluesCheck(values)
-  {
-   let value= UserSegments.includes(values)
-   return value;
-  }
   const navigate = useNavigate();
   const dispatch = useDispatch();
   // const vehicle = useSelector((state) => state.vehicle);
   const vehicle_data = useSelector((state) => state.vehicle);
 
-  const [inputSegement, setInputSegement] = useState('all');
- 
+  const [inputSegement, setInputSegement] = useState("all");
+
   const setSegement = (e) => {
     setInputSegement(e.target.value);
   };
 
-
-  const Add_repaired =  (defect) => {
+  const Add_repaired = (defect) => {
     dispatch(add_repaired_defect(defect));
     dispatch(remove_vehicle_defect(defect._id));
     // save();
@@ -76,7 +55,6 @@ const DefectDashboard = () => {
             onChange={setSegement}
             className="form-select form-select-sm"
             aria-label=".form-select-sm example"
-            
           >
             {/* <option >Choose Segement</option> */}
             <option value="all">All defects</option>
@@ -95,7 +73,7 @@ const DefectDashboard = () => {
           </select>
           <div className="defect-outer">
             {inputSegement === "all"
-              ? vehicle_data[0].defect.map((element, index) => {
+              ? vehicle_data.defect.map((element, index) => {
                   console.log(inputSegement);
                   return (
                     <div className="defect" key={index}>
@@ -115,7 +93,7 @@ const DefectDashboard = () => {
                     </div>
                   );
                 })
-              : vehicle_data[0].defect
+              : vehicle_data.defect
                   .filter((element) => {
                     return element.Segement === inputSegement;
                   })
@@ -148,8 +126,7 @@ const DefectDashboard = () => {
             <h3>Repaired</h3>
           </div>
           {inputSegement === "all"
-            ? vehicle_data[0].repaired
-            .map((element) => {
+            ? vehicle_data.repaired.map((element) => {
                 return (
                   <div className="repaired">
                     <div className="repaired-name">
@@ -160,7 +137,7 @@ const DefectDashboard = () => {
                   </div>
                 );
               })
-            : vehicle_data[0].repaired
+            : vehicle_data.repaired
                 .filter((items) => items.Segement === inputSegement)
                 .map((element) => {
                   return (
@@ -183,42 +160,91 @@ const DefectDashboard = () => {
             <img src={logo} alt="logo" />
           </div>
           <div className="info  ">
-            <h4>MODEL : {vehicle_data[0].model}</h4>
-            <h4> Vin Number : {vehicle_data[0].win_number}</h4>
+            <h4>MODEL : {vehicle_data.model}</h4>
+            <h4> Vin Number : {vehicle_data.win_number}</h4>
           </div>
         </div>
         {/* Segments */}
         <div className="defect-segments container-fuild">
           <div className="add-defect-heading">
             <h3>Add Defect</h3>
-
           </div>
           <div className="segments  ">
             <div className="inner-segment d-flex container row g-3">
-            {arraydata.map((values)=>{
-              if(MyvaluesCheck(values)===true)
-              {
-                return(
-                  <div
-                  className="a-segment col-md-3 border border-info"
-                  onClick={() => navigate("/admin-pannel/segement-managenent")}
-                >
-                  <h5 >{values}</h5>
-                </div>
-                )
-              }
-              else if(MyvaluesCheck(values)===false)
-              {
-                return(
-                <div
-                className="a-segment-disabled col-md-3 border border-info"
-                
+
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/surface-RH-139-defects")}
               >
-                <h5 >{values}</h5>
+                <h5>Surface RH 139</h5>
               </div>
-                )
-              }
-            })}
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/surface-FTR-139-defects")}
+              >
+                <h5>Surface-FTR-139</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/electrical-1-140-defects")}
+              >
+                <h5>Electrical-1-140</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/bluetooth-139-defect")}
+              >
+                <h5>Bluetooth-139</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/surface-LH-140-defect")}
+              >
+                <h5>Surface-LH-140</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/rear-INT-140-defects")}
+              >
+                <h5>Rear-Int-140</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/rear-EXT-141-defects")}
+              >
+                <h5>Rear-EXT-141</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/rh-exterior-141-defects")}
+              >
+                <h5>RH-Exterior-141</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/lh-exterior-141-defects")}
+              >
+                <h5>LH-Exterior-141</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/electrical-2-142-defects")}
+              >
+                <h5>Electrical-2-142</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/front-EXT-142-defects")}
+              >
+                <h5>Front EXT-142</h5>
+              </div>
+              <div
+                className="a-segment col-md-3 border border-info"
+                onClick={() => navigate("/door-closing-142-defects")}
+              >
+                <h5>Door-Closing-142</h5>
+              </div>
+
             </div>
           </div>
         </div>

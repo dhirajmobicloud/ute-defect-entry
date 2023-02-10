@@ -24,13 +24,13 @@ const vehicle = createSlice({
       },
       remove_vehicle_defect : (state, action)=>{
       
-        const defects = state[0].defect.filter((element)=> element._id !== action.payload)
+        const defects = state.defect.filter((element)=> element._id !== action.payload)
         return void(state.defect = defects) 
         
       },
       add_repaired_defect : (state, action)=>{
       
-        state[0].repaired
+        state.repaired
         .unshift(action.payload)
         
       }

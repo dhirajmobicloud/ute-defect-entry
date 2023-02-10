@@ -99,7 +99,7 @@ const Segement = (props) => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          {segement_defects[0].defect.length > 0 ? segement_defects[0].defect.filter((items) => items.Segement === props.station)
+          {segement_defects.defect.length > 0 ? segement_defects.defect.filter((items) => items.Segement === props.station)
             .map((element, index) => {
               return (
                 <div className="a-defect" key={index}>
