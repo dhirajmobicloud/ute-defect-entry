@@ -1,9 +1,12 @@
 import React from "react";
 import { SegmentManagementStyle } from "../Styled-Components/SegmentManagementStyle";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SegementManagement = () => {
+
+  const navigate=useNavigate();
   const SegmentData = [
     "Surface RH 139",
     "Surface FTR 139",
@@ -22,7 +25,22 @@ const SegementManagement = () => {
   const [flag, setflag] = useState(false);
   const [segementCollection, setSegementCollection] = useState([]);
 
+  function FetchSegmentData()
+  {
+    axios
+    .get("https://easy-gray-camel-sock.cyclic.app/assigned-segement-data")
+    .then((response) => {
+      setSegementCollection(response.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  }
   useEffect(() => {
+
+    FetchSegmentData();
+
     axios
       .get("https://easy-gray-camel-sock.cyclic.app/users")
       .then((values) => {
@@ -31,14 +49,7 @@ const SegementManagement = () => {
       .catch((err) => {
         console.log(err);
       });
-    axios
-      .get("https://easy-gray-camel-sock.cyclic.app/assigned-segement-data")
-      .then((response) => {
-        setSegementCollection(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  
   }, []);
 
   console.log(userdata);
@@ -64,6 +75,8 @@ const SegementManagement = () => {
   const [selectedSegment, setSelectedSegment] = useState([]);
   const [username, setUsername] = useState("");
   const [defectWork, setDefectWork] = useState([]);
+  const [newusername,setNewUserName]=useState('');
+  const [newuserpassword,setNewUserPassword]=useState('');
 
   const UserNameEnter = (e) => {
     setUsername(e.target.value);
@@ -125,7 +138,7 @@ const SegementManagement = () => {
     if (e.target.checked === true) {
       setDefectWork([...defectWork, e.target.value]);
     } else if (e.target.checked === false) {
-      setDefectWork(defectWork.filter((values) => values != e.target.value));
+      setDefectWork(defectWork.filter((values) => values !== e.target.value));
     }
   };
 
@@ -147,11 +160,15 @@ const SegementManagement = () => {
         console.log(response);
         if (response) {
           alert("Data Inserted Successfully");
+          FetchSegmentData();
+
         }
       })
       .catch((err) => {
         console.log(err);
       });
+
+    
   };
   console.log("Userdata is", userdata);
 
@@ -167,10 +184,12 @@ const SegementManagement = () => {
           <form onSubmit={Mysubmit}>
             <div className="formdata">
               <div className="inputText ">
+                <div className="textinputdata">
                 <h5 className="description h5 form-label">
                   Enter the username
                 </h5>
-
+                <button type="button" className="AddButton btn btn-primary"  data-bs-toggle="modal" data-bs-target="#myModal">Add User</button>
+                </div>
                 <input
                   type="text"
                   placeholder="Enter the name"
@@ -266,6 +285,33 @@ const SegementManagement = () => {
             </tbody>
           </table>
         </div>
+        <div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title">NEW USER ENTRY</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class=" modaluser modal-body">
+        <form>
+          <div className="userdata">
+        <h6 className="description h6 form-label">Enter the username</h6>
+        <input type='text' className=" formname form-control" value={newusername} onChange={(e)=>setNewUserName(e.target.value)}></input>
+        </div>
+        <div className="userdata">
+        <h6 className="description h6 form-label">Enter the password:</h6>
+        <input type='password' className=" formname form-control" value={newusername} onChange={(e)=>setNewUserName(e.target.value)}></input>
+        </div>
+                <button type="submit" className=" Mybutton btn btn-success" data-bs-dismiss>Submit</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</div>
       </div>
     </SegmentManagementStyle>
   );

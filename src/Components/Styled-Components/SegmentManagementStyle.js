@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const SegmentManagementStyle = styled.div`
   background-color: #141e30;
-  height: 169vh;
+  height: auto;
   .segmanage {
     .title {
       margin-bottom: 3rem;
@@ -26,6 +26,17 @@ export const SegmentManagementStyle = styled.div`
           h5 {
             color: #fff;
           }
+          .textinputdata{
+            display: flex;
+            position: inherit;
+            
+          }
+          .AddButton{
+            margin-left: 80%;
+            margin-bottom:1.2rem;
+            
+          }
+
         }
         .checkboxData {
           h5 {
@@ -162,5 +173,18 @@ export const SegmentManagementStyle = styled.div`
         display: flex;
       }
     } */
+    .modaluser{
+      .userdata
+      {
+        margin-bottom: 12px;
+      .formname{
+        border: 2.5px solid black;
+        height: 30px;
+      }
+    }
+    .Mybutton{
+      margin-left:40%;
+    }
+    }
   }
 `;
