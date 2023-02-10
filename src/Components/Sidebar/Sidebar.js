@@ -29,7 +29,7 @@ function Sidebar() {
           <img src={logo} alt="" />
         </div> */}
 
-        <Link className="link" to="vendorlist">
+        <Link className="link" to="admin-dashboard">
           <h4>
             <HexagonFill className="icon" /> Dashboard
           </h4>
@@ -88,7 +88,7 @@ export default Sidebar;
 
 /////////////////---Styled component start from here---/////////////////
 
-const SIDEBAR = styled.div`
+const SIDEBAR = styled.section`
   /* width: 220px;   */
   background-color: #1a1a27;
   height: 100vh;

@@ -1,22 +1,21 @@
-import React, { useEffect } from 'react'
-import { Outlet, useNavigate } from 'react-router-dom'
-import Sidebar from '../Sidebar/Sidebar.js'
-
+import React, { useEffect } from "react";
+import { Outlet, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import Sidebar from "../Sidebar/Sidebar.js";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
-
-    useEffect(()=>{
-        navigate('admin-dashboard')
-    },[])
+  useEffect(() => {
+    navigate("admin-dashboard");
+  }, []);
 
   return (
-    <div>
-    <Sidebar/>
-    <Outlet/>
-    </div>
-  )
-}
+    <>
+      <Sidebar />
+      <Outlet />
+    </>
+  );
+};
 
-export default AdminDashboard
+export default AdminDashboard;
