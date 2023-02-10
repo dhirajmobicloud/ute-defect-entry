@@ -8,24 +8,24 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const vehicle = createSlice({
     name: 'posts',
-    initialState:[
+    initialState:
       {
         model:"Nexon EV", win_number :"0001",defect:[] , repaired:[]
       }
-    ] ,
+     ,
     reducers: {
       Add_vehicle:(state, action)=> {
         state.unshift(action.payload)
       },
       add_vehicle_defect : (state, action)=>{
       
-        state[0].defect.unshift(action.payload)
+        state.defect.unshift(action.payload)
         
       },
       remove_vehicle_defect : (state, action)=>{
       
         const defects = state[0].defect.filter((element)=> element._id !== action.payload)
-        return void(state[0].defect = defects) 
+        return void(state.defect = defects) 
         
       },
       add_repaired_defect : (state, action)=>{

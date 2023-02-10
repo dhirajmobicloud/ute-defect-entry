@@ -1,23 +1,82 @@
 import styled from "styled-components";
 
-export const SegmentManagementStyle=styled.div`
-background-color: #141e30;
-height: 169vh;
-.segmanage
-{
-    margin-left: 2.3rem;
-
-.title{
-    margin-bottom: 3rem;
-    .titledata{
+export const SegmentManagementStyle = styled.div`
+  background-color: #141e30;
+  height: 169vh;
+  .segmanage {
+    .title {
+      margin-bottom: 3rem;
+      .titledata {
         color: white;
         text-shadow: 0.7rem 0.7rem 0.7rem black;
         padding-top: 0.8rem;
         font-size: 210%;
+      }
     }
-}
 
-.formdata{
+    .form-section {
+      display: flex;
+      form {
+        margin: auto;
+        padding: 20px;
+        background-color: darkslategrey;
+        width: 80vw;
+        border-radius: 15px;
+        .inputText {
+          h5 {
+            color: #fff;
+          }
+        }
+        .checkboxData {
+          h5 {
+            color: #d2ffe0;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            /* border-bottom: solid #fff 1px;
+            border-top: solid #fff 1px; */
+            background-color: #2a4848;
+          }
+          .mycheckboxvalues {
+            .checkboxDiv {
+              display: flex;
+              align-items: center;
+              width: 233px;
+              input {
+                margin: 10px;
+                padding: 10px;
+              }
+              span {
+                color: #fff;
+                padding: 5px;
+                margin: 0;
+              }
+            }
+          }
+        }
+        .submit-button {
+          display: flex;
+          padding: 20px;
+          button {
+            margin: auto;
+          }
+        }
+      }
+    }
+
+    .table-section {
+      display: flex;
+      table {
+        width: 90vw;
+        margin: 20px auto;
+        text-align: center;
+        background-color: #1269bb;
+        border-radius: 10px;
+      }
+    }
+
+    /* .formdata{
     margin-left: 1rem;
     margin-top: 1.2rem;
     .inputText{
@@ -90,28 +149,18 @@ height: 169vh;
         border-radius: 2.5rem;
         font-size: 150%;
     }
-}
+} */
 
-.tabledata{
-margin-top: 2rem;
-background-color: #1269BB;
-color:white;
-    .myhead{
-        background-color:#0e5495;
-    }
-    .showdata{
+    /* .tabledata {
+      margin-top: 2rem;
+      background-color: #1269bb;
+      color: white;
+      .myhead {
+        background-color: #0e5495;
+      }
+      .showdata {
         display: flex;
-    }
-    
-    
-}
-
-}
-
-
-
-
-
-
-
-`
+      }
+    } */
+  }
+`;
