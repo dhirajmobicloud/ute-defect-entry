@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const SegmentManagementStyle=styled.div`
 background-color: #141e30;
 height: 169vh;
+.segmanage
+{
+    margin-left: 2.3rem;
 
 .title{
     margin-bottom: 3rem;
@@ -103,7 +106,7 @@ color:white;
     
 }
 
-
+}
 
 
 

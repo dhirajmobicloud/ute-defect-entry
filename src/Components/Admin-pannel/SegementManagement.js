@@ -152,6 +152,7 @@ console.log( userdata.filter((values)=>values.username.includes(username)));
 
   return (
     <SegmentManagementStyle className='container-fluid'>
+      <div className='segmanage container-fluid'>
     <div className='title'>
       <h3 className='titledata h3 text-center'>SEGMENT MANAGEMENT</h3>
     </div>
@@ -224,6 +225,7 @@ console.log( userdata.filter((values)=>values.username.includes(username)));
 
   </tbody>
 </table>
+</div>
    
     </SegmentManagementStyle>
   )
