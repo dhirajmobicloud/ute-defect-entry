@@ -4,22 +4,66 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { add_vehicle_defect, remove_vehicle_defect } from "../../Redux/Reducers/vehicle";
+import {
+  add_vehicle_defect,
+  remove_vehicle_defect,
+} from "../../Redux/Reducers/vehicle";
 
 const Segement = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [defects, setDefects] = useState([]);
+  const [vehicle_data, setVehicle_data] = useState({
+    model: " ",
+    win_number: "",
+    defect: [],
+    repaired: [],
+  });
 
-  const segement_defects = useSelector((state) => state.vehicle);
-  console.log(segement_defects);
+  // fetching vehicle data
 
-  const AddDefect = (defect) => {
-    dispatch(add_vehicle_defect(defect));
+  // const vehicle_data = useSelector((state) => state.vehicle);
+  const getVehicleData = () => {
+    fetch("https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/ev276818", {
+      method: "GET",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((vehicle) => {
+        console.log(vehicle);
+        setVehicle_data(vehicle);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    console.log("hello");
   };
 
-  const RemoveDefect = (id) => {
-    dispatch(remove_vehicle_defect(id));
+  const AddDefect = (defect) => {
+    fetch("http://localhost:5000/add-vehicle-defect/ev276818", {
+      method: "PUT",
+      body: JSON.stringify(defect),
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
+      if (res.status === 200) {
+        getVehicleData();
+        // alert("Success")
+      }
+    });
+  };
+
+  const RemoveDefect = (defect) => {
+    fetch("http://localhost:5000/remove-vehicle-defect/ev276818", {
+      method: "PUT",
+      body: JSON.stringify(defect),
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
+      if (res.status === 200) {
+        getVehicleData();
+        // alert("Success")
+      }
+    });
   };
 
   const getData = () => {
@@ -36,6 +80,7 @@ const Segement = (props) => {
 
   useEffect(() => {
     getData();
+    getVehicleData();
     // eslint-disable-next-line
   }, []);
 
@@ -51,10 +96,7 @@ const Segement = (props) => {
       <div className="select-defect">
         <div className="section-one">
           <div className="back-button ">
-            <span
-              className="btn"
-              onClick={() => navigate("/defect-dashboard")}
-            >
+            <span className="btn" onClick={() => navigate("/defect-dashboard")}>
               Back
             </span>
           </div>
@@ -62,7 +104,9 @@ const Segement = (props) => {
             <h3>{props.station}</h3>
           </div>
           <div className="Add-button">
-            <span className="btn btn-outline-info text-white">Add new defect</span>
+            <span className="btn btn-outline-info text-white">
+              Add new defect
+            </span>
           </div>
         </div>
         <div className="section-two">
@@ -82,11 +126,17 @@ const Segement = (props) => {
         </div>
         {/* <h5 className="heading">defect list</h5> */}
         <div className="section-three">
-         <span  className="heading"><h5>defect list</h5></span>
+          <span className="heading">
+            <h5>defect list</h5>
+          </span>
           <div className="defect-list container">
             {defects.map((element, index) => {
               return (
-                <div key={index} className="container" onClick={() => AddDefect(element)}>
+                <div
+                  key={index}
+                  className="container"
+                  onClick={() => AddDefect(element)}
+                >
                   <h5>{element.Descrizione}</h5>
                 </div>
               );
@@ -99,20 +149,23 @@ const Segement = (props) => {
           <h5>selected defects</h5>
         </div>
         <div className="container">
-          {segement_defects.defect.length > 0 ? segement_defects.defect.filter((items) => items.Segement === props.station)
-            .map((element, index) => {
-              return (
-                <div className="a-defect" key={index}>
-                  <h6>{element.Descrizione}</h6>
-                  <span
-                    className="btn btn-sm btn-danger"
-                    onClick={() => RemoveDefect(element._id)}
-                  >
-                    Remove
-                  </span>
-                </div>
-              );
-            }): ""}
+          {vehicle_data.defect.length > 0
+            ? vehicle_data.defect
+                .filter((items) => items.Segement === props.station)
+                .map((element, index) => {
+                  return (
+                    <div className="a-defect" key={index}>
+                      <h6>{element.Descrizione}</h6>
+                      <span
+                        className="btn btn-sm btn-danger"
+                        onClick={() => RemoveDefect(element)}
+                      >
+                        Remove
+                      </span>
+                    </div>
+                  );
+                })
+            : ""}
         </div>
       </div>
     </SurfaceRh1Styled>

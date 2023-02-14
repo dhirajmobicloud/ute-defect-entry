@@ -19,10 +19,10 @@ export const DefectDashboardStyle = styled.div`
       padding: 10px;
       height: 50%;
       /* overflow: scroll; */
-        border-bottom: solid gold 1px;
-        ::-webkit-scrollbar {
-          display: none;
-        }
+      border-bottom: solid gold 1px;
+      ::-webkit-scrollbar {
+        display: none;
+      }
 
       .defect-outer {
         height: 30vh;
@@ -57,7 +57,7 @@ export const DefectDashboardStyle = styled.div`
           padding-left: 10px;
           h5 {
             font-size: 13px;
-            span{
+            span {
               font-style: italic;
               text-decoration: underline;
               padding: 10px;
@@ -102,7 +102,7 @@ export const DefectDashboardStyle = styled.div`
           padding-left: 10px;
           h5 {
             font-size: 13px;
-            span{
+            span {
               font-style: italic;
               text-decoration: underline;
               padding: 10px;
@@ -126,10 +126,18 @@ export const DefectDashboardStyle = styled.div`
       display: flex;
       flex-direction: column;
 
-      .logo img{
-        width: 150px;
-        height: 50px;
-        margin: 10px;
+      .logo {
+        display: flex;
+        justify-content: space-between;
+        h6 {
+          color: #fff;
+          margin: 10px;
+        }
+        img {
+          width: 150px;
+          height: 50px;
+          margin: 10px;
+        }
       }
 
       .info {
@@ -138,7 +146,7 @@ export const DefectDashboardStyle = styled.div`
         margin: 20px auto;
         border-radius: 10px;
         background: linear-gradient(to right, #e0eafc, #cfdef3);
-        h4{
+        h4 {
           margin: 20px;
         }
       }
@@ -185,18 +193,18 @@ export const DefectDashboardStyle = styled.div`
             color: black;
             background-color: #58c8eb;
           } */
-          /* .a-segment:not(:disabled)
+        /* .a-segment:not(:disabled)
           {
             background-color:aquamarine;
             color: black;
           } */
 
-          /* .a-segment:disabled{
+        /* .a-segment:disabled{
             color: darkgray;
             background-color: darkgray;
           } */
 
-          /* .a-segment-disabled {
+        /* .a-segment-disabled {
           display: flex;
           width: 185px;
           height: 60px;
@@ -212,9 +220,6 @@ export const DefectDashboardStyle = styled.div`
             text-align: center;
           }
         } */
-
-         
-        
       }
     }
   }

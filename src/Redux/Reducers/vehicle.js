@@ -10,7 +10,8 @@ const vehicle = createSlice({
     name: 'posts',
     initialState:
       {
-        model:"Nexon EV", win_number :"0001",defect:[] , repaired:[]
+        model:"Nexon EV", win_number :"0001",defect:[] 
+        , repaired:[]
       }
      ,
     reducers: {
