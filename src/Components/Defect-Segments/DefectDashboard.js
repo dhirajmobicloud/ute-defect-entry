@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { DefectDashboardStyle } from "../Styled-Components/DefectDashboardStyle";
 import { useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  remove_vehicle_defect,
-  add_repaired_defect,
-} from "../../Redux/Reducers/vehicle";
+// import { useDispatch } from "react-redux";
+// import {
+//   remove_vehicle_defect,
+//   add_repaired_defect,
+// } from "../../Redux/Reducers/vehicle";
 import logo from "../../Images/FCA_logo-removebg-preview.png";
 
 const DefectDashboard = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // Common states
 
@@ -255,7 +255,7 @@ const DefectDashboard = () => {
         <div className="vehicle-information">
           <div className="logo">
             <img src={logo} alt="logo" />
-            <h6>{loginedUser.username}</h6>
+            <h6>{loginedUser.username ? loginedUser.username : "This user don't have any kind of access" }</h6>
           </div>
           <div className="info  ">
             <h4>MODEL : {vehicle_data.model}</h4>

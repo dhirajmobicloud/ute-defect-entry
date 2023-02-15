@@ -1,12 +1,12 @@
 import React from "react";
 import { SegmentManagementStyle } from "../Styled-Components/SegmentManagementStyle";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const SegementManagement = () => {
 
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
   const SegmentData = [
     "Surface-RH-139",
     "Surface-FTR-139",
@@ -76,7 +76,7 @@ const SegementManagement = () => {
   const [username, setUsername] = useState("");
   const [defectWork, setDefectWork] = useState([]);
   const [newusername,setNewUserName]=useState('');
-  const [newuserpassword,setNewUserPassword]=useState('');
+  // const [newuserpassword,setNewUserPassword]=useState('');
 
   const UserNameEnter = (e) => {
     setUsername(e.target.value);
@@ -269,7 +269,7 @@ const SegementManagement = () => {
             <tbody>
               {segementCollection.map((values) => {
                 return (
-                  <tr scope="row">
+                  <tr >
                     <td>
                       <h5 className="description h5 form-label">
                         {values.username}
