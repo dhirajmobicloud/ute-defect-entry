@@ -61,7 +61,7 @@ const DefectDashboard = () => {
   // Add repaired defect fuction
 
   const Add_repaired = (defect) => {
-        fetch('http://localhost:5000/repaired-vehicle-defect/ev276818', {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
+        fetch('https://easy-gray-camel-sock.cyclic.app/repaired-vehicle-defect/00011100', {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
         .then((res)=>{
           if(res.status === 200){
             getVehicleData()
