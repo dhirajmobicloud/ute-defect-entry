@@ -1,4 +1,3 @@
-import { elementRoles } from "aria-query";
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 import { NewDefectsStyled } from "../Styled-Components/NewDefectsStyled";
@@ -7,8 +6,8 @@ import data from "./vehicleinfo.json";
 const NewDefects = () => {
   const [model, setModel] = useState("all");
   const [period, setPeriod] = useState("");
-  const [startdate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  // const [startdate, setStartDate] = useState();
+  // const [endDate, setEndDate] = useState();
   const [defectSegment, setDefectSegement] = useState("");
   const [timePeriod, setTimePeriod] = useState("");
   const [pending, setPending] = useState("Repaired");
@@ -42,6 +41,8 @@ const NewDefects = () => {
       setNewDefectList(list.filter((element) => element.repaired.length > 0));
     } else if (pending === "Pending") {
       setNewDefectList(list.filter((element) => element.defect.length > 0));
+    }else{
+      return
     }
     modelHandler(model);
     console.log(newDefectList);

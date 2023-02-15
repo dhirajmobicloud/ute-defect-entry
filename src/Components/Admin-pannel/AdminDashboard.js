@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import Sidebar from "../Sidebar/Sidebar.js";
 
 const AdminDashboard = () => {
@@ -8,6 +7,7 @@ const AdminDashboard = () => {
 
   useEffect(() => {
     navigate("admin-dashboard");
+     // eslint-disable-next-line
   }, []);
 
   return (

@@ -35,7 +35,7 @@ const AdminLogin = () => {
           />
         </div>
         <div className="buttons d-flex py-4 ">
-        <button type="button" className="btn btn-primary m-auto" role='button' onClick={() => navigate("/admin-pannel")} >
+        <button type="button" className="btn btn-primary m-auto"  onClick={() => navigate("/admin-pannel")} >
           LOGIN
         </button>
         </div>
