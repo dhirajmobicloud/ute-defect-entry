@@ -1,17 +1,11 @@
 import React from "react";
-import { SurfaceRh1Styled } from "../Styled-Components/SegementStyled";
+import { SegementStyled } from "../Styled-Components/SegementStyled";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  add_vehicle_defect,
-  remove_vehicle_defect,
-} from "../../Redux/Reducers/vehicle";
 
 const Segement = (props) => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [defects, setDefects] = useState([]);
   const [vehicle_data, setVehicle_data] = useState({
     model: " ",
@@ -41,7 +35,7 @@ const Segement = (props) => {
   };
 
   const AddDefect = (defect) => {
-    fetch("http://localhost:5000/add-vehicle-defect/ev276818", {
+    fetch("https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/ev276818", {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -92,7 +86,7 @@ const Segement = (props) => {
   //   },[AddDefect, RemoveDefect])
 
   return (
-    <SurfaceRh1Styled>
+    <SegementStyled >
       <div className="select-defect">
         <div className="section-one">
           <div className="back-button ">
@@ -168,7 +162,7 @@ const Segement = (props) => {
             : ""}
         </div>
       </div>
-    </SurfaceRh1Styled>
+    </SegementStyled>
   );
 };
 

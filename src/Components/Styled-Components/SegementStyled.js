@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SurfaceRh1Styled = styled.div`
+export const SegementStyled = styled.div`
 height: 100vh;
 display: flex   ;
 background: -webkit-linear-gradient(to right, #4286f4, #373B44);  
