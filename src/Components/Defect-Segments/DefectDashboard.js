@@ -39,7 +39,7 @@ const DefectDashboard = () => {
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch('https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/ev276818', {method:"GET"})
+    fetch('https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/00011100', {method:"GET"})
     .then((res)=>{
       return res.json()
     })

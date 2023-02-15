@@ -18,7 +18,7 @@ const Segement = (props) => {
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch("https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/ev276818", {
+    fetch("https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/00011100", {
       method: "GET",
     })
       .then((res) => {
@@ -35,7 +35,7 @@ const Segement = (props) => {
   };
 
   const AddDefect = (defect) => {
-    fetch("https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/ev276818", {
+    fetch("https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/00011100", {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -48,7 +48,7 @@ const Segement = (props) => {
   };
 
   const RemoveDefect = (defect) => {
-    fetch("http://localhost:5000/remove-vehicle-defect/ev276818", {
+    fetch("http://localhost:5000/remove-vehicle-defect/00011100", {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
