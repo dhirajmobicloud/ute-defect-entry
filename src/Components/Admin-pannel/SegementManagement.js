@@ -8,18 +8,18 @@ const SegementManagement = () => {
 
   const navigate=useNavigate();
   const SegmentData = [
-    "Surface RH 139",
-    "Surface FTR 139",
-    "Bluetooth 139",
-    "Electrical 1 140",
-    "Surface LH 140",
-    "Rear Int 140",
-    "Rear EXT 141",
-    "RH Exterior 141",
-    "LH Exterior 141",
-    "Electrical 2 142",
-    "Front EXT 142",
-    "Door Closing 142",
+    "Surface-RH-139",
+    "Surface-FTR-139",
+    "Bluetooth-139",
+    "Electrical-1-140",
+    "Surface-LH-140",
+    "Rear-Int-140",
+    "Rear-EXT-141",
+    "RH-Exterior-141",
+    "LH-Exterior-141",
+    "Electrical-2-142",
+    "Front-EXT-142",
+    "Door-Closing-142",
   ];
   const [userdata, setUserdata] = useState([]);
   const [flag, setflag] = useState(false);
