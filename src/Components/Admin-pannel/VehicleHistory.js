@@ -9,11 +9,16 @@ const VehicleHistory = () => {
   const [model, setModel] = useState("all");
   const [period, setPeriod] = useState("all");
   const [startdate, setStartDate] = useState();
+  const [defaultdata,setDefaultData]=useState(data);
+  const [flagger,setflagger]=useState(0);
   const [endDate, setEndDate] = useState();
   const [difectList, setDefectList] = useState(data);
   const [defectSegment, setDefectSegement] = useState("all");
   const [weekDate, setWeekDate] = useState("");
   const [flag, setflag] = useState(0);
+  const [newData,setNewData]=useState([]);
+  const [newlist,setNewlist]=useState([]);
+  let [jsondata,setJsonData]=useState({vin:'',model:'',repaired:[]});
 
   console.log("difectlist", difectList);
   console.log("Flag is", flag);
@@ -632,6 +637,50 @@ const VehicleHistory = () => {
     }
   };
 
+
+
+  const myNewFunction=(e)=>{
+    if(e.target.value==="new")
+    {
+      let myarray=new Array();
+      
+      
+      for(let i=0;i<difectList.length;i++)
+      {
+let mydata=[];
+        
+        for(let j=0;j<difectList[i].repaired.length;j++)
+        {
+          let mydata={vin:'',model:'',repaired:[]}
+          let repairedarray=[];
+          if(difectList[i].repaired[j].new==="true")
+          {
+            repairedarray.push(difectList[i].repaired[j]);
+            mydata.vin=difectList[i].vin;
+            mydata.model=difectList[i].model;
+            mydata.repaired=repairedarray;
+          console.log("Data is",mydata);
+          myarray.push(mydata);
+          }
+         
+     
+          
+        }
+      
+      }
+
+      setDefectList(myarray);
+      alert("NewData");
+      
+
+    }
+    else{
+      setDefectList(defaultdata);
+      alert("DefaultData");
+    }
+  }
+
+  
   /*
   function DateSpanChecker(values)
   {
@@ -768,7 +817,8 @@ const VehicleHistory = () => {
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio1"
-              value="option1"
+              value="default"
+              onChange={(e)=>myNewFunction(e)}
             />
             <label className="form-check-label" htmlFor="inlineRadio1">
               DEFAULT
@@ -780,7 +830,8 @@ const VehicleHistory = () => {
               type="radio"
               name="inlineRadioOptions"
               id="inlineRadio2"
-              value="option2"
+              value="new"
+              onChange={(e)=>myNewFunction(e)}
             />
             <label className="form-check-label" htmlFor="inlineRadio2">
               NEW
