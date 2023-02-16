@@ -111,6 +111,13 @@ const Segement = (props) => {
   const addNewDefect=(e)=>{
     e.preventDefault()
     console.log(newDefect)
+    fetch(`http://localhost:5000/add_${props.segement}`,{method:"POST" , body:JSON.stringify(newDefect), headers: { "Content-Type": "application/json" }}).then((res)=>{
+      if(res){
+       getData()
+      }else{
+        return 
+      }
+   })
   }
 
   useEffect(() => {

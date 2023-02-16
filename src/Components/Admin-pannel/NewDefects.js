@@ -1,7 +1,7 @@
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 import { NewDefectsStyled } from "../Styled-Components/NewDefectsStyled";
-import data from "./vehicleinfo.json";
+// import data from "./vehicleinfo.json";
 
 const NewDefects = () => {
   const [model, setModel] = useState("all");
@@ -11,6 +11,7 @@ const NewDefects = () => {
   const [defectSegment, setDefectSegement] = useState("");
   const [timePeriod, setTimePeriod] = useState("");
   const [pending, setPending] = useState("Repaired");
+  const [data, setData] = useState([]) 
 
   let list = data.map((element) => {
     if (pending === "Repaired") {
@@ -32,9 +33,20 @@ const NewDefects = () => {
   // console.log(list.filter((element) => element.repaired.length > 0));
 
   const [newDefectList, setNewDefectList] = useState(
-    []
-    // list.filter((element) => element.repaired.length > 0)
+    
+    list.filter((element) => element.repaired.length > 0)
   );
+
+  useEffect(()=>{
+    fetch('http://localhost:5000/all_vehicles', {method:"GET"})
+    .then((res)=>{
+       return res.json();
+    }).then((data)=>{
+      console.log(data)
+      setData(data)
+
+    })
+  },[])
 
   useEffect(() => {
     if (pending === "Repaired") {
