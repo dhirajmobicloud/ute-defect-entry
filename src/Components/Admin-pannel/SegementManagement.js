@@ -210,6 +210,7 @@ console.log("Table Entry is",tableEntry);
   const UpdateSubmit=(e)=>{
     e.preventDefault();
     console.log(JSON.stringify(tableEntry));
+    alert(JSON.stringify(tableEntry));
     
   }
                 

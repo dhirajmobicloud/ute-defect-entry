@@ -32,7 +32,7 @@ export const SegmentManagementStyle = styled.div`
             
           }
           .AddButton{
-          margin-left: 70%;
+          margin-left: 76%;
             margin-bottom:1rem;
             
           }
