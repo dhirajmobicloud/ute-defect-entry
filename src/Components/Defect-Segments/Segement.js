@@ -16,6 +16,12 @@ const Segement = (props) => {
     repaired: [],
   });
 
+  const [newDefect, setNewDefect] = useState({
+    Descrizione: "",
+  });
+
+  // console.log( fetchData[0].Digit_13)
+
   // fetching vehicle data
 
   // const vehicle_data = useSelector((state) => state.vehicle);
@@ -37,32 +43,32 @@ const Segement = (props) => {
   };
 
   const AddDefect = (defect) => {
-    fetch(
-      "https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/00011100",
-      {
-        method: "PUT",
-        body: JSON.stringify(defect),
-        headers: { "Content-Type": "application/json" },
-      }
-    ).then((res) => {
-      if (res.status === 200) {
-        getVehicleData();
-        // alert("Success")
-      }
-    });
-  };
-
-  const RemoveDefect = (defect) => {
-    fetch("https://easy-gray-camel-sock.cyclic.app/remove-vehicle-defect/00011100", {
+    fetch("http://localhost:5000/add-vehicle-defect/00011100", {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
-    }).then((res) => {
-      if (res.status === 200) {
-        getVehicleData();
-        // alert("Success")
-      }
-    });
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setVehicle_data(data);
+      });
+  };
+
+  const RemoveDefect = (defect) => {
+    fetch("http://localhost:5000/remove-vehicle-defect/00011100", {
+      method: "PUT",
+      body: JSON.stringify(defect),
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data.info);
+        setVehicle_data(data.info);
+      });
   };
 
   const getData = () => {
@@ -73,6 +79,7 @@ const Segement = (props) => {
         return res.json();
       })
       .then((data) => {
+        console.log(data[1].Digit_13);
         setFetchData(data);
         setDefects(data);
       });
@@ -91,18 +98,26 @@ const Segement = (props) => {
     }
   };
 
+  const newDefectOnChange = (e) => {
+    setNewDefect({
+      Descrizione: e.target.value,
+      EOL_Station: fetchData[0].EOL_Station,
+      Station_No: fetchData[0].Station_No,
+      Segement: fetchData[0].Segement,
+      new : true
+    });
+  };
+
+  const addNewDefect=(e)=>{
+    e.preventDefault()
+    console.log(newDefect)
+  }
+
   useEffect(() => {
     getData();
     getVehicleData();
     // eslint-disable-next-line
   }, []);
-
-  // useEffect(()=>{
-  //   fetch('https://easy-gray-camel-sock.cyclic.app/add_vehicle', {method:"POST", body:segement_defects[0]})
-  //   .then((res)=>{
-  //     console.log(res)
-  //   })
-  //   },[AddDefect, RemoveDefect])
 
   return (
     <SegementStyled>
@@ -146,7 +161,11 @@ const Segement = (props) => {
                     ></button>
                   </div>
                   <div className="modal-body">
-                    <form class="row g-3 needs-validation" novalidate>
+                    <form
+                      class="row g-3 needs-validation"
+                      novalidate
+                      onSubmit={addNewDefect}
+                    >
                       <div class="col-md-12">
                         <label htmlFor="validationCustom03" class="form-label">
                           Description
@@ -156,6 +175,8 @@ const Segement = (props) => {
                           class="form-control"
                           id="validationCustom03"
                           required
+                          name="Descrizione"
+                          onChange={newDefectOnChange}
                         />
                         <div class="invalid-feedback">
                           Please provide a valid city.
@@ -163,11 +184,7 @@ const Segement = (props) => {
                       </div>
 
                       <div class="submit-btn col-12">
-                        <button
-                          class=" btn btn-warning"
-                          type="submit"
-                  
-                        >
+                        <button class=" btn btn-warning" type="submit">
                           ADD
                         </button>
                       </div>
