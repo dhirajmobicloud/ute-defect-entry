@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
 import { SegmentManagementStyle } from "../Styled-Components/SegmentManagementStyle";
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 
 const SegementManagement = () => {
- 
-  let navigate=useNavigate();
-  let SegmentData = [
+
+  // const navigate=useNavigate();
+  const SegmentData = [
     "Surface-RH-139",
     "Surface-FTR-139",
     "Bluetooth-139",
@@ -77,21 +77,12 @@ const SegementManagement = () => {
     );
   }
 
-  let workType = ["Repair Defect", "Add Defect"];
-  let [selectedSegment, setSelectedSegment] = useState([]);
-  let [username, setUsername] = useState("");
-  let [defectWork, setDefectWork] = useState([]);
-  let [newusername,setNewUserName]=useState('');
-  let [newuserpassword,setNewUserPassword]=useState('');
-  let [changePassword,setChangePassword]=useState('');
-  let [changeSegement,setChangeSegment]=useState([]);
-  let [segSolution,setSegSolution]=useState([]);
-  let [worksolution,setWorkSolution]=useState([]);
-  let [myans,setMyAns]=useState([]);
-let [mycheckedData,setMyCheckedData]=useState([]);
-
-
- 
+  const workType = ["Repair Defect", "Add Defect"];
+  const [selectedSegment, setSelectedSegment] = useState([]);
+  const [username, setUsername] = useState("");
+  const [defectWork, setDefectWork] = useState([]);
+  const [newusername,setNewUserName]=useState('');
+  const [newuserpassword,setNewUserPassword]=useState('');
 
   const UserNameEnter = (e) => {
     setUsername(e.target.value);
@@ -321,7 +312,7 @@ console.log("Table Entry is",tableEntry);
             <tbody>
               {segementCollection.map((values,index) => {
                 return (
-                  <tr scope="row" >
+                  <tr scope="row">
                     <td>
                       <h5 className="description h5 form-label">
                         {values.username}

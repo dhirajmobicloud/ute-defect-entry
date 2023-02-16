@@ -1,8 +1,8 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { HexagonFill, CaretDownFill, List } from "react-bootstrap-icons";
-import logo from "../../Images/FCA_logo-removebg-preview.png";
+import { HexagonFill, List } from "react-bootstrap-icons";
+// import logo from "../../Images/FCA_logo-removebg-preview.png";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import{faBars} from '@fortawesome/free-solid-svg-icons'
 
@@ -90,7 +90,7 @@ export default Sidebar;
 
 const SIDEBAR = styled.section`
   /* width: 220px;   */
-  background-color: #1a1a27;
+  background-color: rgb(26 26 39/60%);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -176,7 +176,7 @@ const SIDEBAR = styled.section`
     height: 100%;
     /* display: flex; */
     color: #ffff;
-    background-color: #181c32;
+    /* background-color: #181c32; */
     width: 220px;
     align-items: center;
     text-align: left;
