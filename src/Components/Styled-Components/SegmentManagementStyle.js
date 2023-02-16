@@ -32,8 +32,8 @@ export const SegmentManagementStyle = styled.div`
             
           }
           .AddButton{
-            margin-left: 80%;
-            margin-bottom:1.2rem;
+          margin-left: 70%;
+            margin-bottom:1rem;
             
           }
 
@@ -84,7 +84,53 @@ export const SegmentManagementStyle = styled.div`
         text-align: center;
         background-color: #1269bb;
         border-radius: 10px;
+        .buttondata{
+          margin-top:2rem;
+
+          .Mybutton{
+            margin-right:0.3rem;
+          }
+        }
+        .checkboxData {
+          background-color: coral;
+          h5 {
+            color: #d2ffe0;
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            /* border-bottom: solid #fff 1px;
+            border-top: solid #fff 1px; */
+            background-color: #2a4848;
+          }
+          .mycheckboxvalues {
+            .checkboxDiv {
+              display: flex;
+              align-items: center;
+              width: 233px;
+              input {
+                margin: 10px;
+                padding: 10px;
+              }
+              span {
+                color: #fff;
+                padding: 5px;
+                margin: 0;
+              }
+            }
+          }
+        }
+        .submit-button {
+          display: flex;
+          padding: 20px;
+          button {
+            margin: auto;
+          }
+        }
       }
+      
+      }
+      
     }
 
     /* .formdata{
@@ -186,5 +232,35 @@ export const SegmentManagementStyle = styled.div`
       margin-left:40%;
     }
     }
-  }
+    .modaluser1{
+      background-color:lightblue;
+      .checkboxData {
+          h5 {
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 10px;
+            text-align: center;
+            /* border-bottom: solid #fff 1px;
+            border-top: solid #fff 1px; */
+          }
+          .mycheckboxvalues {
+            .checkboxDiv {
+              display: flex;
+              align-items: center;
+              width: 233px;
+              input {
+                margin: 10px;
+                padding: 10px;
+              }
+              span {
+                color: black;
+                padding: 5px;
+                margin: 0;
+              }
+            }
+          }
+        }
+
+    }
+    
 `;
