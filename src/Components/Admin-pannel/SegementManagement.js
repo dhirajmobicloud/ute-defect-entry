@@ -210,7 +210,15 @@ console.log("Table Entry is",tableEntry);
   const UpdateSubmit=(e)=>{
     e.preventDefault();
     console.log(JSON.stringify(tableEntry));
-    alert(JSON.stringify(tableEntry));
+    // alert(JSON.stringify(tableEntry));
+   fetch('http://localhost:5000/update-assigned-segement',{method:"PUT" , body:JSON.stringify(tableEntry), headers: { "Content-Type": "application/json" }}).then((res)=>{
+      if(res){
+        FetchSegmentData();
+      }else{
+        return 
+      }
+   })
+
     
   }
                 
