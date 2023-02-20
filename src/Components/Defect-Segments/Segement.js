@@ -86,7 +86,7 @@ const Segement = (props) => {
       .then((data) => {
         console.log(data[1].Digit_13);
         setFetchData(data);
-        setDefects(data);
+        setDefects(data.reverse());
       });
   };
 
@@ -117,7 +117,8 @@ const Segement = (props) => {
     e.preventDefault()
     console.log(newDefect)
     fetch(`https://easy-gray-camel-sock.cyclic.app/add_${props.segement}`,{method:"POST" , body:JSON.stringify(newDefect), headers: { "Content-Type": "application/json" }}).then((res)=>{
-      if(res){
+      if(res.status === 200){
+        alert("Added successfully")
        getData()
       }else{
         return 
