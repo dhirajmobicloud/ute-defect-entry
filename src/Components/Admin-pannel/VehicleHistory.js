@@ -1,606 +1,103 @@
 import React from "react";
 import { VehicleHistoryStyled } from "../Styled-Components/VehicleHistoryStyled";
-import data from "./vehicleinfo.json";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
 // import moment from "moment/moment";
 // import styles from "./dashboard.module.css";
 
 const VehicleHistory = () => {
+  const [difectList, setDefectList] = useState([]);
+  const [mylistdata,setMyListData]=useState([]);
+  const [myanotherdata,setMyAnotherData]=useState([]);
+
+  useEffect(()=>{
+    axios.get('https://easy-gray-camel-sock.cyclic.app/all_vehicles').then((response)=>{
+      setDefectList(response.data);
+      setMyListData(response.data);
+      
+    }).catch((err)=>{
+      console.log(err);
+    })
+
+  },[])
+  const vehicleModels=["Nexon Petrol", "Nexon Electric","Nexon Vxi","Compass Vxi","Compass Petrol", "Compass Electric","Compass Diesel","Meridien Electric","Meridien Vxi","Meridien Petrol","Meridien Diesel"];
+  
+ 
   const [model, setModel] = useState("all");
+ 
   const [period, setPeriod] = useState("all");
   const [startdate, setStartDate] = useState();
-  const [defaultdata,setDefaultData]=useState(data);
   const [flagger,setflagger]=useState(0);
   const [endDate, setEndDate] = useState();
-  const [difectList, setDefectList] = useState(data);
+ 
   const [defectSegment, setDefectSegement] = useState("all");
   const [weekDate, setWeekDate] = useState("");
   const [flag, setflag] = useState(0);
   const [newData,setNewData]=useState([]);
   const [newlist,setNewlist]=useState([]);
   let [jsondata,setJsonData]=useState({vin:'',model:'',repaired:[]});
+  let [radiodata,setRadiodata]=useState("default");
+  let [myFilteredSegment,setMyFilteredSegment]=useState([]);
 
-  console.log("difectlist", difectList);
-  console.log("Flag is", flag);
-
-  // function DateChecker(valueData) {
-  //   let booleanData = false;
-  //   let todaydate = new Date();
-  //   if (period === "Today") {
-  //     const [day, month, year] = valueData.split("/");
-
-  //     const dateValue = new Date(+year, month - 1, +day);
-
-  //     const todayDate = new Date();
-
-  //     if (dateValue.getDate() === todayDate.getDate()) {
-  //       booleanData = true;
-  //     }
-  //   }
-
-  //   if (period === "Weekly") {
-  //     const [day, month, year] = valueData.split("/");
-
-  //     const dateValue = new Date(+year, month - 1, +day);
-
-  //     const weekbefore = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-
-  //     if (dateValue > weekbefore && dateValue < todaydate) {
-  //       booleanData = true;
-  //     }
-  //   }
-  //   if (period === "Monthly") {
-  //     const [day, month, year] = valueData.split("/");
-
-  //     const dateValue = new Date(+year, month - 1, +day);
-
-  //     const weekbefore = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-
-  //     if (dateValue > weekbefore && dateValue < todaydate) {
-  //       booleanData = true;
-  //     }
-  //   }
-
-  //   return booleanData;
-  // }
-
-  // const dataSetting = (e) => {
-  //   setFlag(1);
-  //   setPeriod(e.target.value);
-  // };
-
-  // const myStartDate = (e) => {
-  //   setStartDate(e.target.value);
-  //   console.log("Date", startdate);
-  // };
-  // const myEndDate = (e) => {
-  //   setFlag(2);
-  //   setEndDate(e.target.value);
-  //   console.log("End", endDate);
-  // };
-
-  // const segmentHandler = (e) => {
-  //   setFlag(3);
-  //   setDefectSegement(e.target.value);
-  //   console.log("segement", defectSegment);
-  //   // checkSegmentHandler()
-  // };
-
-  // // const checkSegmentHandler = () => {
-  // //   let defects = data.filter((element)=>{
-  // //     let result = element.repaired.filter((item)=> item.Segement === segment)
-  // //     return result
-  // //   })
-  // //   console.log(defects)
-  // // };
-
-  // function DateSpanChecker(valueData) {
-  //   let booleanData = false;
-  //   const [day, month, year] = valueData.split("/");
-  //   const dateValue = new Date(+year, month - 1, +day);
-  //   let start = new Date(startdate);
-  //   let end = new Date(endDate);
-  //   console.log(start);
-  //   console.log(end);
-
-  //   if (dateValue >= start && dateValue <= end) {
-  //     booleanData = true;
-  //   }
-  //   console.log(booleanData);
-  //   return booleanData;
-  // }
-
-  // console.log("Flag", flag);
-  // const [inputData, setinputData] = useState();
-
-  // function ShowOnlyList() {
-  //   return (
-  //     <>
-  //       {data.filter((value) => value.Segement === inputData).length > 0 ? (
-  //         <div className="defectlist">
-  //           {data
-  //             .filter((value) => value.Segement === inputData)
-  //             .map((info) =>
-  //               info.repaired.map((defectdata) => (
-  //                 <div className="listdata d-flex">
-  //                   <div className="vinNumber mx-2 my-2">{info.vin}</div>
-  //                   <div className="Segement mx-2 my-2">{info.Segement}</div>
-  //                   <div className="description mx-2 my-2">
-  //                     {defectdata.description}
-  //                   </div>
-  //                 </div>
-  //               ))
-  //             )}
-  //         </div>
-  //       ) : (
-  //         <h1>Not Found</h1>
-  //       )}
-  //     </>
-  //   );
-  // }
-
-  // function ShowOnlyListWithPeriod() {
-  //   return (
-  //     <>
-  //       {data.filter(
-  //         (value) =>
-  //           value.Segement === inputData && DateChecker(value.date) === true
-  //       ).length > 0 ? (
-  //         <div className={"defectlist"}>
-  //           {data
-  //             .filter(
-  //               (value) =>
-  //                 value.Segement === inputData && DateChecker(value.date) === true
-  //             )
-  //             .map((info) =>
-  //               info.repaired.map((defectdata) => (
-  //                 <div className="listdata d-flex">
-  //                   <div className="mx-2 my-2">{info.vin}</div>
-  //                   <div className="mx-2 my-2">{info.Segement}</div>
-  //                   <div className="mx-2 my-2">{defectdata.description}</div>
-  //                 </div>
-  //               ))
-  //             )}
-  //         </div>
-  //       ) : (
-  //         <h1>Not Found</h1>
-  //       )}
-  //     </>
-  //   );
-  // }
-  // function ShowOnlyListWithStartAndEndDate() {
-  //   return (
-  //     <>
-  //       {data.filter(
-  //         (value) =>
-  //           value.Segement === inputData && DateSpanChecker(value.date) === true
-  //       ).length > 0 ? (
-  //         <div className={"defectlist"}>
-  //           {data
-  //             .filter(
-  //               (value) =>
-  //                 value.Segement === inputData &&
-  //                 DateSpanChecker(value.date) === true
-  //             )
-  //             .map((info) =>
-  //               info.repaired.map((defectdata) => (
-  //                 <div className="listdata d-flex">
-  //                   <div className="mx-2 my-2">{info.vin}</div>
-  //                   <div className="mx-2 my-2">{info.Segement}</div>
-  //                   <div className="mx-2 my-2">{defectdata.description}</div>
-  //                 </div>
-  //               ))
-  //             )}
-  //         </div>
-  //       ) : (
-  //         <h1>Not Found</h1>
-  //       )}
-  //     </>
-  //   );
-  // }
-
-  // function segementWiseRendering() {
-  //   return (
-  //     <>
-  //       {data.filter((value) => value.Segement === inputData && DateSpanChecker(value.date) === true ).length > 0 ? (
-  //         <div className={"defectlist"}>
-  //           {data
-  //             .filter(
-  //               (value) =>
-  //                 value.Segement === inputData &&
-  //                 DateSpanChecker(value.date) === true
-  //             )
-  //             .map((info) =>
-  //             info.repaired.filter((item)=> item.Segement === defectSegment)
-  //             .map((defectdata) => {
-  //                  return <div className="listdata d-flex">
-  //                     <div className="mx-2 my-2">{info.vin}</div>
-  //                     <div className="mx-2 my-2">{info.Segement}</div>
-  //                     <div className="mx-2 my-2">{info.Segement}</div>
-  //                     <div className="mx-2 my-2">{defectdata.description}</div>
-  //                   </div>
-  //                }
-  //             //   info.repaired.map((defectdata) => {
-  //             //     <div className="listdata d-flex">
-  //             //       <div className="mx-2 my-2">{info.vin}</div>
-  //             //       <div className="mx-2 my-2">{info.Segement}</div>
-  //             //       <div className="mx-2 my-2">{info.Segement}</div>
-  //             //       <div className="mx-2 my-2">{defectdata.description}</div>
-  //             //     </div>
-  //             //  }
-  //              )
-  //             )}
-  //         </div>
-  //       ) : (
-  //         <h1>Not Found</h1>
-  //       )}
-  //     </>
-  //   );
-  // }
-
-  // function Combiner() {
-  //   if (flag === 0) {
-  //     return <>{ShowOnlyList()}</>
-  //   }
-  //   else if (flag === 1) {
-  //     return <>{ShowOnlyListWithPeriod()}</>
-  //   }
-  //   else if (flag === 2){
-  //     return <>{ShowOnlyListWithStartAndEndDate()}</>
-  //   }
-  //   else if (flag === 3){
-  //     return <>{segementWiseRendering()}</>
-  //   }
-
-  // }
-  const modelHandler = (e) => {
-    setModel(e.target.value);
-    if (e.target.value === "all") {
-      setflag(1);
-      setDefectList(data);
-    } else {
-      setflag(1);
-      let list = data.filter((element) => element.model === e.target.value);
-      setDefectList(list);
-    }
-    console.log("Hello", difectList);
-  };
 
   function MyDateCheckerToday(mydate) {
-    let booleanData = false;
-    const [day, month, year] = mydate.split("/");
-    let myValue = new Date(+year, month - 1, +day);
-    return myValue;
+  
+     let newDate=mydate.substring(0,mydate.indexOf("T"));
+
+     return newDate;
   }
 
-  const periodHandler = (e) => {
-    setPeriod(e.target.value);
-    alert(e.target.value + "Model:" + model + "Flag:" + flag);
-    if (flag === 0) {
-      if (model === "all") {
-        if (e.target.value === "Today" && difectList.length > 0) {
-          let mydate = new Date();
-          console.log(mydate);
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth() ===
-                mydate.getMonth() &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear()
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length > 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-      }
-    }
-    if (flag === 2) {
-      if (model === "all") {
-        if (e.target.value === "Today" && difectList.length > 0) {
-          alert("Hello 2");
-          let mydate = new Date();
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth() ===
-                mydate.getMonth() &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear()
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length === 0) {
-          alert("Hello 3");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth === mydate.month &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length > 0) {
-          alert("Hello 4");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          alert("Hello4");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length === 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length === 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-      }
-    }
-    if (flag === 1) {
-      if (model === "all") {
-        if (e.target.value === "Today" && difectList.length > 0) {
-          let mydate = new Date();
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth() ===
-                mydate.getMonth() &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear()
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length > 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = difectList.filter(
-            (values) => MyDateCheckerToday(values.date) >= datelast
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = difectList.filter(
-            (values) => MyDateCheckerToday(values.date) >= datelast
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-      }
-    }
-    if (flag === 1) {
-      if (model !== "all") {
-        if (e.target.value === "Today" && difectList.length > 0) {
-          alert("Part 1");
-          let mydate = new Date();
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth() ===
-                mydate.getMonth() &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear() &&
-              values.model === model
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length > 0) {
-          alert("Part2");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              values.model === model
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length === 0) {
-          alert("Part8");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              values.model === model
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          alert("Part 3");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              values.model === model
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length === 0) {
-          alert("Part 3");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              MyDateCheckerToday(values.date) >= datelast &&
-              values.model === model
-          );
-          setDefectList(listData);
-
-          setflag(2);
-        }
-      }
+  function FilterDataBasedOnDate()
+  {
+    let myarray=new Array();
+    for(let i=0;i<difectList.length;i++)
+    {
+     if(difectList[i].date!==undefined)
+     {
+      myarray.push(difectList[i]);
+     }
     }
 
-    if (flag === 2) {
-      if (model !== "all") {
-        if (e.target.value === "Today" && difectList.length > 0) {
-          alert("Part4");
-          let mydate = new Date();
-          let listData = difectList.filter(
-            (values) =>
-              MyDateCheckerToday(values.date).getDate() === mydate.getDate() &&
-              MyDateCheckerToday(values.date).getMonth() ===
-                mydate.getMonth() &&
-              MyDateCheckerToday(values.date).getFullYear() ===
-                mydate.getFullYear() &&
-              values.model === model
-          );
-          setDefectList(listData);
-          setflag(2);
-        }
+   return myarray;
+  
+  }
 
-        if (e.target.value === "Weekly" && difectList.length > 0) {
-          alert("part6");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              values.model === model &&
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
-          console.log(listData);
+ const myanswerarray=FilterDataBasedOnDate();
+ console.log("Answer is",myanswerarray);
 
-          setflag(2);
-        }
-        if (e.target.value === "Weekly" && difectList.length === 0) {
-          alert("part6");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              values.model === model &&
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
+ console.log("Answer Array is the",myanotherdata);
 
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length > 0) {
-          alert("Part8");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              values.model === model &&
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
+ console.log("Defect List is",difectList);
 
-          setflag(2);
-        }
-        if (e.target.value === "Monthly" && difectList.length === 0) {
-          alert("Part8");
-          let mydate = new Date();
-          let datelast = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-          let listData = data.filter(
-            (values) =>
-              values.model === model &&
-              MyDateCheckerToday(values.date) >= datelast &&
-              MyDateCheckerToday(values.date) <= mydate
-          );
-          setDefectList(listData);
+ 
 
-          setflag(2);
-        }
-      }
+
+ 
+
+ 
+  
+  console.log("Flag is", flag);
+
+  
+  const modelHandler = (e) => {
+    setModel(e.target.value);
+    if(e.target.value!=="all")
+    {
+      setMyListData(difectList.filter((values)=>values.model===e.target.value))
     }
+    else{
+      setMyListData(difectList);
+    }
+ 
   };
 
+
+ 
+  const periodHandler=(e)=>{
+    setPeriod(e.target.value);
+ 
+  
+  }
   const EndDateFunction = (e) => {
     setEndDate(e.target.value);
     let start = new Date(startdate);
@@ -613,113 +110,99 @@ const VehicleHistory = () => {
       alert("Invalid Date");
     }
 
-    if (model === "all") {
-      alert("Hello Part End");
-      let listData = data.filter(
+  
+      let listData = difectList.filter(
         (values) =>
           MyDateCheckerToday(values.date) >= start &&
           MyDateCheckerToday(values.date) <= end
       );
       setDefectList(listData);
-    }
+    
   };
 
   const MySegmentFunction = (e) => {
-    let val = e.target.value;
     setDefectSegement(e.target.value);
-    setflag(4);
-    if (model === "all" && val != "all" && difectList.length > 0) {
-      alert("Hello 123");
-      let valueData = difectList.filter(
-        (item) => item.repaired.filter((c) => c.Segement == val).length > 0
-      );
-      console.log("Value is", valueData);
+    
+    if(e.target.value!=='all')
+    {
+      let myarray=new Array();
+      for(let i=0;i<mylistdata.length;i++)
+    {
+    
+      for(let j=0;j<mylistdata[i].repaired.length;j++)
+      {
+        let mydata={vin:'',model:'',date:'',repaired:[]};
+        let repairedarray=[];
+        if(mylistdata[i].repaired[j].Segement===e.target.value)
+        {
+           repairedarray.push(difectList[i].repaired[j]);
+          mydata.vin=mylistdata[i].vin;
+          mydata.model=mylistdata[i].model;
+          mydata.date=mylistdata[i].date;
+          mydata.repaired=repairedarray;
+          console.log("MyAnswer is", mydata);
+          myarray.push(mydata);
+        }
+
+        console.log("My Array is",myarray);
+        setMyListData(myarray);
+      }
     }
-  };
+
+  
+      }
+      else{
+        setMyListData(difectList);
+      }
+    }
+
+     
+   
+    
+
 
 
 
   const myNewFunction=(e)=>{
+    setRadiodata(e.target.value);
     if(e.target.value==="new")
     {
       let myarray=new Array();
-      
-      
-      for(let i=0;i<difectList.length;i++)
+      for(let i=0;i<mylistdata.length;i++)
       {
-let mydata=[];
-        
-        for(let j=0;j<difectList[i].repaired.length;j++)
+        for(let j=0;j<mylistdata[i].repaired.length;j++)
         {
-          let mydata={vin:'',model:'',repaired:[]}
+          let mydata={vin:'',model:'',repaired:[]};
           let repairedarray=[];
-          if(difectList[i].repaired[j].new==="true")
+          console.log("New Data is",mylistdata[i].repaired[j].new);
+          if(mylistdata[i].repaired[j].new===true)
           {
-            repairedarray.push(difectList[i].repaired[j]);
-            mydata.vin=difectList[i].vin;
-            mydata.model=difectList[i].model;
+            repairedarray.push(mylistdata[i].repaired[j])
+            mydata.vin=mylistdata[i].vin;
+            mydata.model=mylistdata[i].model;
             mydata.repaired=repairedarray;
-          console.log("Data is",mydata);
-          myarray.push(mydata);
+
+            console.log("My Data is",mydata);
+            myarray.push(mydata);
           }
-         
-     
-          
         }
-      
       }
-
-      setDefectList(myarray);
-      alert("NewData");
-      
+      setMyListData(myarray);
 
     }
     else{
-      setDefectList(defaultdata);
-      alert("DefaultData");
-    }
-  }
-
-  
-  /*
-  function DateSpanChecker(values)
-  {
-    const [day,month,year]=values.split('/');
-    const date=new Date(+year,month-1,+day);
-    console.log(date);
-    return date;
-  }
-
-  const DefectSegmentDecider=(e)=>{
-    setflag(2);
-    setDefectSegement(e.target.value);
-
-  }
-
-  const DateCheckerSpanFunction=(e)=>{
-    setEndDate(e.target.value);
-    let endDater=new Date(endDate);
-    let startdater=new Date(startdate);
-    if(startdater>endDater)
-    {
-      alert("Start Date entered wrong");
-    }
-    else{
-      let listdata=difectList.filter((value)=>(DateSpanChecker(value.date)>=startdater)&&(DateSpanChecker(value.date)<=endDater));
-      setDefectList(listdata);
+      setMyListData(difectList)
     }
   }
 
   
  
-*/
-
   function ShowDataCondition() {
     return (
       <div className="defects">
         <div className="defectlist">
-          {difectList.length > 0
-            ? difectList.map((element) => {
+          {mylistdata.length > 0
+            ? mylistdata.map((element) => {
                 return element.repaired.map((item) => {
                   return (
                     <div className="listdata d-flex">
@@ -727,7 +210,7 @@ let mydata=[];
                       <div className="Segement mx-2 my-2">{element.model}</div>
                       <div className="Segement mx-2 my-2">{item.Segement}</div>
                       <div className="description mx-2 my-2">
-                        {item.description}
+                        {item.Descrizione}
                       </div>
                     </div>
                   );
@@ -744,11 +227,11 @@ let mydata=[];
       <div className="modeldescription">
         <div className="inputElement">
           <h5>MODEL</h5>
-          <select className={"Model"} onChange={modelHandler} value={model}>
+          <select className={"Model"} onChange={(e)=>modelHandler(e)} value={model}>
             <option value="all">All models</option>
-            {data.map((vehicle, index) => (
-              <option key={index} value={vehicle.model}>
-                {vehicle.model}
+            {vehicleModels.map((vehicle, index) => (
+              <option key={index} value={vehicle}>
+                {vehicle}
               </option>
             ))}
           </select>
@@ -805,7 +288,6 @@ let mydata=[];
             type="date"
             className="enddate"
             value={endDate}
-            onChange={(e) => EndDateFunction(e)}
           ></input>
         </div>
       </div>
@@ -818,6 +300,7 @@ let mydata=[];
               name="inlineRadioOptions"
               id="inlineRadio1"
               value="default"
+              checked={radiodata==="default"}
               onChange={(e)=>myNewFunction(e)}
             />
             <label className="form-check-label" htmlFor="inlineRadio1">
