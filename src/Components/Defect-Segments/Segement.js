@@ -86,7 +86,7 @@ const Segement = (props) => {
       .then((data) => {
         console.log(data[1].Digit_13);
         setFetchData(data);
-        setDefects(data);
+        setDefects(data.reverse());
       });
   };
 
