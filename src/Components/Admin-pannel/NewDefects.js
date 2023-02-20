@@ -1,20 +1,19 @@
 import moment from "moment/moment";
 import React, { useEffect, useState } from "react";
 import { NewDefectsStyled } from "../Styled-Components/NewDefectsStyled";
-// import data from "./vehicleinfo.json"; 
+// import data from "./vehicleinfo.json";
 
-const NewDefects =  () => {
+const NewDefects = () => {
   const [model, setModel] = useState("all");
   const [period, setPeriod] = useState("");
   // const [startdate, setStartDate] = useState();
   // const [endDate, setEndDate] = useState();
-  const [defectSegment, setDefectSegement] = useState("");
-  const [timePeriod, setTimePeriod] = useState("");
+  const [defectSegment, setDefectSegement] = useState("all");
+  const [timePeriod, setTimePeriod] = useState("all");
   const [pending, setPending] = useState("Repaired");
-  const [data, setData] = useState([]) 
- 
-  
-// let list = data
+  const [data, setData] = useState([]);
+
+  // let list = data
   // let list = data.map((element) => {
   //   if (pending === "Repaired") {
   //     return {
@@ -40,12 +39,15 @@ const NewDefects =  () => {
     data.filter((element) => element.repaired.length > 0)
   );
 
-  useEffect(()=>{
-    fetch('https://easy-gray-camel-sock.cyclic.app/all_vehicles', {method:"GET"})
-    .then((res)=>{
-       return res.json();
-    }).then((data)=>{
-      let list = data.map((element) => {
+  useEffect(() => {
+    fetch("https://easy-gray-camel-sock.cyclic.app/all_vehicles", {
+      method: "GET",
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        let list = data.map((element) => {
           if (pending === "Repaired") {
             return {
               ...element,
@@ -62,33 +64,35 @@ const NewDefects =  () => {
             };
           }
         });
-      setData(list)
-      console.log(list)
-      return list
-      
-    }).then((data1)=>{
-      if (pending === "Repaired") {
-        setNewDefectList(data1.filter((element) => element.repaired.length > 0));
-        console.log(data1.filter((element) => element.repaired.length > 0))
-      } else if (pending === "Pending") {
-        setNewDefectList(data1.filter((element) => element.defect.length > 0));
-  
-      }else{
-        return
-      }
-      // modelHandler(model);
-    })
-  },[])
+        setData(list);
+        console.log(list);
+        return list;
+      })
+      .then((data1) => {
+        if (pending === "Repaired") {
+          setNewDefectList(
+            data1.filter((element) => element.repaired.length > 0)
+          );
+          console.log(data1.filter((element) => element.repaired.length > 0));
+        } else if (pending === "Pending") {
+          setNewDefectList(
+            data1.filter((element) => element.defect.length > 0)
+          );
+        } else {
+          return;
+        }
+        // modelHandler(model);
+      });
+  }, []);
 
   useEffect(() => {
     if (pending === "Repaired") {
       setNewDefectList(data.filter((element) => element.repaired.length > 0));
-      console.log(data.filter((element) => element.repaired.length > 0))
+      console.log(data.filter((element) => element.repaired.length > 0));
     } else if (pending === "Pending") {
       setNewDefectList(data.filter((element) => element.defect.length > 0));
-
-    }else{
-      return
+    } else {
+      return;
     }
     modelHandler(model);
     // console.log(newDefectList);
@@ -103,7 +107,8 @@ const NewDefects =  () => {
   };
 
   const modelHandler = (MODEL) => {
-    if (MODEL === "all") {
+    if (MODEL === "all" && defectSegment === "all") {
+      console.log("@@@@@@@@@@@@@@@@@@@@@@")
       let list = data.map((element) => {
         if (pending === "Pending") {
           return {
@@ -119,11 +124,11 @@ const NewDefects =  () => {
               (subElement) => subElement.new === true
             ),
           };
-        }else{
-          return
+        } else {
+          return;
         }
       });
-      console.log(list)
+      console.log(list);
 
       if (pending === "Pending") {
         console.log(list.filter((element) => element.defect.length > 0));
@@ -132,9 +137,27 @@ const NewDefects =  () => {
         console.log(list.filter((element) => element.repaired.length > 0));
         setNewDefectList(list.filter((element) => element.repaired.length > 0));
       }
-    } else {
+    } else if(MODEL !== "all" && defectSegment !== "all") {
+      console.log("%%%%%%%%%%%%%%%%%%%%%")
       let list = data.filter((element) => element.model === MODEL);
       let list1 = list.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter(
+              (subElement) => subElement.Segement === defectSegment
+            ),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.Segement === defectSegment
+            ),
+          };
+        }
+      });
+      let list2 = list1.map((element) => {
         if (pending === "Pending") {
           return {
             ...element,
@@ -153,17 +176,81 @@ const NewDefects =  () => {
       });
 
       if (pending === "Pending") {
-        setNewDefectList(list1.filter((element) => element.defect.length >= 0));
-        console.log(list1.filter((element) => element.defect.length >= 0));
+        setNewDefectList(list2.filter((element) => element.defect.length >= 0));
+        console.log(list2.filter((element) => element.defect.length >= 0));
       } else if (pending === "Repaired") {
         setNewDefectList(
-          list1.filter((element) => element.repaired.length > 0)
+          list2.filter((element) => element.repaired.length > 0)
         );
         // console.log(list1.filter((element) => element.repaired.length > 0));
       }
 
       // checkPeriod();
+    } else if(MODEL === "all" && defectSegment !== "all"){
+      console.log("**********************")
+      let list = data.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter((subElement) => {
+              return subElement.Segement === defectSegment 
+            }),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.Segement === defectSegment
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+      console.log(list);
+
+      if (pending === "Pending") {
+        console.log(list.filter((element) => element.defect.length > 0));
+        setNewDefectList(list.filter((element) => element.defect.length > 0));
+      } else if (pending === "Repaired") {
+        console.log(list.filter((element) => element.repaired.length > 0));
+        setNewDefectList(list.filter((element) => element.repaired.length > 0));
+      }
     }
+    else if(MODEL !== "all" && defectSegment === "all"){
+      console.log("######################")
+      let list = data.filter((element)=>element.model === MODEL)
+      let list1 = list.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter((subElement) => {
+              return subElement.new === true 
+            }),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.new === true
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+      // console.log(list);
+
+      if (pending === "Pending") {
+        console.log(list1.filter((element) => element.defect.length > 0));
+        setNewDefectList(list1.filter((element) => element.defect.length > 0));
+      } else if (pending === "Repaired") {
+        console.log(list1.filter((element) => element.repaired.length > 0));
+        setNewDefectList(list1.filter((element) => element.repaired.length > 0));
+      }
+    }
+    
+
   };
 
   // Check period //////////////////////////////////////////
@@ -202,9 +289,9 @@ const NewDefects =  () => {
   //     let list = newDefectList.filter(
   //       (element) => new Date(element.date) === today
   //     );
-      // let a = new Date(element.date)
-      // console.log(new Date(element.date))
-      // return  a === today;
+  // let a = new Date(element.date)
+  // console.log(new Date(element.date))
+  // return  a === today;
   //     console.log(list);
   //     setNewDefectList(list);
   //   } else if (date === "Weekly") {
@@ -229,22 +316,143 @@ const NewDefects =  () => {
 
   // Segement handler //////////////////////////////////////////
 
-  // const segementHandler = (e) => {
-  //   console.log(e.target.value);
-  //   setDefectSegement(e.target.value);
-  //   let list = newDefectList.filter((element) => element.model === model);
-  //   let list1 = list.map((element) => {
-  //     return {
-  //       ...element,
-  //       repaired: element.repaired.filter(
-  //         (subElement) => subElement.segement === e.target.value
-  //       ),
-  //     };
-      // return {...element, repaired: element.repaired.filter((subElement) => subElement.new === "true")}
-  //   });
-  //   setNewDefectList(list1);
-  //   console.log(list1);
-  // };
+  const segementHandler = (e) => {
+    console.log(e.target.value);
+    setDefectSegement(e.target.value);
+
+    if (model === "all" && e.target.value === "all") {
+      let list = data.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter(
+              (subElement) => subElement.new === true
+            ),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.new === true
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+
+      // console.log(list)
+
+      if (pending === "Pending") {
+        setNewDefectList(list.filter((element) => element.defect.length >= 0));
+        console.log(list.filter((element) => element.defect.length >= 0));
+      } else if (pending === "Repaired") {
+        setNewDefectList(list.filter((element) => element.repaired.length > 0));
+        // console.log(list1.filter((element) => element.repaired.length > 0));
+      } else {
+        return;
+      }
+    } else if (model === "all" && e.target.value !== "all") {
+      let list = data.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter(
+              (subElement) => subElement.Segement === e.target.value
+            ),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.Segement === e.target.value
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+
+      if (pending === "Pending") {
+        setNewDefectList(list.filter((element) => element.defect.length >= 0));
+        console.log(list.filter((element) => element.defect.length >= 0));
+      } else if (pending === "Repaired") {
+        setNewDefectList(
+          list.filter((element) => element.repaired.length > 0)
+        );
+        // console.log(list1.filter((element) => element.repaired.length > 0));
+      } else {
+        return;
+      }
+    } 
+    else if(model !== "all" && e.target.value === "all") {
+      let list = data.filter((element) => element.model === model);
+      let list1 = list.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter(
+              (subElement) => subElement.new === true
+            ),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.new === true
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+      if (pending === "Pending") {
+        setNewDefectList(list1.filter((element) => element.defect.length >= 0));
+        console.log(list1.filter((element) => element.defect.length >= 0));
+      } else if (pending === "Repaired") {
+        setNewDefectList(
+          list1.filter((element) => element.repaired.length > 0)
+        );
+        // console.log(list1.filter((element) => element.repaired.length > 0));
+      } else {
+        return;
+      }
+    }
+    else if(model !== "all" && e.target.value !== "all") {
+      let list = data.filter((element) => element.model === model);
+      let list1 = list.map((element) => {
+        if (pending === "Pending") {
+          return {
+            ...element,
+            defect: element.defect.filter(
+              (subElement) => subElement.Segement === e.target.value
+            ),
+          };
+        } else if (pending === "Repaired") {
+          return {
+            ...element,
+            repaired: element.repaired.filter(
+              (subElement) => subElement.Segement === e.target.value
+            ),
+          };
+        } else {
+          return;
+        }
+      });
+      if (pending === "Pending") {
+        setNewDefectList(list1.filter((element) => element.defect.length >= 0));
+        console.log(list1.filter((element) => element.defect.length >= 0));
+      } else if (pending === "Repaired") {
+        setNewDefectList(
+          list1.filter((element) => element.repaired.length > 0)
+        );
+        // console.log(list1.filter((element) => element.repaired.length > 0));
+      } else {
+        return;
+      }
+    }
+    
+  };
 
   // Pending or repaired handler //////////////////////////////////////////
 
@@ -287,7 +495,7 @@ const NewDefects =  () => {
           <select
             className="Model"
             value={defectSegment}
-            onChange={"segementHandler"}
+            onChange={segementHandler}
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -426,7 +634,7 @@ const NewDefects =  () => {
             </div>
             <div class="col-md-4">
               <label for="inputAddress2" class="form-label">
-                Component 
+                Component
               </label>
               <input
                 type="text"
