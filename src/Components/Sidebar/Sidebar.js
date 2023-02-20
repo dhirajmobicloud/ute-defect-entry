@@ -66,18 +66,6 @@ function Sidebar() {
               Segement Management
             </Link>
           </div>
-
-          {/* <div className="content-child">
-            <button>Quote Submission</button>
-          </div>
-
-          <div className="content-child">
-            <button>Comparison</button>
-          </div>
-
-          <div className="content-child">
-            <button>Approval note submission</button>
-          </div> */}
         </div>
       </div>
     </SIDEBAR>
@@ -128,6 +116,8 @@ const SIDEBAR = styled.section`
     margin: 20px 20px 30px 20px;
     display: flex;
     align-items: center;
+    font-weight: 800;
+    font-family: 'Times New Roman', Times, serif;
   }
 
   button {
@@ -174,26 +164,28 @@ const SIDEBAR = styled.section`
 
   .content-child {
     height: 100%;
-    /* display: flex; */
+    font-weight: 900;
     color: #ffff;
-    /* background-color: #181c32; */
     width: 220px;
     align-items: center;
     text-align: left;
     padding: 10px 5px 0 0;
     /* padding-bottom:10px; */
     padding: 10px 0 10px 20px;
-    border-top: solid black 1px;
+    /* border-top: solid black 1px; */
     /* border-top: solid #ffff 1px;  */
     :hover {
-      background-color: #2e386eb0;
+      /* background-color: #2e386eb0; */
+      background-color:#ffffff70;
+      color: #000;
+      transform: scale(1.1);
     }
   }
 
   .Master-child {
     text-align: left;
     /* background-color:lightgray; */
-    border-bottom: solid black 1px;
+    /* border-bottom: solid black 1px; */
     color: #ffff;
     padding: 10px 10px 10px 40px;
   }
