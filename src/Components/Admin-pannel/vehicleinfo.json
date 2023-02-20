@@ -1364,46 +1364,147 @@
     "defect": [
       {
         "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
         "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
       },
       {
         "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
-        "Segement" : "Surface-RH-139"
+        "segement" : "Surface-RH-139"
+      }
+    ]
+  },
+  {
+    "vin": "12373",
+    "model": "Nexon Vxi",
+    "date": "16/02/2023",
+
+    "defect": [
+      {
+        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
+        "segement" : "Surface-RH-139"
+      }
+    ],
+
+    "repaired": [
+      {
+        "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
+        "segement" : "Surface-RH-139"
+      },
+      {
+        "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "segement" : "Surface-RH-139"
+      }
+    ]
+  },
+  {
+    "vin": "12374",
+    "model": "Nexon Petrol",
+    "date": "16/02/2023",
+    "defect": [
+      {
+        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT ",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D71CM115 - REAR DOOR INTERIOR PANEL TRIM - KD - SCRATCHES - 010 - LEFT",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "C60PQ010 - WINDSCREEN WIPER ASSEMBLY - CF - DETACHED / MISSING FASTENING - 900 - REAR",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D85WA110 - WHEEL COVER - 74 - BOLTS - TIGHT, LOOSE, MISSING - 190 - FRONT/RIGHT",
+        "segement": "Surface-RH-139"
+      }
+    ],
+
+    "repaired": [
+      {
+        "description": "C65AE370 - LIGHT CLUSTER FRAME - K4 - LOOSE - 000 - SINGLE",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D85YR110 - FRONT FENDER - 2J - BADLY DONE TOUCH-UPS / TRACES OF WORKING - 610 - UPPER/LEFT",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "C60PT631 - REAR WINDOW WIPER MOTOR SHAFT COVER - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
+        "segement": "Surface-RH-139"
+      },
+      {
+        "description": "D85WA110 - WHEEL COVER - KD - SCRATCHES - 190 - FRONT/RIGHT ",
+        "segement": "Surface-RH-139"
       }
     ]
   }
