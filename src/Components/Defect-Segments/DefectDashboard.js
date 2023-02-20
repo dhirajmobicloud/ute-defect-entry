@@ -17,7 +17,7 @@ const DefectDashboard = () => {
   const [inputSegement, setInputSegement] = useState("all");
   const [loginedUser, setLoginedUser] = useState({});
   const [vehicle_data, setVehicle_data] = useState({
-    model:"Nexon EV", win_number :"0001",defect:[] 
+    model:"Nexon EV", vin :"",defect:[] 
     , repaired:[]
   });
   // Disable segement state
@@ -34,12 +34,13 @@ const DefectDashboard = () => {
   const [Electrical_2_142, setElectrical_2] = useState(false);
   const [Front_EXT_142, setFront_EXT] = useState(false);
   const [Door_Closing_142, setDoor_Closing] = useState(false);
+  const [vin_no, setVin_no] = useState(localStorage.getItem("vehicle_id"))
 
   // fetching vehicle data
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch('https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/00011100', {method:"GET"})
+    fetch(`https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/${vin_no}`, {method:"GET"})
     .then((res)=>{
       return res.json()
     })
@@ -61,13 +62,18 @@ const DefectDashboard = () => {
   // Add repaired defect fuction
 
   const Add_repaired = (defect) => {
-        fetch('https://easy-gray-camel-sock.cyclic.app/repaired-vehicle-defect/00011100', {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
+        fetch(`https://easy-gray-camel-sock.cyclic.app/repaired-vehicle-defect/${vin_no}`, {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
         .then((res)=>{
           if(res.status === 200){
-            getVehicleData()
+            // getVehicleData()
+            return res.json()
             // alert("Success")       
+          }else{
+            return
           }
          
+        }).then((data)=>{
+          setVehicle_data(data)
         })
 
   };
@@ -121,8 +127,12 @@ const DefectDashboard = () => {
 
   // useEffect
   useEffect(() => {
-    getVehicleData();
-    segementAssigned(localStorage.getItem("username"));
+      getVehicleData();
+      segementAssigned(localStorage.getItem("username"));
+      let Vin = localStorage.getItem("vehicle_id")
+      setVin_no(Vin)
+     console.log(Vin)
+      // console.log(localStorage.getItem(JSON.parse("vehicle_id")))
     // eslint-disable-next-line
   }, []);
 
@@ -259,7 +269,7 @@ const DefectDashboard = () => {
           </div>
           <div className="info  ">
             <h4>MODEL : {vehicle_data.model}</h4>
-            <h4> Vin Number : {vehicle_data.win_number}</h4>
+            <h4> Vin Number : {vehicle_data.vin}</h4>
           </div>
         </div>
         {/* Segments */}

@@ -1,6 +1,5 @@
 import React from "react";
 import { VehicleHistoryStyled } from "../Styled-Components/VehicleHistoryStyled";
-import data from "./vehicleinfo.json";
 import { useState,useEffect } from "react";
 import axios from "axios";
 // import moment from "moment/moment";

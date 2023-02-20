@@ -23,7 +23,7 @@ const Login = () => {
       .then((response) => {
         if (response) {
           localStorage.setItem("username", response.data.username);
-          navigate("/defect-dashboard");
+          navigate("/add-vehicle");
         }
       })
       .catch((err) => {

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// export const saveVehicle = createAsyncThunk('saveVehicle', async () => {
-//   const response = await fetch('',{method:'POST', body: })
+// export const getVehicleData = createAsyncThunk('getVehicleData', async () => {
+//   const response = await fetch('',{method:'GET'})
 //   return response.json()
 // })
 

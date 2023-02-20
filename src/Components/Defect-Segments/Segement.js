@@ -7,6 +7,7 @@ import { useState } from "react";
 const Segement = (props) => {
   const navigate = useNavigate();
   const [defects, setDefects] = useState([]);
+  const [vin_no, setVin_no] = useState(localStorage.getItem("vehicle_id"))
   const [fetchData, setFetchData] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [vehicle_data, setVehicle_data] = useState({
@@ -26,7 +27,7 @@ const Segement = (props) => {
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch("https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/00011100", {
+    fetch(`https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/${vin_no}`, {
       method: "GET",
     })
       .then((res) => {
@@ -43,7 +44,7 @@ const Segement = (props) => {
   };
 
   const AddDefect = (defect) => {
-    fetch("http://localhost:5000/add-vehicle-defect/00011100", {
+    fetch(`https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/${vin_no}`, {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -53,11 +54,12 @@ const Segement = (props) => {
       })
       .then((data) => {
         setVehicle_data(data);
+        // getVehicleData()
       });
   };
 
   const RemoveDefect = (defect) => {
-    fetch("http://localhost:5000/remove-vehicle-defect/00011100", {
+    fetch(`https://easy-gray-camel-sock.cyclic.app/remove-vehicle-defect/${vin_no}`, {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -68,6 +70,9 @@ const Segement = (props) => {
       .then((data) => {
         console.log(data.info);
         setVehicle_data(data.info);
+        // getVehicleData()
+
+        
       });
   };
 
@@ -111,6 +116,13 @@ const Segement = (props) => {
   const addNewDefect=(e)=>{
     e.preventDefault()
     console.log(newDefect)
+    fetch(`https://easy-gray-camel-sock.cyclic.app/add_${props.segement}`,{method:"POST" , body:JSON.stringify(newDefect), headers: { "Content-Type": "application/json" }}).then((res)=>{
+      if(res){
+       getData()
+      }else{
+        return 
+      }
+   })
   }
 
   useEffect(() => {
