@@ -5,53 +5,53 @@
     "date": "02/01/2023",
     "defect": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
-        "segement": "Surface-FTR-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
+        "Segement": "Surface-FTR-139"
       },
      
       {
-        "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
-        "segement": "Bluetooth-139",
-        "new": "true"
+        "Descrizione": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
+        "Segement": "Bluetooth-139",
+        "new": true
       },
       {
-        "description": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
-        "segement": "Surface-LH-140"
+        "Descrizione": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
+        "Segement": "Surface-LH-140"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-LH-140"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-LH-140"
       }
     ],
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
-        "segement": "Surface-LH-140"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
+        "Segement": "Surface-LH-140"
       },
       {
-        "description": "LSD not fitted properly ",
-        "segement": "Surface-FTR-139",
-        "new": "true"
+        "Descrizione": "LSD not fitted properly ",
+        "Segement": "Surface-FTR-139",
+        "new": true
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
-        "segement": "Front EXT-142"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
+        "Segement": "Front EXT-142"
       },
       {
-        "description": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
-        "segement": "LH-Exterior-141"
+        "Descrizione": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "LH-Exterior-141"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
-        "segement": "LH-Exterior-141"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
+        "Segement": "LH-Exterior-141"
       }
     ]
   },
@@ -62,53 +62,53 @@
 
     "defect": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
-        "segement": "Surface-RH-139",
-        "new": "true"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
+        "Segement": "Surface-RH-139",
+        "new": true
+      },
+      { 
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
+        "Segement": "Rear-EXT-141"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
-        "segement": "Rear-EXT-141"
+        "Descrizione": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
-      },
-      {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "LSD not aligned ",
-        "segement": "Surface-FTR-139",
-        "new": "true"
+        "Descrizione": "LSD not aligned ",
+        "Segement": "Surface-FTR-139",
+        "new": true
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
-        "segement": "Bluetooth-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
+        "Segement": "Bluetooth-139"
       
       },
       {
-        "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -119,47 +119,47 @@
 
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139",
-        "new": "true"
+        "Descrizione": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139",
+        "new": true
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -170,51 +170,51 @@
 
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "LSD fitting not proper ",
-        "segement": "Surface-FTR-139",
-        "new": "true"
+        "Descrizione": "LSD fitting not proper ",
+        "Segement": "Surface-FTR-139",
+        "new": true
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -225,51 +225,51 @@
 
     "defect": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - KC - NEGATIVE DINGS (DING REMOVAL) - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - KC - NEGATIVE DINGS (DING REMOVAL) - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - RD - NOT WORKING - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - RD - NOT WORKING - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - KD - SCRATCHES - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - KD - SCRATCHES - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "LSD fitting not proper ",
-        "segement": "Surface-FTR-139",
-        "new": "true"
+        "Descrizione": "LSD fitting not proper ",
+        "Segement": "Surface-FTR-139",
+        "new": true
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - K4 - LOOSE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - K4 - LOOSE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -280,47 +280,47 @@
     "date": "04/01/2023",
     "defect": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - K4 - LOOSE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - K4 - LOOSE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - KC - NEGATIVE DINGS (DING REMOVAL) - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - KC - NEGATIVE DINGS (DING REMOVAL) - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - RD - NOT WORKING - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - RD - NOT WORKING - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - KD - SCRATCHES - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - KD - SCRATCHES - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -330,46 +330,46 @@
     "date": "06/01/2023",
     "defect": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -380,46 +380,46 @@
 
     "defect": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -430,47 +430,47 @@
 
     "defect": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -481,46 +481,46 @@
 
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -531,46 +531,46 @@
 
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - CF - DETACHED / MISSING FASTENING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2B - RUNS ON INNER COATS - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - GF - NOT FITTED - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - GF - NOT FITTED - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - 0X - WRONG PART - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - GF - NOT FITTED - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60RK110 - RADIO AERIAL - CB - INCORRECT FITTING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE150 - REAR WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -580,46 +580,46 @@
     "date": "03/02/2023",
     "defect": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - GJ - UNEVEN CLEARANCE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 27 - DAMAGED - 410 - LOWER/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - K4 - LOOSE - GBC - REAR RIGHT SIDE DOOR ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - 74 - BOLTS - TIGHT, LOOSE, MISSING - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - 0X - WRONG PART - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - RD - NOT WORKING - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZJ - POOR TOUCH-UP - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80YA36Q - STOPPERS - 0X - WRONG PART - GBB - REAR LEFT SIDE DOOR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT770 - FUEL FLAP - KD - SCRATCHES - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QE110 - FRONT WHEEL ARCH MOULDING - BA - BREAKAGE/DAMAGE - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -629,46 +629,46 @@
     "date": "09/01/2023",
     "defect": [
       {
-        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZL - INSUFFICIENT PAINT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZL - INSUFFICIENT PAINT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 - LEFT/INTERNAL ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 - LEFT/INTERNAL ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - CF - DETACHED / MISSING FASTENING - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - CF - DETACHED / MISSING FASTENING - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT818 - DOOR SILL RAIL TRIM - KB - DEFORMATION - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT818 - DOOR SILL RAIL TRIM - KB - DEFORMATION - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "repaired": [
       {
-        "description": "C60JC110 - DIGITAL FUEL RESERVE WARNING LIGHT - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60JC110 - DIGITAL FUEL RESERVE WARNING LIGHT - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 610 - UPPER/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 610 - UPPER/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - CB - INCORRECT FITTING - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - CB - INCORRECT FITTING - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85MA110 - WINDSCREEN GLASS - GH - MISALIGNED - 900 - REAR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85MA110 - WINDSCREEN GLASS - GH - MISALIGNED - 900 - REAR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT818 - DOOR SILL RAIL TRIM - CB - INCORRECT FITTING - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT818 - DOOR SILL RAIL TRIM - CB - INCORRECT FITTING - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -679,46 +679,46 @@
 
     "repaired": [
       {
-        "description": "C60JC110 - DIGITAL FUEL RESERVE WARNING LIGHT - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60JC110 - DIGITAL FUEL RESERVE WARNING LIGHT - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 610 - UPPER/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 610 - UPPER/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - CB - INCORRECT FITTING - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - CB - INCORRECT FITTING - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85MA110 - WINDSCREEN GLASS - GH - MISALIGNED - 900 - REAR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85MA110 - WINDSCREEN GLASS - GH - MISALIGNED - 900 - REAR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT818 - DOOR SILL RAIL TRIM - CB - INCORRECT FITTING - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT818 - DOOR SILL RAIL TRIM - CB - INCORRECT FITTING - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "defect": [
       {
-        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - ZL - INSUFFICIENT PAINT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - ZL - INSUFFICIENT PAINT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 - LEFT/INTERNAL ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 - LEFT/INTERNAL ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - CF - DETACHED / MISSING FASTENING - TAA - CENTRAL TUNNEL",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QN110 - SPOILER - CF - DETACHED / MISSING FASTENING - TAA - CENTRAL TUNNEL",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YT818 - DOOR SILL RAIL TRIM - KB - DEFORMATION - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YT818 - DOOR SILL RAIL TRIM - KB - DEFORMATION - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -729,46 +729,46 @@
 
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - QF - PRIMER DEFECT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - QF - PRIMER DEFECT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - KG - CUTS - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - KG - CUTS - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85MA110 - WINDSCREEN GLASS - 2Z - TRACES OF PRIMER - 910 - REAR/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85MA110 - WINDSCREEN GLASS - 2Z - TRACES OF PRIMER - 910 - REAR/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YJ510 - WHEEL ARCHES - KB - DEFORMATION - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YJ510 - WHEEL ARCHES - KB - DEFORMATION - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - BA - BREAKAGE/DAMAGE - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - BA - BREAKAGE/DAMAGE - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "A05AB610 - ENGINE HEATER WIRING - 85 - IMPROPERLY INSTALLED WIRING - PAE - LEFT TAILGATE COMPARTMENT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "A05AB610 - ENGINE HEATER WIRING - 85 - IMPROPERLY INSTALLED WIRING - PAE - LEFT TAILGATE COMPARTMENT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "B45UD110 - WHEEL - BB - PUNCTURE - 990 - REAR/RIGHT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "B45UD110 - WHEEL - BB - PUNCTURE - 990 - REAR/RIGHT ",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -778,47 +778,47 @@
     "date": "15/01/2023",
     "defect": [
       {
-        "description": "C60AA510 - IGNITION/DOOR LOCK KEYS - BA - BREAKAGE/DAMAGE - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AA510 - IGNITION/DOOR LOCK KEYS - BA - BREAKAGE/DAMAGE - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "A05AB610 - ENGINE HEATER WIRING - 85 - IMPROPERLY INSTALLED WIRING - PAE - LEFT TAILGATE COMPARTMENT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "A05AB610 - ENGINE HEATER WIRING - 85 - IMPROPERLY INSTALLED WIRING - PAE - LEFT TAILGATE COMPARTMENT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "B45UD110 - WHEEL - BB - PUNCTURE - 990 - REAR/RIGHT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "B45UD110 - WHEEL - BB - PUNCTURE - 990 - REAR/RIGHT ",
+        "Segement": "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C60AB130 - ENGINE START/STOP SWITCH - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60AB130 - ENGINE START/STOP SWITCH - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - QF - PRIMER DEFECT - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - QF - PRIMER DEFECT - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - KG - CUTS - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CJ553 - REAR DOOR INNER WEATHERSTRIP - KG - CUTS - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85MA110 - WINDSCREEN GLASS - 2Z - TRACES OF PRIMER - 910 - REAR/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85MA110 - WINDSCREEN GLASS - 2Z - TRACES OF PRIMER - 910 - REAR/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YJ510 - WHEEL ARCHES - KB - DEFORMATION - 090 - RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YJ510 - WHEEL ARCHES - KB - DEFORMATION - 090 - RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -828,47 +828,47 @@
     "date": "16/01/2023",
     "defect": [
       {
-        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2D - RUNS ON OUTER COAT - 610 - UPPER/LEFT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - KD - SCRATCHES - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D71CM115 – REAR DOOR INTERIOR PANEL TRIM - KD - SCRATCHES - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60PQ010 - WINDSCREEN WIPER ASSEMBLY - CF - DETACHED / MISSING FASTENING - 900 - REAR",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60PQ010 - WINDSCREEN WIPER ASSEMBLY - CF - DETACHED / MISSING FASTENING - 900 - REAR",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85WA110 - WHEEL COVER - 74 - BOLTS - TIGHT, LOOSE, MISSING - 190 - FRONT/RIGHT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85WA110 - WHEEL COVER - 74 - BOLTS - TIGHT, LOOSE, MISSING - 190 - FRONT/RIGHT",
+        "Segement": "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C65AE370 - LIGHT CLUSTER FRAME - K4 - LOOSE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C65AE370 - LIGHT CLUSTER FRAME - K4 - LOOSE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2J - BADLY DONE TOUCH-UPS / TRACES OF WORKING - 610 - UPPER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2J - BADLY DONE TOUCH-UPS / TRACES OF WORKING - 610 - UPPER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60PT631 - REAR WINDOW WIPER MOTOR SHAFT COVER - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60PT631 - REAR WINDOW WIPER MOTOR SHAFT COVER - BA - BREAKAGE/DAMAGE - 000 - SINGLE",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85WA110 - WHEEL COVER - KD - SCRATCHES - 190 - FRONT/RIGHT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85WA110 - WHEEL COVER - KD - SCRATCHES - 190 - FRONT/RIGHT ",
+        "Segement": "Surface-RH-139"
       }
     ]
   },
@@ -878,42 +878,42 @@
     "date": "17/01/2023",
     "defect": [
       {
-        "description": "C60CJ330 - EXCESS COOLANT TEMPT.WARNING LIGHT BULB - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60CJ330 - EXCESS COOLANT TEMPT.WARNING LIGHT BULB - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 23 - PAINT DROPS - 410 - LOWER/LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D85YR110 - FRONT FENDER - 23 - PAINT DROPS - 410 - LOWER/LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT ",
+        "Segement": "Surface-RH-139"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - GJ - UNEVEN CLEARANCE - 191 - FRONT/RIGHT/INTERNAL ",
-        "segement": "Surface-RH-139"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - GJ - UNEVEN CLEARANCE - 191 - FRONT/RIGHT/INTERNAL ",
+        "Segement": "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT"
+        "Descrizione": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
       },
       {
-        "description": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - CB - INCORRECT FITTING - 010 - LEFT"
+        "Descrizione": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - CB - INCORRECT FITTING - 010 - LEFT"
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - GJ - UNEVEN CLEARANCE - 990 - REAR/RIGHT"
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - GJ - UNEVEN CLEARANCE - 990 - REAR/RIGHT"
       }
     ]
   },
@@ -923,36 +923,36 @@
     "date": "17/01/2023",
     "defect": [
       {
-        "description": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT"
+        "Descrizione": "C60MN110 - SEAT BELT UNFASTENED WARNING LIGHT - RD - NOT WORKING - 190 - FRONT/RIGHT"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
       },
       {
-        "description": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - CB - INCORRECT FITTING - 010 - LEFT"
+        "Descrizione": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - CB - INCORRECT FITTING - 010 - LEFT"
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - GJ - UNEVEN CLEARANCE - 990 - REAR/RIGHT"
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - GJ - UNEVEN CLEARANCE - 990 - REAR/RIGHT"
       }
     ],
     "repaired": [
       {
-        "description": "C60CJ330 - EXCESS COOLANT TEMPT.WARNING LIGHT BULB - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE "
+        "Descrizione": "C60CJ330 - EXCESS COOLANT TEMPT.WARNING LIGHT BULB - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 23 - PAINT DROPS - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 23 - PAINT DROPS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - K4 - LOOSE - 010 - LEFT"
       },
       {
-        "description": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT "
+        "Descrizione": "C60UQ250 - ADJ. SPOTLIGHT/LIGHT BAR ELECT. BOARD - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT "
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - GJ - UNEVEN CLEARANCE - 191 - FRONT/RIGHT/INTERNAL "
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - GJ - UNEVEN CLEARANCE - 191 - FRONT/RIGHT/INTERNAL "
       }
     ]
   },
@@ -962,36 +962,36 @@
     "date": "20/01/2023",
     "defect": [
       {
-        "description": "C60JL410 - ENGINE OIL LEVEL & TEMPERATURE SENSOR - RD - NOT WORKING - 000 - SINGLE "
+        "Descrizione": "C60JL410 - ENGINE OIL LEVEL & TEMPERATURE SENSOR - RD - NOT WORKING - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - VH - SURFACE FINISH POORLY DONE - 610 - UPPER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - VH - SURFACE FINISH POORLY DONE - 610 - UPPER/LEFT"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - KD - SCRATCHES - 090 - RIGHT"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - KD - SCRATCHES - 090 - RIGHT"
       },
       {
-        "description": "C60UM310 - REAR TV CAMERA - K4 - LOOSE - 000 - SINGLE"
+        "Descrizione": "C60UM310 - REAR TV CAMERA - K4 - LOOSE - 000 - SINGLE"
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - 0X - WRONG PART - 990 - REAR/RIGHT "
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - 0X - WRONG PART - 990 - REAR/RIGHT "
       }
     ],
     "repaired": [
       {
-        "description": "C60LK110 - TRACTION CONTROL SYSTEM WARNING LIGHT - RD - NOT WORKING - 000 - SINGLE"
+        "Descrizione": "C60LK110 - TRACTION CONTROL SYSTEM WARNING LIGHT - RD - NOT WORKING - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 410 - LOWER/LEFT "
+        "Descrizione": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 410 - LOWER/LEFT "
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 090 - RIGHT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 090 - RIGHT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAF - RIGHT TAILGATE COMPARTMENT "
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAF - RIGHT TAILGATE COMPARTMENT "
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - KD - SCRATCHES - 990 - REAR/RIGHT"
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - KD - SCRATCHES - 990 - REAR/RIGHT"
       }
     ]
   },
@@ -1002,36 +1002,36 @@
 
     "defect": [
       {
-        "description": "C60LK110 - TRACTION CONTROL SYSTEM WARNING LIGHT - RD - NOT WORKING - 000 - SINGLE"
+        "Descrizione": "C60LK110 - TRACTION CONTROL SYSTEM WARNING LIGHT - RD - NOT WORKING - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 410 - LOWER/LEFT "
+        "Descrizione": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 410 - LOWER/LEFT "
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 090 - RIGHT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 090 - RIGHT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAF - RIGHT TAILGATE COMPARTMENT "
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAF - RIGHT TAILGATE COMPARTMENT "
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - KD - SCRATCHES - 990 - REAR/RIGHT"
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - KD - SCRATCHES - 990 - REAR/RIGHT"
       }
     ],
     "repaired": [
       {
-        "description": "C60JL410 - ENGINE OIL LEVEL & TEMPERATURE SENSOR - RD - NOT WORKING - 000 - SINGLE "
+        "Descrizione": "C60JL410 - ENGINE OIL LEVEL & TEMPERATURE SENSOR - RD - NOT WORKING - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - VH - SURFACE FINISH POORLY DONE - 610 - UPPER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - VH - SURFACE FINISH POORLY DONE - 610 - UPPER/LEFT"
       },
       {
-        "description": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - KD - SCRATCHES - 090 - RIGHT"
+        "Descrizione": "D90AV1EQ - REAR DOOR ARM REST MOULDING PAINT - KD - SCRATCHES - 090 - RIGHT"
       },
       {
-        "description": "C60UM310 - REAR TV CAMERA - K4 - LOOSE - 000 - SINGLE"
+        "Descrizione": "C60UM310 - REAR TV CAMERA - K4 - LOOSE - 000 - SINGLE"
       },
       {
-        "description": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - 0X - WRONG PART - 990 - REAR/RIGHT "
+        "Descrizione": "D71AJ552 - FRONT DOOR WINDOW WEATHERSTRIP - 0X - WRONG PART - 990 - REAR/RIGHT "
       }
     ]
   },
@@ -1042,36 +1042,36 @@
 
     "defect": [
       {
-        "description": "C55AN51Q -  GLOW DIESEL WARNING LAMP - RD - NOT WORKING - 000 - SINGLE "
+        "Descrizione": "C55AN51Q -  GLOW DIESEL WARNING LAMP - RD - NOT WORKING - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 610 - UPPER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 610 - UPPER/LEFT"
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 010 - LEFT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 010 - LEFT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - 0X - WRONG PART - P - REAR TAILGATE COMPLETE"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - 0X - WRONG PART - P - REAR TAILGATE COMPLETE"
       },
       {
-        "description": "D71AJ554 - F. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
+        "Descrizione": "D71AJ554 - F. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
       }
     ],
     "repaired": [
       {
-        "description": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
+        "Descrizione": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 27 - DAMAGED - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 27 - DAMAGED - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE510 - REAR DOOR OPENING LIMITER - BA - BREAKAGE/DAMAGE - 010 - LEFT"
+        "Descrizione": "D71CE510 - REAR DOOR OPENING LIMITER - BA - BREAKAGE/DAMAGE - 010 - LEFT"
       },
       {
-        "description": "C65EJ110 - TAIL-LIGHT - BA - BREAKAGE/DAMAGE - 090 - RIGHT "
+        "Descrizione": "C65EJ110 - TAIL-LIGHT - BA - BREAKAGE/DAMAGE - 090 - RIGHT "
       },
       {
-        "description": "D71CJ554 - R. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "D71CJ554 - R. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       }
     ]
   },
@@ -1082,36 +1082,36 @@
 
     "defect": [
       {
-        "description": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
+        "Descrizione": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 27 - DAMAGED - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 27 - DAMAGED - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE510 - REAR DOOR OPENING LIMITER - BA - BREAKAGE/DAMAGE - 010 - LEFT"
+        "Descrizione": "D71CE510 - REAR DOOR OPENING LIMITER - BA - BREAKAGE/DAMAGE - 010 - LEFT"
       },
       {
-        "description": "C65EJ110 - TAIL-LIGHT - BA - BREAKAGE/DAMAGE - 090 - RIGHT "
+        "Descrizione": "C65EJ110 - TAIL-LIGHT - BA - BREAKAGE/DAMAGE - 090 - RIGHT "
       },
       {
-        "description": "D71CJ554 - R. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "D71CJ554 - R. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       }
     ],
     "repaired": [
       {
-        "description": "C55AN51Q -  GLOW DIESEL WARNING LAMP - RD - NOT WORKING - 000 - SINGLE "
+        "Descrizione": "C55AN51Q -  GLOW DIESEL WARNING LAMP - RD - NOT WORKING - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 610 - UPPER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 610 - UPPER/LEFT"
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 010 - LEFT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - GF - NOT FITTED - 010 - LEFT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - 0X - WRONG PART - P - REAR TAILGATE COMPLETE"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - 0X - WRONG PART - P - REAR TAILGATE COMPLETE"
       },
       {
-        "description": "D71AJ554 - F. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
+        "Descrizione": "D71AJ554 - F. DOOR OUTER WINDOW WEATHERSTRIP/MOULD - BA - BREAKAGE/DAMAGE - 090 - RIGHT"
       }
     ]
   },
@@ -1122,36 +1122,36 @@
 
     "defect": [
       {
-        "description": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
+        "Descrizione": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
       },
       {
-        "description": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
+        "Descrizione": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
       }
     ],
     "repaired": [
       {
-        "description": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
+        "Descrizione": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
+        "Descrizione": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
       }
     ]
   },
@@ -1162,36 +1162,36 @@
 
     "repaired": [
       {
-        "description": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
+        "Descrizione": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
       },
       {
-        "description": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
+        "Descrizione": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
       }
     ],
     "defect": [
       {
-        "description": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
+        "Descrizione": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
+        "Descrizione": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
       }
     ]
   },
@@ -1202,36 +1202,36 @@
 
     "defect": [
       {
-        "description": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
+        "Descrizione": "C60JD51Q -  BATTERY WARNING LAMP - RD - NOT WORKING - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - UE - CRACKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
+        "Descrizione": "C55AN46B - REAR SIDE DOOR WIRING CONNECTIONS - 83 - CONNECTION LOOSE - 010 - LEFT"
       },
       {
-        "description": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
+        "Descrizione": "D80QL110 - ADHESIVE STRIP - BA - BREAKAGE/DAMAGE - PAE - LEFT TAILGATE COMPARTMENT"
       },
       {
-        "description": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
+        "Descrizione": "D71YA110 - EXTERIOR MOULDING ON FRONT DOOR FRAME - K4 - LOOSE - 090 - RIGHT "
       }
     ],
     "repaired": [
       {
-        "description": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
+        "Descrizione": "VC60UZ21Q - BLIND  ANGLE DETECTION SENSOR WARNING LAMP - SB - INDICATION IRREGULAR/INCORRECT - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
+        "Descrizione": "D71CE510 - REAR DOOR OPENING LIMITER - GF - NOT FITTED - 010 - LEFT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - KBC - REAR RIGHT PILLARS"
       }
     ]
   },
@@ -1242,36 +1242,36 @@
 
     "defect": [
       {
-        "description": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - KD - SCRATCHES - 000 - SINGLE "
+        "Descrizione": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - KD - SCRATCHES - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT "
+        "Descrizione": "D85YR110 - FRONT FENDER - 2G - COLOUR CHANGE - 410 - LOWER/LEFT "
       },
       {
-        "description": "D71CE110 - REAR SIDE DOOR HINGES - BA - BREAKAGE/DAMAGE - 010 - LEFT"
+        "Descrizione": "D71CE110 - REAR SIDE DOOR HINGES - BA - BREAKAGE/DAMAGE - 010 - LEFT"
       },
       {
-        "description": "C65EJ110 - TAIL-LIGHT - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT"
+        "Descrizione": "C65EJ110 - TAIL-LIGHT - 74 - BOLTS - TIGHT, LOOSE, MISSING - 010 - LEFT"
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 74 - BOLTS - TIGHT, LOOSE, MISSING - 090 - RIGHT"
       }
     ],
     "repaired": [
       {
-        "description": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - K4 - LOOSE - 000 - SINGLE"
+        "Descrizione": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - K4 - LOOSE - 000 - SINGLE"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 610 - UPPER/LEFT "
+        "Descrizione": "D85YR110 - FRONT FENDER - QS - FIBER - HAIR - 610 - UPPER/LEFT "
       },
       {
-        "description": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
+        "Descrizione": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GF - NOT FITTED - 090 - RIGHT "
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GF - NOT FITTED - 090 - RIGHT "
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - KD - SCRATCHES - 090 - RIGHT"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - KD - SCRATCHES - 090 - RIGHT"
       }
     ]
   },
@@ -1283,36 +1283,36 @@
 
     "defect": [
       {
-        "description": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - GF - NOT FITTED - 000 - SINGLE "
+        "Descrizione": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - GF - NOT FITTED - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 76 - ORANGE PEEL - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 76 - ORANGE PEEL - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE110 - REAR SIDE DOOR HINGES - K4 - LOOSE - 090 - RIGHT"
+        "Descrizione": "D71CE110 - REAR SIDE DOOR HINGES - K4 - LOOSE - 090 - RIGHT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       },
       {
-        "description": "D85YT110 - SIDE DOORS - GH - MISALIGNED - 190 - FRONT/RIGHT "
+        "Descrizione": "D85YT110 - SIDE DOORS - GH - MISALIGNED - 190 - FRONT/RIGHT "
       }
     ],
     "repaired": [
       {
-        "description": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - 0X - WRONG PART - 000 - SINGLE"
+        "Descrizione": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - 0X - WRONG PART - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
+        "Descrizione": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - KB - DEFORMATION - 090 - RIGHT "
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - KB - DEFORMATION - 090 - RIGHT "
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
       }
     ]
   },
@@ -1323,36 +1323,36 @@
 
     "defect": [
       {
-        "description": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - GF - NOT FITTED - 000 - SINGLE "
+        "Descrizione": "C65JA130 - MAIN/DIPPED HEADLAMP SWITCH - GF - NOT FITTED - 000 - SINGLE "
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 76 - ORANGE PEEL - 410 - LOWER/LEFT"
+        "Descrizione": "D85YR110 - FRONT FENDER - 76 - ORANGE PEEL - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71CE110 - REAR SIDE DOOR HINGES - K4 - LOOSE - 090 - RIGHT"
+        "Descrizione": "D71CE110 - REAR SIDE DOOR HINGES - K4 - LOOSE - 090 - RIGHT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - GJ - UNEVEN CLEARANCE - 090 - RIGHT"
       },
       {
-        "description": "D85YT110 - SIDE DOORS - GH - MISALIGNED - 190 - FRONT/RIGHT "
+        "Descrizione": "D85YT110 - SIDE DOORS - GH - MISALIGNED - 190 - FRONT/RIGHT "
       }
     ],
     "repaired": [
       {
-        "description": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - 0X - WRONG PART - 000 - SINGLE"
+        "Descrizione": "C60MH41Q -  DRIVING MODE SET ON  WARNING LAMP - 0X - WRONG PART - 000 - SINGLE"
       },
       {
-        "description": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
+        "Descrizione": "D71AA01Q - FRONT DOOR FRAME - 2U - POLISHING MARKS - 410 - LOWER/LEFT"
       },
       {
-        "description": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
+        "Descrizione": "D71KJ315 - REAR DOOR LOCK CHILD SAFETY CATCH - K4 - LOOSE - 090 - RIGHT"
       },
       {
-        "description": "C65EK110 - OUTER TAIL-LIGHT - KB - DEFORMATION - 090 - RIGHT "
+        "Descrizione": "C65EK110 - OUTER TAIL-LIGHT - KB - DEFORMATION - 090 - RIGHT "
       },
       {
-        "description": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
+        "Descrizione": "D71YJ110 - EXTERIOR MOULDING ON REAR DOOR FRAME - 0X - WRONG PART - 090 - RIGHT"
       }
     ]
   },
@@ -1363,46 +1363,46 @@
 
     "defect": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - GF - NOT FITTED - 000 - SINGLE",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
+        "Descrizione": "D85YR110 - FRONT FENDER - IE - IRREGULAR APPLICATION OF SEALANT - 410 - LOWER/LEFT",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - 74 - BOLTS - TIGHT, LOOSE, MISSING - 011 LEFT/INTERNAL",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
+        "Descrizione": "D80QN110 - SPOILER - BA - BREAKAGE/DAMAGE - TAA - CENTRAL TUNNEL",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GF - NOT FITTED - 090 - RIGHT",
         "Segement" : "Surface-RH-139"
       }
     ],
 
     "repaired": [
       {
-        "description": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
+        "Descrizione": "C65AE110 - LIGHT CLUSTER - 0X - WRONG PART - 000 - SINGLE",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
+        "Descrizione": "D85YR110 - FRONT FENDER - 2Q - IMPURITIES IN THE PAINT - 410 - LOWER/LEFT",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
+        "Descrizione": "D71KJ310 - REAR DOOR LOCK MECHANISM - KD - SCRATCHES - 011 - LEFT/INTERNAL",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
+        "Descrizione": "D80QN110 - SPOILER - 74 - BOLTS - TIGHT, LOOSE, MISSING - TAA - CENTRAL TUNNEL",
         "Segement" : "Surface-RH-139"
       },
       {
-        "description": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
+        "Descrizione": "D80LM180 - LOWER SIDE PROTECTION - GJ - UNEVEN CLEARANCE - 090 - RIGHT",
         "Segement" : "Surface-RH-139"
       }
     ]

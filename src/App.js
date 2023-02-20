@@ -11,6 +11,7 @@ import AdminLogin from "./Components/Admin-pannel/AdminLogin";
 import AdminDashboard from "./Components/Admin-pannel/AdminDashboard";
 import NewDefects from "./Components/Admin-pannel/NewDefects";
 import SegementManagement from "./Components/Admin-pannel/SegementManagement";
+import Addvehicle from "./Components/Defect-Segments/Addvehicle";
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
           <Route path="segement-managenent" element={<SegementManagement/>}/>
 
         </Route>
+        <Route path="/add-vehicle" element={<Addvehicle />} />
         <Route path="/defect-dashboard" element={<DefectDashboard />} />
         <Route exact path="/surface-rh-139-defects" element={<Segement segement="surface-rh-139-defects" station='Surface-RH-139' />} />
         <Route exact path="/surface-ftr-139-defects" element={<Segement segement="surface-ftr-139-defects" station='Surface-FTR-139'/>} />
