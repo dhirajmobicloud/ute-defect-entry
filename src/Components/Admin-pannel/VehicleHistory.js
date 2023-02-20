@@ -20,7 +20,7 @@ const VehicleHistory = () => {
     })
 
   },[])
-  const vehicleModels=["Nexon Petrol", "Nexon Electric","Nexon Vxi","Compass Vxi","Compass Petrol", "Compass Electric","Compass Diesel","Meridien Electric","Meridien Vxi","Meridien Petrol","Meridien Diesel"];
+  const vehicleModels=["Nexon Petrol", "Nexon Electric","Nexon Vxi","Compass Vxi","Compass Petrol", "Compass Electric","Compass Diesel","Meridien Electric","Meridien Vxi","Meridien Petrol","Meridien Diesel","compass"];
   
  
   const [model, setModel] = useState("all");
@@ -47,54 +47,70 @@ const VehicleHistory = () => {
      return newDate;
   }
 
-  function FilterDataBasedOnDate()
-  {
-    let myarray=new Array();
-    for(let i=0;i<difectList.length;i++)
-    {
-     if(difectList[i].date!==undefined)
-     {
-      myarray.push(difectList[i]);
-     }
-    }
 
-   return myarray;
-  
-  }
 
- const myanswerarray=FilterDataBasedOnDate();
- console.log("Answer is",myanswerarray);
 
- console.log("Answer Array is the",myanotherdata);
+function MyDateConverter(mydate)
+{
+  const [year, month, day] = mydate.split("-");
+  let myValue = new Date(+year, month - 1, +day);
+  return myValue;
+}
 
- console.log("Defect List is",difectList);
 
- 
 
 
  
 
  
-  
-  console.log("Flag is", flag);
-
   
   const modelHandler = (e) => {
     setModel(e.target.value);
+    let modeldata=e.target.value;
     if(e.target.value!=="all")
     {
-      setMyListData(difectList.filter((values)=>values.model===e.target.value))
+      setMyListData(mylistdata.filter((values)=>values.model===e.target.value));
+   
+    
     }
-    else{
-      setMyListData(difectList);
-    }
+
+    
+   
  
   };
 
-
  
+
+  console.log("My List Data is",mylistdata);
   const periodHandler=(e)=>{
     setPeriod(e.target.value);
+    alert(e.target.value);
+    if(e.target.value==='Today')
+    {
+      let newDate=new Date();
+      setMyListData(mylistdata.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate()))))
+
+    
+    }
+    if(e.target.value==='Weekly')
+    {
+      let newDate=new Date();
+      let sevenDayBackDate=new Date(Date.now()-7*24*60*60*1000);
+      setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate)));
+    
+    
+    }
+    if(e.target.value==='Monthly')
+    {
+      
+      let newDate=new Date();
+      let thirtyDayBackDate=new Date(Date.now()-30*24*60*60*1000);
+      setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>thirtyDayBackDate)));
+    
+ 
+    }
+
+   
  
   
   }
@@ -102,59 +118,55 @@ const VehicleHistory = () => {
     setEndDate(e.target.value);
     let start = new Date(startdate);
     let end = new Date(e.target.value);
-    console.log(start);
-
-    console.log(end);
+  alert("Startdate is "+start+" and EndDate is "+end);
 
     if (start > end) {
       alert("Invalid Date");
     }
+else{
+   
 
   
-      let listData = difectList.filter(
-        (values) =>
-          MyDateCheckerToday(values.date) >= start &&
-          MyDateCheckerToday(values.date) <= end
-      );
-      setDefectList(listData);
+
+   setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))>=start&&MyDateConverter(MyDateCheckerToday(values.createdAt))<=end)));
+}
+
+
+ 
+  
+   
     
   };
 
   const MySegmentFunction = (e) => {
     setDefectSegement(e.target.value);
     
-    if(e.target.value!=='all')
+  alert(e.target.value);
+  if(e.target.value!=='all')
+  {
+    let myarray=new Array();
+    for(let i=0;i<mylistdata.length;i++)
     {
-      let myarray=new Array();
-      for(let i=0;i<mylistdata.length;i++)
-    {
-    
       for(let j=0;j<mylistdata[i].repaired.length;j++)
       {
-        let mydata={vin:'',model:'',date:'',repaired:[]};
+        let mydata={vin:'',model:'',createdAt:'',repaired:[]};
         let repairedarray=[];
         if(mylistdata[i].repaired[j].Segement===e.target.value)
         {
-           repairedarray.push(difectList[i].repaired[j]);
+          repairedarray.push(mylistdata[i].repaired[j])
           mydata.vin=mylistdata[i].vin;
           mydata.model=mylistdata[i].model;
-          mydata.date=mylistdata[i].date;
           mydata.repaired=repairedarray;
-          console.log("MyAnswer is", mydata);
+          mydata.createdAt=mylistdata[i].createdAt;
+
           myarray.push(mydata);
         }
-
-        console.log("My Array is",myarray);
-        setMyListData(myarray);
       }
     }
+    setMyListData(myarray);
 
-  
-      }
-      else{
-        setMyListData(difectList);
-      }
-    }
+  }
+  }
 
      
    
@@ -172,17 +184,17 @@ const VehicleHistory = () => {
       {
         for(let j=0;j<mylistdata[i].repaired.length;j++)
         {
-          let mydata={vin:'',model:'',repaired:[]};
+          let mydata={vin:'',model:'',createdAt:'',repaired:[]};
           let repairedarray=[];
-          console.log("New Data is",mylistdata[i].repaired[j].new);
           if(mylistdata[i].repaired[j].new===true)
           {
             repairedarray.push(mylistdata[i].repaired[j])
             mydata.vin=mylistdata[i].vin;
             mydata.model=mylistdata[i].model;
             mydata.repaired=repairedarray;
+            mydata.createdAt=mylistdata[i].createdAt;
 
-            console.log("My Data is",mydata);
+            
             myarray.push(mydata);
           }
         }
@@ -288,6 +300,7 @@ const VehicleHistory = () => {
             type="date"
             className="enddate"
             value={endDate}
+            onChange={(e)=>EndDateFunction(e)}
           ></input>
         </div>
       </div>
