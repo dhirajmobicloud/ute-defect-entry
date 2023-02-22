@@ -11,7 +11,7 @@ const VehicleHistory = () => {
   const [myanotherdata,setMyAnotherData]=useState([]);
 
   useEffect(()=>{
-    axios.get('https://easy-gray-camel-sock.cyclic.app/all_vehicles').then((response)=>{
+    axios.get(`${process.env.REACT_APP_API_URL}/all_vehicles`).then((response)=>{
       setDefectList(response.data);
       setMyListData(response.data);
       

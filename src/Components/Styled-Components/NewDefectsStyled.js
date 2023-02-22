@@ -29,7 +29,7 @@ export const NewDefectsStyled = styled.div`
       border-radius: 10px;
       border: none;
       width: 200px;
-      text-transform: uppercase;
+      /* text-transform: uppercase; */
     }
     h5 {
       text-align: center;
@@ -56,14 +56,21 @@ export const NewDefectsStyled = styled.div`
           display: none;
         }
         .listdata {
-          color: white;
+          color: #000;
           background-color: #4286f4;
           margin: 5px;
           align-items: center;
+          font-weight: 600;
+
+          form{
+            input{
+              font-size: 30px;
+            }
+          }
 
           .vinNumber {
             padding: 0 10px 0 0;
-            border-right: solid white 1px;
+            border-right: solid #000 1px;
           }
           .model {
             padding: 0 10px 0 0;

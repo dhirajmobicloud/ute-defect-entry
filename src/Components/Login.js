@@ -6,20 +6,20 @@ import axios from "axios";
 import logo from "../Images/FCA_logo-removebg-preview.png";
 // import { useDispatch, useSelector } from "react-redux";
 // import logo from '../Images/FCA_logo-removebg-preview.png'
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 // import { Add_vehicle } from "../Redux/Reducers/vehicle";
 
 const Login = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [userpassword, setUserpassword] = useState("");
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     let mydata = { username: username, password: userpassword };
     axios
-      .post(" https://easy-gray-camel-sock.cyclic.app/login", mydata)
+      .post(`${process.env.REACT_APP_API_URL}/login`, mydata)
       .then((response) => {
         if (response) {
           localStorage.setItem("username", response.data.username);
@@ -70,7 +70,6 @@ const Login = () => {
               <button
                 type="submit"
                 className="btn btn-primary m-auto"
-                role="button"
               >
                 LOGIN
               </button>

@@ -6,7 +6,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    navigate("admin-dashboard");
+    navigate("new-defects");
      // eslint-disable-next-line
   }, []);
 

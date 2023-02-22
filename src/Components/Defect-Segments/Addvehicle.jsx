@@ -14,7 +14,7 @@ const Addvehicle = () => {
 
   const submitHandler =(e)=>{
     e.preventDefault();
-    fetch('https://easy-gray-camel-sock.cyclic.app/add_vehicle',{method:'POST' ,body:JSON.stringify(vehicle_data), headers: { "Content-Type": "application/json" }})
+    fetch(`${process.env.REACT_APP_API_URL}/add_vehicle`,{method:'POST' ,body:JSON.stringify(vehicle_data), headers: { "Content-Type": "application/json" }})
     .then(async(res)=>{
       if(res.status === 200){
         localStorage.setItem("vehicle_id", vehicle_data.vin)

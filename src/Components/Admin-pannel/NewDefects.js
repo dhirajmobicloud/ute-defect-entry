@@ -5,13 +5,17 @@ import { NewDefectsStyled } from "../Styled-Components/NewDefectsStyled";
 
 const NewDefects = () => {
   const [model, setModel] = useState("all");
-  const [period, setPeriod] = useState("");
+  const [period, setPeriod] = useState("today");
   // const [startdate, setStartDate] = useState();
   // const [endDate, setEndDate] = useState();
   const [defectSegment, setDefectSegement] = useState("all");
   const [timePeriod, setTimePeriod] = useState("all");
   const [pending, setPending] = useState("Repaired");
   const [data, setData] = useState([]);
+  const [sectedDefects, setSelectedDefects] = useState([]);
+  const [newDefect, setNewDefect] = useState({
+    Segement:"", Descrizione:"",  
+  })
 
   // let list = data
   // let list = data.map((element) => {
@@ -40,7 +44,7 @@ const NewDefects = () => {
   );
 
   useEffect(() => {
-    fetch("https://easy-gray-camel-sock.cyclic.app/all_vehicles", {
+    fetch(`${process.env.REACT_APP_API_URL}/all_vehicles`, {
       method: "GET",
     })
       .then((res) => {
@@ -274,45 +278,15 @@ const NewDefects = () => {
   //   }
   // };
 
-  // Period handler //////////////////////////////////////////
-
-  // const periodlHandler = (e) => {
-  //   let date = e.target.value;
-  //   // checkPeriod(date);
-  //   setPeriod(e.target.value);
-  //   console.log(timePeriod);
-  //   if (date === "Today") {
-  //     let date = moment().format("L");
-  //     let today = new Date(date);
-  //     setTimePeriod(today);
-  //     console.log(today);
-  //     let list = newDefectList.filter(
-  //       (element) => new Date(element.date) === today
-  //     );
-  // let a = new Date(element.date)
-  // console.log(new Date(element.date))
-  // return  a === today;
-  //     console.log(list);
-  //     setNewDefectList(list);
-  //   } else if (date === "Weekly") {
-  //     let list = data.filter((element) => {
-  //       let a = element.date;
-  //       console.log(a);
-  //       return element.model === model && a >= timePeriod;
-  //     });
-  //     console.log(list);
-  //     setNewDefectList(list);
-  //   } else if (date === "Monthly") {
-  //     let list = data.filter((element) => {
-  //       let a = new Date(element.date);
-  //       return element.model === model && a >= timePeriod;
-  //     });
-  //     console.log(list);
-  //     setNewDefectList(list);
-  //   } else {
-  //     console.log("something went wrong");
-  //   }
-  // };
+  const checkPeriod=(data)=>{
+    let today = moment
+    let week = moment().subtract(7, "days").calendar();
+    let month = moment().subtract(30, "days").calendar();
+    
+  }
+// console.log( moment("09/05/2002")._d)
+ 
+  console.log( checkPeriod(data))
 
   // Segement handler //////////////////////////////////////////
 
@@ -461,6 +435,22 @@ const NewDefects = () => {
     setPending(e.target.value);
   };
 
+  const selectDefects = (e, vin) =>{
+    console.log("this is event : " , e)
+    
+    console.log("this is vin : " , vin)
+    setSelectedDefects([...sectedDefects,  Object.assign(e,{vin:vin , status:pending})])
+  }
+
+  const replaceDefects = () =>{
+    fetch(`http://localhost:5000/replace-defects`, {method : "POST", body:JSON.stringify({sectedDefects, newDefect }),headers:{'Content-Type':'application/json'} })
+    // console.log( JSON.stringify({sectedDefects, newDefect }) )
+  }
+
+  const newDefectOnchange =(e)=>{
+      setNewDefect({...newDefect, [e.target.name]:e.target.value})
+  }
+
   return (
     <NewDefectsStyled className="mainpart">
       <div className="modeldescription">
@@ -481,7 +471,7 @@ const NewDefects = () => {
         </div>
         <div className="inputElement">
           <h5>PERIOD</h5>
-          <select className="Model" value={period} onChange={""}>
+          <select className="Model" value={period} onChange={(e)=>setPeriod(e.target.value)}>
             <option value="all" selected>
               ALL
             </option>
@@ -535,7 +525,7 @@ const NewDefects = () => {
                       <div className="listdata d-flex">
                         <div>
                           <form className="mx-2">
-                            <input type="checkbox" />
+                            <input  onChange={()=>selectDefects(item , element.vin)} type="checkbox" />
                           </form>
                         </div>
                         <div className="vinNumber mx-2 my-2">{element.vin}</div>
@@ -557,7 +547,7 @@ const NewDefects = () => {
                       <div className="listdata d-flex">
                         <div>
                           <form className="mx-2">
-                            <input type="checkbox" />
+                            <input  onChange={()=>selectDefects(item)} type="checkbox" />
                           </form>
                         </div>
                         <div className="vinNumber mx-2 my-2">{element.vin}</div>
@@ -599,7 +589,7 @@ const NewDefects = () => {
               <label for="inputEmail4" class="form-label">
                 SEGEMENT
               </label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" value={newDefect.Segement} name="Segement" onChange={newDefectOnchange} aria-label="Default select example">
                 <option selected>Choose...</option>
                 <option value="Surface-RH-139">Surface RH 139</option>
                 <option value="Surface-FTR-139">Surface FTR 139</option>
@@ -616,10 +606,10 @@ const NewDefects = () => {
               </select>
             </div>
             <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">
+              <label for="inputText" class="form-label">
                 Descrizione
               </label>
-              <input type="password" class="form-control" id="inputPassword4" />
+              <input type="text" value={newDefect.Descrizione} name="Descrizione" onChange={newDefectOnchange} class="form-control" id="inputText" />
             </div>
             <div class="col-md-4">
               <label for="inputAddress" class="form-label">
@@ -656,7 +646,7 @@ const NewDefects = () => {
               <input type="text" class="form-control" id="inputState" />
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">
+              <button type="button" onClick={replaceDefects} class="btn btn-primary">
                 Submit
               </button>
               <button type="submit" class="btn btn-primary disabled mx-2">

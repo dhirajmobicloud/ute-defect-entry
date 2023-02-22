@@ -40,7 +40,7 @@ const DefectDashboard = () => {
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/${vin_no}`, {method:"GET"})
+    fetch(`${process.env.REACT_APP_API_URL}/get-vehicle-data/${vin_no}`, {method:"GET"})
     .then((res)=>{
       return res.json()
     })
@@ -62,7 +62,7 @@ const DefectDashboard = () => {
   // Add repaired defect fuction
 
   const Add_repaired = (defect) => {
-        fetch(`https://easy-gray-camel-sock.cyclic.app/repaired-vehicle-defect/${vin_no}`, {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
+        fetch(`${process.env.REACT_APP_API_URL}/repaired-vehicle-defect/${vin_no}`, {method:"PUT", body:JSON.stringify(defect),  headers: { "Content-Type": "application/json" }})
         .then((res)=>{
           if(res.status === 200){
             // getVehicleData()
@@ -82,7 +82,7 @@ const DefectDashboard = () => {
 
   const segementAssigned = (LoginedUser) => {
     fetch(
-      `https://easy-gray-camel-sock.cyclic.app/get-assigned-segement-data/${LoginedUser}`,
+      `${process.env.API_URL}/get-assigned-segement-data/${LoginedUser}`,
       { method: "GET" }
     )
       .then((res) => {
