@@ -48,6 +48,7 @@ export const NewDefectsStyled = styled.div`
       border-radius: 10px 10px 10px 10px;
       padding: 20px;
 
+       
       .defectlist {
         background-color: #373b44;
         /* height: 65vh; */
@@ -56,8 +57,8 @@ export const NewDefectsStyled = styled.div`
           display: none;
         }
         .listdata {
-          color: #000;
-          background-color: #4286f4;
+          color: #fff;
+          background-color: #4286f426;
           margin: 5px;
           align-items: center;
           font-weight: 600;

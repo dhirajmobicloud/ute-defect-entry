@@ -82,7 +82,7 @@ const DefectDashboard = () => {
 
   const segementAssigned = (LoginedUser) => {
     fetch(
-      `${process.env.API_URL}/get-assigned-segement-data/${LoginedUser}`,
+      `${process.env.REACT_APP_API_URL}/get-assigned-segement-data/${LoginedUser}`,
       { method: "GET" }
     )
       .then((res) => {
