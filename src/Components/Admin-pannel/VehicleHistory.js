@@ -6,37 +6,52 @@ import axios from "axios";
 // import styles from "./dashboard.module.css";
 
 const VehicleHistory = () => {
-  const [difectList, setDefectList] = useState([]);
-  const [mylistdata,setMyListData]=useState([]);
-  const [myanotherdata,setMyAnotherData]=useState([]);
+  const [booleanFlag,setBooleanFlag]=useState(false);
+  const [myarraydata,setmyarraydata]=useState([]);
+  let [mylistdata,setMyListData]=useState([])
+  let [myanotherdata,setMyAnotherData]=useState([]);
+  let [radiodata,setRadiodata]=useState("default");
 
   useEffect(()=>{
     axios.get('https://easy-gray-camel-sock.cyclic.app/all_vehicles').then((response)=>{
-      setDefectList(response.data);
+      setBooleanFlag(true);
+      setmyarraydata(response.data);
       setMyListData(response.data);
+      setMyAnotherData(response.data);
+     
+
+
+   
       
     }).catch((err)=>{
+      setBooleanFlag(true);
       console.log(err);
     })
 
   },[])
+
+ 
+
   const vehicleModels=["Nexon Petrol", "Nexon Electric","Nexon Vxi","Compass Vxi","Compass Petrol", "Compass Electric","Compass Diesel","Meridien Electric","Meridien Vxi","Meridien Petrol","Meridien Diesel","compass"];
-  
- 
+
+
+
+      
+
   const [model, setModel] = useState("all");
- 
+ const [flag1,setflag1]=useState(0);
+ const [flag2,setflag2]=useState(0);
+ const [flag3,setflag3]=useState(0);
   const [period, setPeriod] = useState("all");
   const [startdate, setStartDate] = useState();
-  const [flagger,setflagger]=useState(0);
   const [endDate, setEndDate] = useState();
  
   const [defectSegment, setDefectSegement] = useState("all");
   const [weekDate, setWeekDate] = useState("");
-  const [flag, setflag] = useState(0);
   const [newData,setNewData]=useState([]);
   const [newlist,setNewlist]=useState([]);
   let [jsondata,setJsonData]=useState({vin:'',model:'',repaired:[]});
-  let [radiodata,setRadiodata]=useState("default");
+ 
   let [myFilteredSegment,setMyFilteredSegment]=useState([]);
 
 
@@ -48,8 +63,6 @@ const VehicleHistory = () => {
   }
 
 
-
-
 function MyDateConverter(mydate)
 {
   const [year, month, day] = mydate.split("-");
@@ -57,189 +70,796 @@ function MyDateConverter(mydate)
   return myValue;
 }
 
-
-
-
- 
-
- 
-  
-  const modelHandler = (e) => {
-    setModel(e.target.value);
-    let modeldata=e.target.value;
-    if(e.target.value!=="all")
-    {
-      setMyListData(mylistdata.filter((values)=>values.model===e.target.value));
-   
-    
-    }
-
-    
-   
- 
-  };
-
- 
-
-  console.log("My List Data is",mylistdata);
-  const periodHandler=(e)=>{
-    setPeriod(e.target.value);
-    alert(e.target.value);
-    if(e.target.value==='Today')
-    {
-      let newDate=new Date();
-      setMyListData(mylistdata.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate()))))
-
-    
-    }
-    if(e.target.value==='Weekly')
-    {
-      let newDate=new Date();
-      let sevenDayBackDate=new Date(Date.now()-7*24*60*60*1000);
-      setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate)));
-    
-    
-    }
-    if(e.target.value==='Monthly')
-    {
-      
-      let newDate=new Date();
-      let thirtyDayBackDate=new Date(Date.now()-30*24*60*60*1000);
-      setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>thirtyDayBackDate)));
-    
- 
-    }
-
-   
- 
-  
-  }
-  const EndDateFunction = (e) => {
-    setEndDate(e.target.value);
-    let start = new Date(startdate);
-    let end = new Date(e.target.value);
-  alert("Startdate is "+start+" and EndDate is "+end);
-
-    if (start > end) {
-      alert("Invalid Date");
-    }
-else{
-   
-
-  
-
-   setMyListData(mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))>=start&&MyDateConverter(MyDateCheckerToday(values.createdAt))<=end)));
+function StartDateFunction(mydate)
+{
+  const [year, month, day]=mydate.split("-");
+  let newDate=new Date(+year,month-1,day-1);
+  return newDate;
 }
 
 
- 
-  
-   
-    
-  };
+const modelHandler=(e)=>{
+  let modeldata=e.target.value;
+  setModel(modeldata);
+  let mydatavalues=mylistdata.filter((values)=>values.model===modeldata);
+  setMyListData(mydatavalues);
+  setMyAnotherData(mydatavalues);
+}
 
-  const MySegmentFunction = (e) => {
-    setDefectSegement(e.target.value);
+
+const periodHandler=(e)=>{
+  let periodData=e.target.value;
+  setPeriod(periodData);
+  if(periodData==='Today')
+  {
+    let newDate=new Date();
+   let mydatavalues= mylistdata.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate())));
+
+   setMyListData(mydatavalues);
+   setMyAnotherData(mydatavalues);
+ 
+
+  }
+  if(periodData==='Weekly')
+  {
+    let newDate=new Date(Date.now()+1*24*60*60*1000);
+    let sevenDayBackDate=new Date(Date.now()-8*24*60*60*1000);
+    let mydatavalues=mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+    setMyListData(mydatavalues);
+    setMyAnotherData(mydatavalues);
     
-  alert(e.target.value);
-  if(e.target.value!=='all')
+    
+    
+  }
+  if(periodData==="Monthly")
+  {
+  
+    
+      let newDate=new Date(Date.now()+1*24*60*60*1000);
+      let sevenDayBackDate=new Date(Date.now()-31*24*60*60*1000);
+      let mydatavalues=mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+      setMyListData(mydatavalues);
+      setMyAnotherData(mydatavalues);
+    
+  
+      
+      
+  
+  }
+  
+}
+
+
+
+    
+
+
+const SegmentHandler=(e)=>{
+  let SegmentData=e.target.value;
+  setDefectSegement(SegmentData);
+ alert(SegmentData);
+
+ let myarray=new Array();
+
+ for(let i=0;i<mylistdata.length;i++)
+ {
+  if(mylistdata[i].repaired.length>0)
+  {
+    myarray.push(mylistdata[i]);
+  }
+ }
+
+ let myarray1=new Array();
+
+ for(let i=0;i<myarray.length;i++)
+ {
+    let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+    for(let j=0;j<myarray[i].repaired.length;j++)
+    {
+      if(myarray[i].repaired[j].Segement===SegmentData)
+      {
+        mydata.repaired.push(myarray[i].repaired[j]);
+      }
+    }
+    if(mydata.repaired.length>0);
+    myarray1.push(mydata);
+ }
+ 
+ console.log("MY ARRAY AFTER FILTER IS=",myarray);
+ console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+
+let myfinalarray=new Array();
+
+for(let i=0;i<myarray1.length;i++)
+{
+  if(myarray1[i].repaired.length>0)
+  {
+    myfinalarray.push(myarray1[i]);
+  }
+}
+
+console.log(myfinalarray);
+setMyListData(myfinalarray);
+setMyAnotherData(myfinalarray);
+
+
+ }
+
+const NewDataHandler=(e)=>{
+  setRadiodata(e.target.value);
+  let mydata=e.target.value;
+  alert(mydata);
+
+  if(e.target.value==="new")
   {
     let myarray=new Array();
+
     for(let i=0;i<mylistdata.length;i++)
     {
+      let mydata={vin:mylistdata[i].vin,model:mylistdata[i].model,createdAt:mylistdata[i].createdAt,repaired:[]}
       for(let j=0;j<mylistdata[i].repaired.length;j++)
       {
-        let mydata={vin:'',model:'',createdAt:'',repaired:[]};
-        let repairedarray=[];
-        if(mylistdata[i].repaired[j].Segement===e.target.value)
+        if(mylistdata[i].repaired[j].new===true)
         {
-          repairedarray.push(mylistdata[i].repaired[j])
-          mydata.vin=mylistdata[i].vin;
-          mydata.model=mylistdata[i].model;
-          mydata.repaired=repairedarray;
-          mydata.createdAt=mylistdata[i].createdAt;
-
-          myarray.push(mydata);
-        }
+          mydata.repaired.push(mylistdata[i].repaired[j]);
       }
     }
-    setMyListData(myarray);
 
-  }
-  }
-
-     
-   
-    
-
-
-
-
-  const myNewFunction=(e)=>{
-    setRadiodata(e.target.value);
-    if(e.target.value==="new")
+    if(mydata.repaired.length>0)
     {
-      let myarray=new Array();
-      for(let i=0;i<mylistdata.length;i++)
-      {
-        for(let j=0;j<mylistdata[i].repaired.length;j++)
-        {
-          let mydata={vin:'',model:'',createdAt:'',repaired:[]};
-          let repairedarray=[];
-          if(mylistdata[i].repaired[j].new===true)
-          {
-            repairedarray.push(mylistdata[i].repaired[j])
-            mydata.vin=mylistdata[i].vin;
-            mydata.model=mylistdata[i].model;
-            mydata.repaired=repairedarray;
-            mydata.createdAt=mylistdata[i].createdAt;
-
-            
-            myarray.push(mydata);
-          }
-        }
-      }
-      setMyListData(myarray);
-
-    }
-    else{
-      setMyListData(difectList)
+      myarray.push(mydata);
     }
   }
 
-  
+  console.log("The Final Answer is mainly=",myarray);
+ if(myarray.length===0)
+ {
+  mylistdata.length=0;
+ }
+ else if(myarray.length>0)
+ {
+  setMyListData(myarray);
+ }
  
-  function ShowDataCondition() {
-    return (
-      <div className="defects">
-        <div className="defectlist">
-          {mylistdata.length > 0
-            ? mylistdata.map((element) => {
-                return element.repaired.map((item) => {
-                  return (
-                    <div className="listdata d-flex">
-                      <div className="vinNumber mx-2 my-2">{element.vin}</div>
-                      <div className="Segement mx-2 my-2">{element.model}</div>
-                      <div className="Segement mx-2 my-2">{item.Segement}</div>
+}
+else if(e.target.value==="default")
+{
+  setMyListData(myanotherdata);
+}
+}
+
+function MyCheckData(array1,array2)
+{
+  if(array1.length===0)
+  {
+    if(array2.length===0)
+    {
+      console.log("No Data needed to add");
+    }
+    else if(array2.length>0)
+    {
+      console.log("Needed to ADD DATA");
+      setMyListData(array2);
+      setMyAnotherData(array2);
+    }
+  }
+  else if(array1.length>0)
+  {
+    if(array1.length===array2.length)
+      {
+           let k=0;
+           for(let i=0;i<array2.length;i++)
+           {
+            if(array1[i].vin===array2[i].vin)
+            {
+              k=k+1;
+            }
+           }
+           if(k===array1.length);
+           {
+            console.log("No Needed to add data");
+           }
+           if(k!==array1.length)
+            {
+               setMyListData(array2);
+               setMyAnotherData(array2);
+            }
+           }
+
+      }
+      else if(array1.length!==array2.length)
+      {
+        console.log("Data Needed to Insert");
+        setMyListData(array2);
+        setMyAnotherData(array2);
+      }
+  }
+
+  function PeriodData()
+  {
+    if(model!=="all"&&period==="all"&&defectSegment==="all"&&radiodata==="default")
+    {
+      console.log("Condiiton 1");
+      let mydatavalues=myarraydata.filter((values)=>values.model===model);
+     MyCheckData(mylistdata,mydatavalues);
+    }
+    if(model==="all"&&period!=="all"&&defectSegment==="all")
+    {
+      console.log("Condition 2");
+      if(period==="Today")
+      {
+        console.log("Condition 2.1")
+        let newDate=new Date();
+        let mydatavalues= myarraydata.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate())));
+
+        MyCheckData(mylistdata,mydatavalues);
+
+      }
+      if(period==="Weekly")
+      {
+        console.log("Condition 2.2");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-8*24*60*60*1000);
+        let mydatavalues=myarraydata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+        MyCheckData(mylistdata,mydatavalues);
+      }
+      if(period==="Monthly")
+      {
+        console.log("Condition 2.3");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-31*24*60*60*1000);
+        let mydatavalues=myarraydata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+        MyCheckData(mylistdata,mydatavalues);
+      }
+    }
+    if(model==="all"&&period==="all"&&defectSegment!=="all"&&radiodata==="default")
+    {
+      console.log("Condition 3");
+
+      let myarray=new Array();
+
+      for(let i=0;i<myarraydata.length;i++)
+      {
+       if(myarraydata[i].repaired.length>0)
+       {
+         myarray.push(myarraydata[i]);
+       }
+      }
+     
+      let myarray1=new Array();
+     
+      for(let i=0;i<myarray.length;i++)
+      {
+         let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+         for(let j=0;j<myarray[i].repaired.length;j++)
+         {
+           if(myarray[i].repaired[j].Segement===defectSegment)
+           {
+             mydata.repaired.push(myarray[i].repaired[j]);
+           }
+         }
+         if(mydata.repaired.length>0);
+         myarray1.push(mydata);
+      }
+      
+      console.log("MY ARRAY AFTER FILTER IS=",myarray);
+      console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+     
+     let myfinalarray=new Array();
+     
+     for(let i=0;i<myarray1.length;i++)
+     {
+       if(myarray1[i].repaired.length>0)
+       {
+         myfinalarray.push(myarray1[i]);
+       }
+     }
+     MyCheckData(mylistdata,myfinalarray);
+    }
+    if(model==="all"&&period!=="all"&&defectSegment!=="all"&&radiodata==="default")
+    {
+      console.log("Condition 4");
+      if(period==="Today")
+      {
+        console.log("Condition 4.1")
+        let newDate=new Date();
+        let mydatavalues= myarraydata.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate())));
+
+        let myarray=new Array();
+
+        for(let i=0;i<mydatavalues.length;i++)
+        {
+         if(mydatavalues[i].repaired.length>0)
+         {
+           myarray.push(mydatavalues[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+
+      }
+      if(period==="Weekly")
+      {
+        console.log("Condition 4.2");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-8*24*60*60*1000);
+        let mydatavalues=myarraydata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+        let myarray=new Array();
+
+        for(let i=0;i<mydatavalues.length;i++)
+        {
+         if(mydatavalues[i].repaired.length>0)
+         {
+           myarray.push(mydatavalues[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+      }
+      if(period==="Monthly")
+      {
+        console.log("Condition 4.3");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-31*24*60*60*1000);
+        let mydatavalues=myarraydata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+        let myarray=new Array();
+
+        for(let i=0;i<mydatavalues.length;i++)
+        {
+         if(mydatavalues[i].repaired.length>0)
+         {
+           myarray.push(mydatavalues[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+      }
+    }
+
+    if(model!=="all"&&period==="all"&&defectSegment!=="all")
+    {
+      console.log("Condition 5")
+      let mydatavalues=myarraydata.filter((values)=>values.model===model);
+
+      let myarray=new Array();
+
+      for(let i=0;i<mydatavalues.length;i++)
+      {
+       if(mydatavalues[i].repaired.length>0)
+       {
+         myarray.push(mydatavalues[i]);
+       }
+      }
+     
+      let myarray1=new Array();
+     
+      for(let i=0;i<myarray.length;i++)
+      {
+         let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+         for(let j=0;j<myarray[i].repaired.length;j++)
+         {
+           if(myarray[i].repaired[j].Segement===defectSegment)
+           {
+             mydata.repaired.push(myarray[i].repaired[j]);
+           }
+         }
+         if(mydata.repaired.length>0);
+         myarray1.push(mydata);
+      }
+      
+      console.log("MY ARRAY AFTER FILTER IS=",myarray);
+      console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+     
+     let myfinalarray=new Array();
+     
+     for(let i=0;i<myarray1.length;i++)
+     {
+       if(myarray1[i].repaired.length>0)
+       {
+         myfinalarray.push(myarray1[i]);
+       }
+     }
+     MyCheckData(mylistdata,myfinalarray);
+    }
+    if(model!=="all"&&period!=="all"&&defectSegment==="all")
+    {
+      console.log("Condition 6");
+      let mydatavalues=myarraydata.filter((values)=>values.model===model);
+      if(period==="Today")
+      {
+        console.log("Condition 6.1")
+        let newDate=new Date();
+        let mydata= mydatavalues.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate())));
+        MyCheckData(mylistdata,mydata);
+      }
+      if(period==="Weekly")
+      {
+        console.log("Condition 6.2");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-8*24*60*60*1000);
+        let mydata=mydatavalues.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+        MyCheckData(mylistdata,mydata);
+
+      }
+      if(period==="Monthly")
+      {
+        console.log("Condition 6.3");
+        let newDate=new Date(Date.now()+1*24*60*60*1000);
+        let sevenDayBackDate=new Date(Date.now()-31*24*60*60*1000);
+        let mydata=mydatavalues.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+        MyCheckData(mylistdata,mydata);
+
+      }
+  }
+  if(model==="all"&&period==="all"&&defectSegment==="all")
+  {
+    console.log("Condition 7");
+    let mydatavalues=myarraydata;
+    MyCheckData(mylistdata,mydatavalues);
+  }
+
+  if(model!=="all"&&period!="all"&&defectSegment!=="all")
+  {
+    console.log("Condition 8");
+    let mydatavalues=myarraydata.filter((values)=>values.model===model);
+    if(period==="Today")
+      {
+        console.log("Condition 8.1")
+        let newDate=new Date();
+        let mydata= mydatavalues.filter((values)=>((MyDateConverter(MyDateCheckerToday(values.createdAt)).getFullYear()===newDate.getFullYear())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getMonth()===newDate.getMonth())&&(MyDateConverter(MyDateCheckerToday(values.createdAt)).getDate()===newDate.getDate())));
+
+       let myarray=new Array();
+ 
+        for(let i=0;i<mydata.length;i++)
+        {
+         if(mydata[i].repaired.length>0)
+         {
+           myarray.push(mydata[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+      }
+if(period==="Weekly")
+{
+  console.log("Condition 8.2");
+  let newDate=new Date(Date.now()+1*24*60*60*1000);
+  let sevenDayBackDate=new Date(Date.now()-8*24*60*60*1000);
+  let mydata=mydatavalues.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+  let myarray=new Array();
+ 
+        for(let i=0;i<mydata.length;i++)
+        {
+         if(mydata[i].repaired.length>0)
+         {
+           myarray.push(mydata[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+}
+if(period==="Monthly")
+{
+  console.log("Condition 8.3");
+  let newDate=new Date(Date.now()+1*24*60*60*1000);
+  let sevenDayBackDate=new Date(Date.now()-31*24*60*60*1000);
+  let mydata=mydatavalues.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))<newDate&&MyDateConverter(MyDateCheckerToday(values.createdAt))>sevenDayBackDate));
+
+  let myarray=new Array();
+ 
+        for(let i=0;i<mydata.length;i++)
+        {
+         if(mydata[i].repaired.length>0)
+         {
+           myarray.push(mydata[i]);
+         }
+        }
+       
+        let myarray1=new Array();
+       
+        for(let i=0;i<myarray.length;i++)
+        {
+           let mydata={vin:myarray[i].vin,model:myarray[i].model,createdAt:myarray[i].createdAt,repaired:[]};
+           for(let j=0;j<myarray[i].repaired.length;j++)
+           {
+             if(myarray[i].repaired[j].Segement===defectSegment)
+             {
+               mydata.repaired.push(myarray[i].repaired[j]);
+             }
+           }
+           if(mydata.repaired.length>0);
+           myarray1.push(mydata);
+        }
+        
+        console.log("MY ARRAY AFTER FILTER IS=",myarray);
+        console.log("MY ARRAY AFTER ARRAY1 IS=", myarray1);
+       
+       let myfinalarray=new Array();
+       
+       for(let i=0;i<myarray1.length;i++)
+       {
+         if(myarray1[i].repaired.length>0)
+         {
+           myfinalarray.push(myarray1[i]);
+         }
+       }
+       MyCheckData(mylistdata,myfinalarray);
+}
+      }
+
+  }
+
+   
+
+
+PeriodData();
+
+
+function ShowDataCondition() {
+  return (
+    <div className="defects">
+      <div className="defectlist">
+        {mylistdata.length > 0
+          ? mylistdata.map((element) => {
+             if(element.repaired.length>0)
+             {
+              return(
+                <>
+              {
+                        element.repaired.map((values)=>{
+                          return(
+                            <div className="listdata d-flex">
+                            <div className="vinNumber mx-2 my-2">{element.vin}</div>
+                            <div className="Segement mx-2 my-2">{element.model}</div>
+                            
+                                <div className="Segement mx-2 my-2">{values.Segement}</div>
                       <div className="description mx-2 my-2">
-                        {item.Descrizione}
+                        {values.Descrizione}
                       </div>
                     </div>
-                  );
-                });
-              })
-            : ""}
-        </div>
+                            
+                            
+                          )
+                        })
+                      }
+                      
+                     
+
+                  </>
+
+              )
+             }
+             else if(element.repaired.length===0)
+             {
+              return(
+                <div className="listdata d-flex">
+                      <div className="vinNumber mx-2 my-2">{element.vin}</div>
+                      <div className="Segement mx-2 my-2">{element.model}</div>
+                  </div>
+
+              )
+             }
+            })
+          
+          : <div><h3 className="h3 text-white">Data Not Found</h3> </div>}
       </div>
-    );
+    </div>
+  );
+}
+
+
+const endFunction=(e)=>{
+  setEndDate(e.target.value);
+  let mydatevalue=e.target.value;
+  let start=startdate;
+console.log("START=",start);
+console.log("END=",mydatevalue);
+
+if(typeof startdate!=="undefined")
+{
+  let startdate=new Date(start);
+  startdate.setDate(startdate.getDate()-1)
+  let end=new Date(mydatevalue);
+  end.setDate(end.getDate()+1);
+
+  console.log("START=",startdate);
+  console.log("END=",end);
+
+  if(startdate>end)
+  {
+    alert("Please Enter Date Carefully");
   }
+  else if(startdate<=end)
+  {
+    let mydatevalues=mylistdata.filter((values)=>(MyDateConverter(MyDateCheckerToday(values.createdAt))>startdate)&&(MyDateConverter(MyDateCheckerToday(values.createdAt))<end));
+
+    console.log("Date Values Are=",mydatevalues);
+
+    if(mydatevalues.length===0)
+    {
+      mylistdata.length=0;
+      myanotherdata.length=0;
+    }
+    else if(mydatevalues.length>0)
+    {
+
+    setMyListData(mydatevalues);
+    setMyAnotherData(mydatevalues);
+    }
+  }
+}
+
+else if(typeof startdate==="undefined")
+{
+  alert("Please Enter Date");
+}
+
+}
+
+
+
+
+
+ 
+
+ 
+  
+ 
+  
 
   return (
     <VehicleHistoryStyled className="mainpart">
       <div className="modeldescription">
         <div className="inputElement">
           <h5>MODEL</h5>
-          <select className={"Model"} onChange={(e)=>modelHandler(e)} value={model}>
+          <select className={"Model"}  value={model} onChange={(e)=>modelHandler(e)}>
             <option value="all">All models</option>
             {vehicleModels.map((vehicle, index) => (
               <option key={index} value={vehicle}>
@@ -253,7 +873,7 @@ else{
           <select
             className="Model"
             value={period}
-            onChange={(e) => periodHandler(e)}
+          onChange={(e)=>periodHandler(e)}
           >
             <option value="all" selected>
               all
@@ -268,7 +888,8 @@ else{
           <select
             className="Model"
             value={defectSegment}
-            onChange={(e) => MySegmentFunction(e)}
+            onChange={(e)=>SegmentHandler(e)}
+            
           >
             <option value="all">All defects</option>
             <option value="Surface-RH-139">Surface RH 139</option>
@@ -291,7 +912,7 @@ else{
             type="date"
             className="startdate"
             value={startdate}
-            onChange={(e) => setStartDate(e.target.value)}
+            onChange={(e)=>setStartDate(e.target.value)}
           ></input>
         </div>
         <div className="inputElement">
@@ -300,7 +921,7 @@ else{
             type="date"
             className="enddate"
             value={endDate}
-            onChange={(e)=>EndDateFunction(e)}
+            onChange={(e)=>endFunction(e)}
           ></input>
         </div>
       </div>
@@ -314,7 +935,7 @@ else{
               id="inlineRadio1"
               value="default"
               checked={radiodata==="default"}
-              onChange={(e)=>myNewFunction(e)}
+              onChange={(e)=>NewDataHandler(e)}
             />
             <label className="form-check-label" htmlFor="inlineRadio1">
               DEFAULT
@@ -327,15 +948,16 @@ else{
               name="inlineRadioOptions"
               id="inlineRadio2"
               value="new"
-              onChange={(e)=>myNewFunction(e)}
+              onChange={(e)=>NewDataHandler(e)}
             />
             <label className="form-check-label" htmlFor="inlineRadio2">
               NEW
             </label>
           </div>
-        </div>
-        {ShowDataCondition()}
-      </div>
+          </div>
+          {ShowDataCondition()}
+       
+</div>
     </VehicleHistoryStyled>
   );
 };
