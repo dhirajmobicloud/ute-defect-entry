@@ -35,7 +35,7 @@ const SegementManagement = () => {
   function FetchSegmentData()
   {
     axios
-    .get("https://easy-gray-camel-sock.cyclic.app/assigned-segement-data")
+    .get(`${process.env.REACT_APP_API_URL}/assigned-segement-data`)
     .then((response) => {
       setSegementCollection(response.data);
     })
@@ -49,7 +49,7 @@ const SegementManagement = () => {
     FetchSegmentData();
 
     axios
-      .get("https://easy-gray-camel-sock.cyclic.app/users")
+      .get(`${process.env.REACT_APP_API_URL}/users`)
       .then((values) => {
         setUserdata(values.data);
       })
@@ -189,7 +189,7 @@ console.log("Table Entry is",tableEntry);
     };
     axios
       .post(
-        "https://easy-gray-camel-sock.cyclic.app/assigned-segement",
+        `${process.env.REACT_APP_API_URL}/assigned-segement`,
         jsondata
       )
       .then((response) => {
@@ -211,7 +211,7 @@ console.log("Table Entry is",tableEntry);
     e.preventDefault();
     console.log(JSON.stringify(tableEntry));
     // alert(JSON.stringify(tableEntry));
-   fetch('https://easy-gray-camel-sock.cyclic.app/update-assigned-segement',{method:"PUT" , body:JSON.stringify(tableEntry), headers: { "Content-Type": "application/json" }}).then((res)=>{
+   fetch(`${process.env.REACT_APP_API_URL}/update-assigned-segement`,{method:"PUT" , body:JSON.stringify(tableEntry), headers: { "Content-Type": "application/json" }}).then((res)=>{
       if(res){
         FetchSegmentData();
       }else{

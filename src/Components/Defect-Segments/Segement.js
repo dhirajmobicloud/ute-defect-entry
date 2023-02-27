@@ -17,6 +17,8 @@ const Segement = (props) => {
     repaired: [],
   });
 
+  // let API = process.env.REACT_APP_API_URL
+
   const [newDefect, setNewDefect] = useState({
     Descrizione: "",
   });
@@ -27,7 +29,7 @@ const Segement = (props) => {
 
   // const vehicle_data = useSelector((state) => state.vehicle);
   const getVehicleData = () => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/get-vehicle-data/${vin_no}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/get-vehicle-data/${vin_no}`, {
       method: "GET",
     })
       .then((res) => {
@@ -44,7 +46,7 @@ const Segement = (props) => {
   };
 
   const AddDefect = (defect) => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/add-vehicle-defect/${vin_no}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/add-vehicle-defect/${vin_no}`, {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -59,7 +61,7 @@ const Segement = (props) => {
   };
 
   const RemoveDefect = (defect) => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/remove-vehicle-defect/${vin_no}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/remove-vehicle-defect/${vin_no}`, {
       method: "PUT",
       body: JSON.stringify(defect),
       headers: { "Content-Type": "application/json" },
@@ -76,8 +78,9 @@ const Segement = (props) => {
       });
   };
 
+
   const getData = () => {
-    fetch(`https://easy-gray-camel-sock.cyclic.app/${props.segement}`, {
+    fetch(`${process.env.REACT_APP_API_URL}/${props.segement}`, {
       method: "GET",
     })
       .then((res) => {
@@ -116,7 +119,7 @@ const Segement = (props) => {
   const addNewDefect=(e)=>{
     e.preventDefault()
     console.log(newDefect)
-    fetch(`https://easy-gray-camel-sock.cyclic.app/add_${props.segement}`,{method:"POST" , body:JSON.stringify(newDefect), headers: { "Content-Type": "application/json" }}).then((res)=>{
+    fetch(`${process.env.REACT_APP_API_URL}/add_${props.segement}`,{method:"POST" , body:JSON.stringify(newDefect), headers: { "Content-Type": "application/json" }}).then((res)=>{
       if(res.status === 200){
         alert("Added successfully")
        getData()
