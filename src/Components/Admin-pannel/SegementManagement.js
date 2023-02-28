@@ -23,25 +23,24 @@ const SegementManagement = () => {
     "Door-Closing-142",
   ];
   let [userdata, setUserdata] = useState([]);
-  let [tableEntry,setTableEntry]=useState({username:'',segement_assigned:[],work:[]});
+  let [tableEntry, setTableEntry] = useState({ username: '', segement_assigned: [], work: [] });
   let [flag, setflag] = useState(false);
-  let[segementCollection, setSegementCollection] = useState([]);
-  let [newname,setnewname]=useState('');
-  let [status,setStatus]=useState(true);
-  let [counter,setCounter]=useState(0);
+  let [segementCollection, setSegementCollection] = useState([]);
+  let [newname, setnewname] = useState('');
+  let [status, setStatus] = useState(true);
+  let [counter, setCounter] = useState(0);
 
-  
 
-  function FetchSegmentData()
-  {
+
+  function FetchSegmentData() {
     axios
-    .get("https://easy-gray-camel-sock.cyclic.app/assigned-segement-data")
-    .then((response) => {
-      setSegementCollection(response.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+      .get("https://easy-gray-camel-sock.cyclic.app/assigned-segement-data")
+      .then((response) => {
+        setSegementCollection(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
   }
   useEffect(() => {
@@ -56,13 +55,13 @@ const SegementManagement = () => {
       .catch((err) => {
         console.log(err);
       });
-  
+
   }, []);
 
 
   function Mydata(values) {
     let valuedata = values;
-    
+
 
     return (
       <div className="showdata">
@@ -75,14 +74,14 @@ const SegementManagement = () => {
         })}
       </div>
     );
-  }
+  } 
 
   const workType = ["Repair Defect", "Add Defect"];
   const [selectedSegment, setSelectedSegment] = useState([]);
   const [username, setUsername] = useState("");
   const [defectWork, setDefectWork] = useState([]);
-  const [newusername,setNewUserName]=useState('');
-  const [newuserpassword,setNewUserPassword]=useState('');
+  const [newusername, setNewUserName] = useState('');
+  const [newuserpassword, setNewUserPassword] = useState('');
 
   const UserNameEnter = (e) => {
     setUsername(e.target.value);
@@ -94,14 +93,14 @@ const SegementManagement = () => {
     }
   };
 
-  const ModalData=(index)=>{
+  const ModalData = (index) => {
     setTableEntry(segementCollection[index]);
-  
+
   }
 
- 
 
-console.log("Table Entry is",tableEntry);
+
+  console.log("Table Entry is", tableEntry);
 
 
   const EnterSearch = (value) => {
@@ -157,26 +156,22 @@ console.log("Table Entry is",tableEntry);
     }
   };
 
-  const changeSegementAssigned=(e)=>{
-    if(e.target.checked===true)
-    {
-       setTableEntry({...tableEntry,segement_assigned:[...tableEntry.segement_assigned,e.target.value]});
+  const changeSegementAssigned = (e) => {
+    if (e.target.checked === true) {
+      setTableEntry({ ...tableEntry, segement_assigned: [...tableEntry.segement_assigned, e.target.value] });
     }
-    else if(e.target.checked===false)
-    {
-      setTableEntry({...tableEntry,segement_assigned:tableEntry.segement_assigned.filter((value)=>value!==e.target.value)})
+    else if (e.target.checked === false) {
+      setTableEntry({ ...tableEntry, segement_assigned: tableEntry.segement_assigned.filter((value) => value !== e.target.value) })
     }
-    
+
   }
 
-  const changeWorkAssigned=(e)=>{
-    if(e.target.checked===true)
-    {
-      setTableEntry({...tableEntry,work:[...tableEntry.work,e.target.value]});
+  const changeWorkAssigned = (e) => {
+    if (e.target.checked === true) {
+      setTableEntry({ ...tableEntry, work: [...tableEntry.work, e.target.value] });
     }
-    else if(e.target.checked===false)
-    {
-      setTableEntry({...tableEntry,work:tableEntry.work.filter((values)=>values!==e.target.value)});
+    else if (e.target.checked === false) {
+      setTableEntry({ ...tableEntry, work: tableEntry.work.filter((values) => values !== e.target.value) });
     }
   }
 
@@ -204,24 +199,24 @@ console.log("Table Entry is",tableEntry);
         console.log(err);
       });
 
-    
+
   };
 
-  const UpdateSubmit=(e)=>{
+  const UpdateSubmit = (e) => {
     e.preventDefault();
     console.log(JSON.stringify(tableEntry));
     // alert(JSON.stringify(tableEntry));
-   fetch('https://easy-gray-camel-sock.cyclic.app/update-assigned-segement',{method:"PUT" , body:JSON.stringify(tableEntry), headers: { "Content-Type": "application/json" }}).then((res)=>{
-      if(res){
+    fetch('https://easy-gray-camel-sock.cyclic.app/update-assigned-segement', { method: "PUT", body: JSON.stringify(tableEntry), headers: { "Content-Type": "application/json" } }).then((res) => {
+      if (res) {
         FetchSegmentData();
-      }else{
-        return 
+      } else {
+        return
       }
-   })
+    })
 
-    
+
   }
-                
+
 
   return (
     <SegmentManagementStyle className="container-fluid">
@@ -234,10 +229,10 @@ console.log("Table Entry is",tableEntry);
             <div className="formdata">
               <div className="inputText ">
                 <div className="textinputdata">
-                <h5 className="description h5 form-label">
-                  Enter the username
-                </h5>
-                <button type="button" className="AddButton btn btn-primary"  data-bs-toggle="modal" data-bs-target="#myModal">Add User</button>
+                  <h5 className="description h5 form-label">
+                    Enter the username
+                  </h5>
+                  <button type="button" className="AddButton btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Add User</button>
                 </div>
                 <input
                   type="text"
@@ -319,7 +314,7 @@ console.log("Table Entry is",tableEntry);
               </tr>
             </thead>
             <tbody>
-              {segementCollection.map((values,index) => {
+              {segementCollection.map((values, index) => {
                 return (
                   <tr scope="row">
                     <td>
@@ -330,137 +325,128 @@ console.log("Table Entry is",tableEntry);
                     {/* <td>{Mydata(values.segement_assigned)}</td>
                   <td>{Mydata(values.work)}</td> */}
                     <td>{Mydata(values.segement_assigned)}</td>
-                    <td>{Mydata(values.work)} 
+                    <td>{Mydata(values.work)}
 
-                    <div class="modal fade" id="myModal1">
-  <div class="modal-dialog">
-    <div class="modal-content">
+                      <div class="modal fade" id="myModal1">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
 
-      <div class="modal-header">
-        <h4 class="modal-title">NEW USER ENTRY</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+                            <div class="modal-header">
+                              <h4 class="modal-title">NEW USER ENTRY</h4>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
 
-      <div class=" modaluser modal-body">
-      <form onSubmit={UpdateSubmit}>
-        <div className="userdata">
-        <h6 className="description h6 form-label">Username:</h6>
-        <input type='text' className=" formname form-control" value={tableEntry.username} disabled></input>
-        </div>
-        <div className="checkboxData ">
-        <h5 className="description  form-label">
-                  Select the defect work to assign:
-                </h5>
-                
-                <div className="mycheckboxvalues row">
-        {
+                            <div class=" modaluser modal-body">
+                              <form onSubmit={UpdateSubmit}>
+                                <div className="userdata">
+                                  <h6 className="description h6 form-label">Username:</h6>
+                                  <input type='text' className=" formname form-control" value={tableEntry.username} disabled></input>
+                                </div>
+                                <div className="checkboxData ">
+                                  <h5 className="description  form-label">
+                                    Select the defect work to assign:
+                                  </h5>
 
-          SegmentData.map((values,index)=>{
-          
-          
-            if(tableEntry.segement_assigned.includes(values)===true)
-            {
-            
-             return(
-              <>
-               <div className="checkboxDiv col-sm-6">
-                      <input
-                        type="checkbox"
-                        defaultValue={values}
-                        checked={tableEntry.segement_assigned.includes(values)}
-                        onChange={(e)=>changeSegementAssigned(e)}
-                        className="mycheckboxpopup form-check-input"
-                      ></input>
-                      <span className="mycheckboxvalues h5">{values}</span>
-                    </div>
-              
-              </>
-             )
-            
-              
-            }
-            if(tableEntry.segement_assigned.includes(values)===false){
-              return(
-                <>
-                <div className="checkboxDiv col-sm-6">
-                      <input
-                        type="checkbox"
-                        value={values}
-                        checked={tableEntry.segement_assigned.includes(values)}
-                        onChange={(e)=>changeSegementAssigned(e)}
-                        className="mycheckboxpopup form-check-input"
-                      ></input>
-                      <span className="mycheckboxvalues h5">{values}</span>
-                    </div>
-                </>
-              )
-            }
-          })
-        }
-        </div>
-        </div>
-        <div className="checkboxData">
-                <h5 className="description h5 form-label">
-                  Select the Segments to assign:
-                </h5>
-                <div className="mycheckboxvalues row">
-                  {workType.map((values) => {
-                    if(tableEntry.work.includes(values)===true)
-                    {
-                      return(
-                    <div className="checkboxDiv col-sm-6">
-                      <input
-                        type="checkbox"
-                      value={values}
-                        checked={tableEntry.work.includes(values)}
-                        onChange={(e)=>changeWorkAssigned(e)}
-                        className="mycheckboxwork form-check-input"
-                      ></input>
-                      <span className="mycheckboxvalues h5">{values}</span>
-                    </div>
-                      )
-                  }
-                  else{
-                    return(
-                      <div className="checkboxDiv col-sm-6">
-                      <input
-                        type="checkbox"
-                        value={values}
-                        checked={tableEntry.work.includes(values)}
-                        onChange={(e)=>changeWorkAssigned(e)}
-                        className="mycheckboxwork form-check-input"
-                      ></input>
-                      <span className="mycheckboxvalues h5">{values}</span>
-                    </div>
-                    )
-                  }
-                }
-                  )}
-                </div>
-              </div>
-              <div className="submit-button">
-                <button type="submit" className=" Mybutton btn btn-success">SUBMIT</button>
-                </div>
-      </form>
-      </div>
+                                  <div className="mycheckboxvalues row">
+                                    {
 
-    
-      </div>
-      </div>
-      </div>
-      
+                                      SegmentData.map((values, index) => {
 
-                 
+
+                                        if (tableEntry.segement_assigned.includes(values) === true) {
+
+                                          return (
+                                            <>
+                                              <div className="checkboxDiv col-sm-6">
+                                                <input
+                                                  type="checkbox"
+                                                  defaultValue={values}
+                                                  checked={tableEntry.segement_assigned.includes(values)}
+                                                  onChange={(e) => changeSegementAssigned(e)}
+                                                  className="mycheckboxpopup form-check-input"
+                                                ></input>
+                                                <span className="mycheckboxvalues h5">{values}</span>
+                                              </div>
+
+                                            </>
+                                          )
+
+
+                                        }
+                                        if (tableEntry.segement_assigned.includes(values) === false) {
+                                          return (
+                                            <>
+                                              <div className="checkboxDiv col-sm-6">
+                                                <input
+                                                  type="checkbox"
+                                                  value={values}
+                                                  checked={tableEntry.segement_assigned.includes(values)}
+                                                  onChange={(e) => changeSegementAssigned(e)}
+                                                  className="mycheckboxpopup form-check-input"
+                                                ></input>
+                                                <span className="mycheckboxvalues h5">{values}</span>
+                                              </div>
+                                            </>
+                                          )
+                                        }
+                                      })
+                                    }
+                                  </div>
+                                </div>
+                                <div className="checkboxData">
+                                  <h5 className="description h5 form-label">
+                                    Select the Segments to assign:
+                                  </h5>
+                                  <div className="mycheckboxvalues row">
+                                    {workType.map((values) => {
+                                      if (tableEntry.work.includes(values) === true) {
+                                        return (
+                                          <div className="checkboxDiv col-sm-6">
+                                            <input
+                                              type="checkbox"
+                                              value={values}
+                                              checked={tableEntry.work.includes(values)}
+                                              onChange={(e) => changeWorkAssigned(e)}
+                                              className="mycheckboxwork form-check-input"
+                                            ></input>
+                                            <span className="mycheckboxvalues h5">{values}</span>
+                                          </div>
+                                        )
+                                      }
+                                      else {
+                                        return (
+                                          <div className="checkboxDiv col-sm-6">
+                                            <input
+                                              type="checkbox"
+                                              value={values}
+                                              checked={tableEntry.work.includes(values)}
+                                              onChange={(e) => changeWorkAssigned(e)}
+                                              className="mycheckboxwork form-check-input"
+                                            ></input>
+                                            <span className="mycheckboxvalues h5">{values}</span>
+                                          </div>
+                                        )
+                                      }
+                                    }
+                                    )}
+                                  </div>
+                                </div>
+                                <div className="submit-button">
+                                  <button type="submit" className=" Mybutton btn btn-success">SUBMIT</button>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </td>
-                    <td> 
+                    <td>
                       <div className="buttondata">
-                                          
-                       <button className="Mybutton btn btn-secondary"  data-bs-toggle="modal" data-bs-target="#myModal1" onClick={()=>ModalData(index)}>Edit</button>
-                    <button className="Mybutton btn btn-danger">Delete</button>
-                    </div>
-                  </td>
-                  
-                    
+
+                        <button className="Mybutton btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal1" onClick={() => ModalData(index)}>Edit</button>
+                        <button className="Mybutton btn btn-danger">Delete</button>
+                      </div>
+                    </td>
                   </tr>
                 );
               })}
@@ -468,32 +454,32 @@ console.log("Table Entry is",tableEntry);
           </table>
         </div>
         <div class="modal fade" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
+          <div class="modal-dialog">
+            <div class="modal-content">
 
-      <div class="modal-header">
-        <h4 class="modal-title">NEW USER ENTRY</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+              <div class="modal-header">
+                <h4 class="modal-title">NEW USER ENTRY</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
 
-      <div class=" modaluser modal-body">
-        <form>
-          <div className="userdata">
-        <h6 className="description h6 form-label">Enter the username</h6>
-        <input type='text' className=" formname form-control" value={newusername} onChange={(e)=>setNewUserName(e.target.value)}></input>
+              <div class=" modaluser modal-body">
+                <form>
+                  <div className="userdata">
+                    <h6 className="description h6 form-label">Enter the username</h6>
+                    <input type='text' className=" formname form-control" value={newusername} onChange={(e) => setNewUserName(e.target.value)}></input>
+                  </div>
+                  <div className="userdata">
+                    <h6 className="description h6 form-label">Enter the password:</h6>
+                    <input type='password' className=" formname form-control" value={newusername} onChange={(e) => setNewUserName(e.target.value)}></input>
+                  </div>
+                  <button type="submit" className=" Mybutton btn btn-success" data-bs-dismiss>Submit</button>
+                </form>
+              </div>
+
+
+            </div>
+          </div>
         </div>
-        <div className="userdata">
-        <h6 className="description h6 form-label">Enter the password:</h6>
-        <input type='password' className=" formname form-control" value={newusername} onChange={(e)=>setNewUserName(e.target.value)}></input>
-        </div>
-                <button type="submit" className=" Mybutton btn btn-success" data-bs-dismiss>Submit</button>
-        </form>
-      </div>
-
-
-    </div>
-  </div>
-</div>
 
 
 
