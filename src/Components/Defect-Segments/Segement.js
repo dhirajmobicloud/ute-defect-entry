@@ -149,7 +149,7 @@ const Segement = (props) => {
           </div>
           <div className="Add-button">
             <span
-              className="btn btn-outline-info text-white"
+              className="btn btn-sm btn-success text-white"
               data-bs-toggle="modal"
               data-bs-target="#addNewUserModal"
             >
@@ -244,11 +244,11 @@ const Segement = (props) => {
             </form>
           </div>
         </div>
-        {/* <h5 className="heading">defect list</h5> */}
+        <h5 className="heading">defect list</h5>
         <div className="section-three">
-          <span className="heading">
+          {/* <span className="heading">
             <h5>defect list</h5>
-          </span>
+          </span> */}
           <div className="defect-list container">
             {defects.map((element, index) => {
               return (

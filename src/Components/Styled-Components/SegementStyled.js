@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const SegementStyled = styled.div`
   height: 100vh;
   display: flex;
-  background: -webkit-linear-gradient(to right, #4286f4, #373b44);
-  background: linear-gradient(to right, #4286f4, #373b44);
+  /* background: -webkit-linear-gradient(to right, #4286f4, #373b44); */
+  /* background: linear-gradient(to right, #4286f4, #373b44); */
 
   /* -------------------- Select Defect -------------------- */
   .select-defect {
@@ -12,7 +12,7 @@ export const SegementStyled = styled.div`
     flex-direction: column;
     /* background: #373B44;   */
     /* fallback for old browsers */
-    background-color: #141e30;
+    /* background-color: #141e30; */
     width: 70vw;
     /* height: 100vh; */
     border-right: solid gold 1px;
@@ -34,13 +34,18 @@ export const SegementStyled = styled.div`
       }
 
       .Add-button {
+        color: #000;
+        span{
+          border-radius: 20px;
+        }
         .modal {
           .modal-dialog {
             display: flex;
             height: 75vh;
             .modal-content {
-              background-color : #abc6d3 ;
+              background-color : #74ebd5 ;
               border-radius: 30px;
+              
               margin: auto;
               .modal-body {
                 form {
@@ -82,6 +87,14 @@ export const SegementStyled = styled.div`
         width: 50%;
       }
     }
+
+    .heading {
+        margin: 10px;
+        text-transform: uppercase;
+        color: #000;
+        font-weight: 700;
+       
+      }
     .section-three {
       display: flex;
       flex-direction: column;
@@ -90,11 +103,7 @@ export const SegementStyled = styled.div`
       ::-webkit-scrollbar {
         display: none;
       }
-      .heading {
-        margin: 10px;
-        text-transform: uppercase;
-        color: #e8e8e8;
-      }
+      
       .defect-list {
         display: flex;
         flex-direction: column;
@@ -106,7 +115,8 @@ export const SegementStyled = styled.div`
           height: 30px;
           margin: 10px 10px 10px 0;
           align-items: center;
-          background-color: #e8e8e8;
+          /* background-color: #e8e8e8; */
+          box-shadow: 4px 4px 11px 0px;
           cursor: pointer;
           h5 {
             font-size: 12px;
@@ -131,7 +141,7 @@ export const SegementStyled = styled.div`
       display: flex;
       height: 50px;
       border-bottom: solid gold 1px;
-      color: bisque;
+      color: #000;
       h5 {
         margin: auto;
         text-align: center;

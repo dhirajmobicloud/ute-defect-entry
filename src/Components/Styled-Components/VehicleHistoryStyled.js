@@ -5,7 +5,7 @@ export const VehicleHistoryStyled = styled.div`
   width: -webkit-fill-available;
   display: flex;
   padding-left: 20px;
-  background-color: #141e30;
+  /* background-color: #141e30; */
   flex-direction: column;
   ::-webkit-scrollbar {
     display: none;
@@ -24,7 +24,8 @@ export const VehicleHistoryStyled = styled.div`
     input {
       text-transform: uppercase;
       text-align: center;
-      background-color:#83a4d4;
+      /* background-color:#83a4d4; */
+      background-color: #0000001c;
       color:black;
       padding: 5px;
       border-radius: 10px;
@@ -33,7 +34,8 @@ export const VehicleHistoryStyled = styled.div`
     }
     h5 {
       text-align: center;
-      color: bisque;
+      /* color: bisque; */
+      color: #000;
     }
   }
 
@@ -42,7 +44,8 @@ export const VehicleHistoryStyled = styled.div`
 
     .result-filter {
       display: flex;
-      background-color: #83a4d4;
+      /* background-color: #83a4d4; */
+      background-color: #0000001c;
       /* background-color: lightgrey; */
       margin: 20px 20px 0 20px;
       border-radius: 10px 10px 0 0;
@@ -53,7 +56,8 @@ export const VehicleHistoryStyled = styled.div`
       }
     }
     .defects {
-      background-color: #83a4d4;
+      /* background-color: #83a4d4; */
+      background-color: #0000001c;
       margin: 5px 20px 20px 20px;
       /* background-color: lightgrey; */
       border-radius: 0 0 10px 10px;
@@ -61,15 +65,17 @@ export const VehicleHistoryStyled = styled.div`
       padding: 20px;
 
       .defectlist {
-        background-color: #373b44;
+        /* background-color: #373b44; */
         height: 65vh;
         overflow: scroll;
         ::-webkit-scrollbar {
           display: none;
         }
         .listdata {
-          color: white;
-          background-color:#4286f4;
+          color: #000;
+          /* background-color:#4286f4; */
+            background-color: #7c9adf94;
+            border-radius: 5px;
           margin: 5px;
           align-items: center;
 

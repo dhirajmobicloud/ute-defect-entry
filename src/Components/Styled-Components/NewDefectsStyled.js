@@ -6,7 +6,7 @@ export const NewDefectsStyled = styled.div`
  padding-left: 20px;
   display: flex;
   /* background: #f1f1f1; */
-  background-color: #141e30;
+  /* background-color: #141e30; */
   flex-direction: column;
   ::-webkit-scrollbar {
     display: none;
@@ -22,7 +22,8 @@ export const NewDefectsStyled = styled.div`
 
     select,
     input {
-      background-color: #83a4d4;
+      /* background-color: #83a4d4; */
+      background-color: #0000001c;
       color: black;
       padding: 5px;
       text-align: center;
@@ -33,7 +34,8 @@ export const NewDefectsStyled = styled.div`
     }
     h5 {
       text-align: center;
-      color: bisque;
+      /* color: bisque; */
+      color: #000;
     }
   }
 
@@ -44,21 +46,24 @@ export const NewDefectsStyled = styled.div`
 
     .defects {
       margin: 5px 20px 20px 20px;
-      background-color: #83a4d4;
+      /* background-color: #83a4d4; */
+      background-color: #0000001c;
       border-radius: 10px 10px 10px 10px;
       padding: 20px;
 
        
       .defectlist {
-        background-color: #373b44;
+        /* background-color: #373b44; */
+       
         /* height: 65vh; */
         overflow: scroll;
         ::-webkit-scrollbar {
           display: none;
         }
         .listdata {
-          color: #fff;
-          background-color: #4286f426;
+          color: #000;
+          /* background-color: #4286f426; */
+          background-color: #7c9adf94;
           margin: 5px;
           align-items: center;
           font-weight: 600;
@@ -88,7 +93,8 @@ export const NewDefectsStyled = styled.div`
 
     .management-section {
       margin: auto;
-      background-color: #83a4d4;
+      /* background-color: #83a4d4; */
+      background-color: #7c9adf94;
       width: 80vw;
       padding: 20px;
       border-radius: 10px;

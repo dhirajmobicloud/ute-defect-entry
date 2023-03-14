@@ -8,17 +8,19 @@ width: 100%;
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: #141e30;
+  /* background-color: #141e30; */
 
 .LoginCart{
-    width: 430px;
+    width: 300px;
     border-radius: 15px;
     margin: auto;
-    background-color: #2C5364;
+    background-color: #00000021;
+
+    /* background-color: #2C5364; */
     
 }
 form {
-    padding: 40px;
+    padding: 40px 20px;
     align-items: center;
     text-align:center;
 

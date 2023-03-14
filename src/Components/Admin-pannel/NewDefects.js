@@ -459,7 +459,7 @@ const NewDefects = () => {
   };
 
   const replaceDefects = () => {
-    fetch(`http://localhost:5000/replace-defects`, {
+    fetch(`https://easy-gray-camel-sock.cyclic.app/replace-defects`, {
       method: "POST",
       body: JSON.stringify({ sectedDefects, newDefect }),
       headers: { "Content-Type": "application/json" },
@@ -658,7 +658,7 @@ const NewDefects = () => {
                 id="inputText"
               />
             </div>
-            <div class="col-md-2">
+            {/* <div class="col-md-2">
               <label for="inputAddress" class="form-label">
                 Part name
               </label>
@@ -815,7 +815,7 @@ const NewDefects = () => {
                 value={newDefect.Difetti}
                 id="inputState"
               />
-            </div>
+            </div> */}
             <div class="col-12 d-flex">
               <button
                 type="submit"

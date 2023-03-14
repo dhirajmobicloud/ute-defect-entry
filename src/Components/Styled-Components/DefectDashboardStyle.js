@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const DefectDashboardStyle = styled.div`
-  background-color: #141e30;
+  /* background-color: #141e30; */
   display: flex;
   overflow: hidden;
   height: 100vh;
@@ -9,7 +9,7 @@ export const DefectDashboardStyle = styled.div`
   .defects-repaired {
     width: 30%;
     max-height: 100vh;
-    border-right: solid gold 1px;
+    border-right: solid #686868 1px;
     display: flex;
     flex-direction: column;
 
@@ -19,7 +19,7 @@ export const DefectDashboardStyle = styled.div`
       padding: 10px;
       height: 50%;
       /* overflow: scroll; */
-      border-bottom: solid gold 1px;
+      border-bottom: solid #686868 1px;
       ::-webkit-scrollbar {
         display: none;
       }
@@ -37,11 +37,13 @@ export const DefectDashboardStyle = styled.div`
       }
 
       .defects-heading {
-        color: bisque;
+        color: #000;
+      
         height: 45px;
         h3 {
           text-align: center;
           text-transform: uppercase;
+          font-weight: 700;
         }
       }
 
@@ -82,10 +84,11 @@ export const DefectDashboardStyle = styled.div`
       }
 
       .repaired-heading {
-        color: bisque;
+        color: #000;
         height: 45px;
         h3 {
           text-align: center;
+          font-weight: 700;
           text-transform: uppercase;
         }
       }
@@ -130,7 +133,7 @@ export const DefectDashboardStyle = styled.div`
         display: flex;
         justify-content: space-between;
         h6 {
-          color: #fff;
+          color: #000;
           margin: 10px;
         }
         img {
@@ -160,7 +163,8 @@ export const DefectDashboardStyle = styled.div`
         height: 45px;
         h3 {
           text-align: center;
-          color: bisque;
+          color: #000;
+          font-weight: 700;
           text-transform: uppercase;
         }
       }
@@ -180,7 +184,7 @@ export const DefectDashboardStyle = styled.div`
           color: black;
           text-transform: uppercase;
           /* background-color: #58c8eb; */
-          border-radius: 10px;
+          border-radius: 30px;
           cursor: pointer;
 
           h5 {

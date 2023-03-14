@@ -7,7 +7,7 @@ export const LoginStyled = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: #141e30;
+  /* background-color: #141e30; */
 
   .logo img{
         width: 150px;
@@ -17,11 +17,12 @@ export const LoginStyled = styled.div`
 
   .LoginCart {
     /* height: 390px; */
-    width: 430px;
+    width: 330px;
     border-radius: 15px;
-    background-color: #2C5364;
+    background-color: #00000021;
     /* background-color: #d9d9d9; */
     margin: auto;
+    /* box-shadow: 4px 6px 18px 0px; */
   }
   form {
     padding: 40px;

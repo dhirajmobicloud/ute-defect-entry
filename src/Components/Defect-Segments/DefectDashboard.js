@@ -265,7 +265,7 @@ const DefectDashboard = () => {
         <div className="vehicle-information">
           <div className="logo">
             <img src={logo} alt="logo" />
-            <h6>{loginedUser.username ? loginedUser.username : "This user don't have any kind of access" }</h6>
+            <h6> LOGINED USER : {loginedUser.username ? loginedUser.username : "This user don't have any kind of access" }</h6>
           </div>
           <div className="info  ">
             <h4>MODEL : {vehicle_data.model}</h4>
